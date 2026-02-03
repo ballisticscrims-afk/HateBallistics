@@ -1,26 +1,35 @@
-body {
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
   background: #000;
-  color: white;
+  color: #fff;
 }
 
 /* NAVBAR */
-.navbar {
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.8);
+  padding: 15px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
-  background: #111;
+  z-index: 1000;
 }
 
-.navbar ul {
-  list-style: none;
+nav ul {
   display: flex;
   gap: 25px;
+  list-style: none;
 }
 
-.navbar a {
+nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -28,9 +37,8 @@ body {
 
 /* HERO */
 .hero {
+  height: 100vh;
   position: relative;
-  height: 90vh;
-  overflow: hidden;
 }
 
 .hero video {
@@ -46,28 +54,55 @@ body {
   transform: translate(-50%, -50%);
   text-align: center;
 }
-.page-title {
+
+.hero-text h1 {
+  font-size: 60px;
+}
+
+.hero-text p {
+  font-size: 20px;
+}
+
+/* SECTIONS */
+.section {
+  padding: 80px 40px;
   text-align: center;
-  margin: 40px 0;
 }
 
-.product-grid {
+.cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-  padding: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 30px;
+  margin-top: 40px;
 }
 
-.product img {
-  width: 100%;
+.card {
+  background: #111;
+  padding: 30px;
+  border-radius: 10px;
 }
+
+.card a {
+  color: red;
+  text-decoration: none;
+}
+
+/* TEAM */
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
   gap: 30px;
-  padding: 40px;
 }
 
-.player img {
+.team-grid img {
   width: 100%;
+  border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+  background: #111;
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
 }
