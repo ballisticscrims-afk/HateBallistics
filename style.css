@@ -512,3 +512,27 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+/* ===== ROLE FILTERS ===== */
+
+.role-filters {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+.role-filters button {
+  background: #111;
+  color: white;
+  border: 1px solid #333;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.role-filters button.active,
+.role-filters button:hover {
+  background: red;
+  border-color: red;
+}
