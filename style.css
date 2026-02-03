@@ -574,3 +574,61 @@ footer {
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 30px;
 }
+/* ===== ROSTER PAGE ===== */
+
+.roster-page {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+
+/* PAGE TITLE */
+.roster-title {
+  text-align: center;
+  font-size: 42px;
+  letter-spacing: 3px;
+  margin-bottom: 100px;
+}
+
+/* ===== TEAM SECTIONS ===== */
+
+.team-section {
+  margin-bottom: 140px;
+  text-align: center;
+}
+
+/* TEAM HEADER */
+.team-title {
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 50px;
+  position: relative;
+  display: inline-block;
+}
+
+/* RED ACCENT LINE */
+.team-title::after {
+  content: "";
+  display: block;
+  width: 70%;
+  height: 3px;
+  background: red;
+  margin: 14px auto 0;
+}
+
+/* ===== TEAM GRID ===== */
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 36px;
+  justify-items: center;
+}
+
+/* ===== PLAYER CARD SIZE CONTROL ===== */
+
+.player-card {
+  width: 100%;
+  max-width: 260px;
+}
