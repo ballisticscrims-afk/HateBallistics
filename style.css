@@ -1,37 +1,61 @@
-/* NAVBAR BASE */
+/* ===== NAVBAR WITH LOGO ===== */
+
 .navbar {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(8px);
+  height: 64px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
+  justify-content: space-between;
+  padding: 0 40px;
   z-index: 1000;
-  transition: background 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 }
 
-.nav-logo {
-  font-size: 22px;
-  font-weight: bold;
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo img {
+  height: 38px;              /* 🔥 PERFECT SIZE */
+  width: auto;
+  display: block;
 }
 
 /* LINKS */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 30px;
+  align-items: center;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-link {
+.nav-links a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
-  position: relative;
+  font-weight: 600;
+  font-size: 15px;
   transition: color 0.3s ease;
 }
+
+.nav-links a:hover {
+  color: red;
+}
+
+/* BODY RESET */
+body {
+  margin: 0;
+  background: black;
+  color: white;
+}
+
 
 /* HOVER EFFECT */
 .nav-link:hover {
