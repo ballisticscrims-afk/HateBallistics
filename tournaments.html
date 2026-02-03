@@ -1,33 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Tournaments</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>H4TE Esports – Tournaments</title>
+  <link rel="stylesheet" href="tournaments.css">
 </head>
 <body>
 
-  <nav class="navbar">
-  <div class="nav-left">
-    <a href="index.html" class="nav-logo">
-      <img src="images/logo.png" alt="H4TE Logo">
-    </a>
+  <!-- BACKGROUND VIDEO -->
+  <div class="bg-video">
+    <video autoplay muted loop playsinline>
+      <source src="videos/tournaments-bg.mp4" type="video/mp4">
+    </video>
   </div>
 
-  <ul class="nav-links nav-center">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="team.html">Roster</a></li>
-    <li><a href="tournaments.html">Tournaments</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="socials.html">Socials</a></li>
-  </ul>
-</nav>
+  <!-- PAGE CONTENT -->
+  <div class="page">
 
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="logo">H4TE</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="team.html">Roster</a></li>
+        <li><a class="active" href="tournaments.html">Tournaments</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="socials.html">Socials</a></li>
+      </ul>
+    </nav>
 
-<section class="section">
-  <h1>Tournaments</h1>
-  <p>Upcoming & past competitions</p>
-</section>
+    <!-- HERO -->
+    <header class="hero">
+      <h1>Tournaments</h1>
+      <p>Upcoming & past competitions</p>
+    </header>
+
+    <!-- PANELS -->
+    <section class="tournament-panels">
+
+      <!-- MAIN TOURNAMENTS -->
+      <div class="panel">
+        <h2>Main Tournaments</h2>
+        <p class="panel-desc">Premier competitive events featuring our main roster.</p>
+
+        <div class="winners">
+          <h3>Past Winners</h3>
+          <ul>
+            <li>🏆 H4TE – Winter Invitational 2024</li>
+            <li>🏆 H4TE – EU Pro Series Qualifier</li>
+            <li>🥈 H4TE – Champions Clash</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- UNDERDOG -->
+      <div class="panel">
+        <h2>Underdog Tournaments</h2>
+        <p class="panel-desc">Rising talent, open brackets, and breakout performances.</p>
+
+        <div class="winners">
+          <h3>Past Winners</h3>
+          <ul>
+            <li>🏆 H4TE Academy – Rising Stars Cup</li>
+            <li>🏆 H4TE Underdog – Open Division Finals</li>
+            <li>🥈 H4TE Underdog – Community Showdown</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SPECIAL -->
+      <div class="panel">
+        <h2>Special Tournaments</h2>
+        <p class="panel-desc">Invitationals, showmatches, and special-format events.</p>
+
+        <div class="winners">
+          <h3>Highlights</h3>
+          <ul>
+            <li>⭐ H4TE – All-Star Invitational</li>
+            <li>⭐ H4TE – Creator Cup Showcase</li>
+            <li>⭐ H4TE – International Mix Event</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
 
 </body>
 </html>
-
