@@ -45,13 +45,15 @@ body {
   backdrop-filter: blur(8px);
 }
 
+/* GRID LAYOUT */
 .nav-inner {
   max-width: 1400px;
   margin: 0 auto;
   padding: 18px 60px;
-  display: flex;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
 }
 
 /* LOGO */
@@ -59,16 +61,11 @@ body {
   height: 34px;
 }
 
-.logo-text {
-  font-size: 22px;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
-/* LINKS */
+/* NAV LINKS */
 .nav-links {
   list-style: none;
   display: flex;
+  justify-content: center;
   gap: 32px;
 }
 
@@ -88,6 +85,12 @@ body {
 .nav-links a.active {
   border-bottom: 2px solid red;
 }
+
+/* SPACER (KEEPS CENTER TRUE) */
+.nav-spacer {
+  width: 34px; /* roughly logo width */
+}
+
 
 /* HERO */
 .hero {
