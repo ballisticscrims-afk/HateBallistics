@@ -536,3 +536,19 @@ footer {
   background: red;
   border-color: red;
 }
+
+/* ===== EXPANDABLE BIO ===== */
+
+.player-bio {
+  max-height: 0;
+  overflow: hidden;
+  background: #0d0d0d;
+  padding: 0 16px;
+  font-size: 14px;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.player-card.expanded .player-bio {
+  max-height: 120px;
+  padding: 16px;
+}
