@@ -377,3 +377,50 @@ footer {
     text-align: center;
   }
 }
+/* ===== ROSTER PAGE ===== */
+
+.roster-page {
+  max-width: 1100px;
+  margin: 120px auto 80px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.roster-title {
+  font-size: 42px;
+  margin-bottom: 60px;
+  letter-spacing: 2px;
+}
+
+/* SECTION */
+.roster-section {
+  background: #111;
+  padding: 30px;
+  border-radius: 14px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+.roster-section h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* LIST */
+.roster-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.roster-section li {
+  padding: 10px 0;
+  font-size: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.roster-section li:last-child {
+  border-bottom: none;
+}
