@@ -1,4 +1,4 @@
-/* ===== NAVBAR WITH LOGO ===== */
+/* ===== NAVBAR CENTERED LINKS ===== */
 
 .navbar {
   position: fixed;
@@ -10,34 +10,35 @@
   backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 0 40px;
   z-index: 1000;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 }
 
+/* LEFT LOGO */
 .nav-left {
+  position: absolute;
+  left: 40px;
   display: flex;
   align-items: center;
 }
 
 .nav-logo img {
-  height: 38px;              /* 🔥 PERFECT SIZE */
+  height: 38px;
   width: auto;
-  display: block;
 }
 
-/* LINKS */
-.nav-links {
+/* CENTER LINKS */
+.nav-center {
+  margin: 0 auto;                 /* 🔥 centers the links */
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 28px;
-  margin: 0;
+  gap: 32px;
   padding: 0;
 }
 
-.nav-links a {
+.nav-center a {
   color: white;
   text-decoration: none;
   font-weight: 600;
@@ -45,16 +46,12 @@
   transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
+.nav-center a:hover {
   color: red;
 }
 
-/* BODY RESET */
-body {
-  margin: 0;
-  background: black;
-  color: white;
-}
+/
+
 
 
 /* HOVER EFFECT */
