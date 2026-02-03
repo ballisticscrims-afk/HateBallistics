@@ -57,11 +57,11 @@ body {
 }
 
 /* LOGO */
-.logo img {
+.nav-logo img {
   height: 34px;
 }
 
-/* NAV LINKS */
+/* CENTER LINKS */
 .nav-links {
   list-style: none;
   display: flex;
@@ -69,6 +69,7 @@ body {
   gap: 32px;
 }
 
+/* LINKS */
 .nav-links a {
   color: white;
   text-decoration: none;
@@ -82,13 +83,14 @@ body {
   color: #ff2a2a;
 }
 
+/* ACTIVE PAGE */
 .nav-links a.active {
   border-bottom: 2px solid red;
 }
 
-/* SPACER (KEEPS CENTER TRUE) */
-.nav-spacer {
-  width: 34px; /* roughly logo width */
+/* RIGHT SPACER */
+.nav-right {
+  width: 34px; /* matches logo width */
 }
 
 
