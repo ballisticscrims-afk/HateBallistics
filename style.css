@@ -10,30 +10,41 @@ body {
   color: #fff;
 }
 
-/* NAVBAR */
-nav {
+.navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(0,0,0,0.8);
-  padding: 15px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background: black;
+  padding: 15px 0;
   z-index: 1000;
 }
 
-nav ul {
+.nav-links {
   display: flex;
-  gap: 25px;
+  justify-content: center;
+  gap: 40px;
   list-style: none;
 }
 
-nav a {
+.nav-links a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  font-size: 18px;
 }
+
+.nav-links a:hover {
+  color: red;
+}
+
+/* push content down so navbar doesn't cover it */
+body {
+  margin: 0;
+  padding-top: 70px;
+  background: black;
+  color: white;
+}
+
 
 /* HERO */
 .hero {
