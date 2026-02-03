@@ -1,36 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Socials</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>H4TE | Socials</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
-<nav class="navbar">
-  <div class="nav-left">
-    <a href="index.html" class="nav-logo">
-      <img src="images/logo.png" alt="H4TE Logo">
-    </a>
+
+  <!-- BACKGROUND VIDEO -->
+  <div class="page-bg">
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="videos/socials-bg.mp4" type="video/mp4">
+    </video>
+    <div class="bg-overlay"></div>
   </div>
 
-  <ul class="nav-links nav-center">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="team.html">Roster</a></li>
-    <li><a href="tournaments.html">Tournaments</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="socials.html">Socials</a></li>
-  </ul>
-</nav>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="H4TE Logo">
+      </a>
 
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="team.html">Roster</a></li>
+        <li><a href="tournaments.html">Tournaments</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="active" href="socials.html">Socials</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<section class="section">
-  <h1>Social Links</h1>
-  <p>
-    <a href="#">Twitter</a><br>
-    <a href="#">YouTube</a><br>
-    <a href="#">Twitch</a>
-  </p>
-</section>
+  <!-- CONTENT -->
+  <main class="socials-page">
+    <h1 class="page-title">Connect With H4TE</h1>
+    <p class="page-subtitle">Follow us across all platforms</p>
+
+    <div class="social-grid">
+
+      <a href="https://www.tiktok.com/" target="_blank" class="social-card">
+        <img src="images/icons/tiktok.svg" alt="TikTok">
+        <span>TikTok</span>
+      </a>
+
+      <a href="https://www.youtube.com/" target="_blank" class="social-card">
+        <img src="images/icons/youtube.svg" alt="YouTube">
+        <span>YouTube</span>
+      </a>
+
+      <a href="https://twitter.com/" target="_blank" class="social-card">
+        <img src="images/icons/twitter.svg" alt="Twitter">
+        <span>Twitter</span>
+      </a>
+
+      <a href="https://www.instagram.com/" target="_blank" class="social-card">
+        <img src="images/icons/instagram.svg" alt="Instagram">
+        <span>Instagram</span>
+      </a>
+
+      <a href="https://battlefy.com/" target="_blank" class="social-card">
+        <img src="images/icons/battlefy.svg" alt="Battlefy">
+        <span>Battlefy</span>
+      </a>
+
+    </div>
+  </main>
 
 </body>
 </html>
-
