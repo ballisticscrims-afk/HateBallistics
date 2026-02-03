@@ -18,7 +18,7 @@
 /* LEFT LOGO */
 .nav-left {
   position: absolute;
-  left: 40px;
+  left: 100px;
   display: flex;
   align-items: center;
 }
