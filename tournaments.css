@@ -188,3 +188,33 @@ body {
   line-height: 1.8;
   opacity: 0.9;
 }
+.panel-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* PANEL BASE */
+.tournament-panel {
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 18px;
+  padding: 32px;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* HOVER EFFECT */
+.panel-link:hover .tournament-panel {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.35);
+}
+
+/* RED LINE */
+.panel-line {
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: red;
+  margin: 10px auto 18px;
+}
