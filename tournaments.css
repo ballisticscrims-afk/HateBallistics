@@ -52,18 +52,28 @@ body {
 }
 
 /* INNER CONTAINER */
+
+/* LOGO */
+.nav-logo img {
+  height: 26px;
+  display: block;
+}
 .nav-inner {
   width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 48px;
+  max-width: 100%;
+  padding: 0 24px;
 
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
 }
 
-/* LOGO */
+/* FORCE LOGO LEFT */
+.nav-left {
+  justify-self: start;
+}
+
+/* LOGO SIZE */
 .nav-logo img {
   height: 26px;
   display: block;
@@ -77,7 +87,11 @@ body {
   gap: 32px;
   margin: 0;
   padding: 0;
+
+  justify-self: center;
 }
+
+
 
 .nav-links a {
   color: #ffffff;
