@@ -377,7 +377,9 @@ footer {
     text-align: center;
   }
 }
-/* ===== ROSTER PAGE ===== */
+
+}
+/* ===== ROSTER HOVER CARDS ===== */
 
 .roster-page {
   max-width: 1100px;
@@ -389,38 +391,45 @@ footer {
 .roster-title {
   font-size: 42px;
   margin-bottom: 60px;
-  letter-spacing: 2px;
 }
 
-/* SECTION */
 .roster-section {
   background: #111;
   padding: 30px;
   border-radius: 14px;
   margin-bottom: 40px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
 }
 
 .roster-section h2 {
-  font-size: 22px;
   margin-bottom: 20px;
-  text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-/* LIST */
 .roster-section ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.roster-section li {
-  padding: 10px 0;
-  font-size: 16px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+.player-card {
+  position: relative;
+  padding: 12px;
+  cursor: pointer;
 }
 
-.roster-section li:last-child {
-  border-bottom: none;
+.player-hover {
+  position: absolute;
+  right: -180px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #1a1a1a;
+  padding: 12px;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+}
+
+.player-card:hover .player-hover {
+  opacity: 1;
 }
