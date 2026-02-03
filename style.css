@@ -552,3 +552,25 @@ footer {
   max-height: 120px;
   padding: 16px;
 }
+/* ===== TEAM SECTIONS ===== */
+
+.team-section {
+  margin-bottom: 100px;
+}
+
+.team-header {
+  font-size: 26px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 30px;
+  padding-left: 14px;
+  border-left: 4px solid red;
+  color: white;
+}
+
+/* roster grid already inline */
+.roster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 30px;
+}
