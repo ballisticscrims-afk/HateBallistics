@@ -34,27 +34,58 @@ body {
   position: relative;
   z-index: 1;
 }
-
 /* NAVBAR */
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+}
+
+.nav-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 18px 60px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 24px 60px;
+  justify-content: space-between;
 }
 
-.navbar ul {
-  display: flex;
+/* LOGO */
+.logo img {
+  height: 34px;
+}
+
+.logo-text {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* LINKS */
+.nav-links {
   list-style: none;
-  gap: 30px;
+  display: flex;
+  gap: 32px;
 }
 
-.navbar a {
+.nav-links a {
   color: white;
   text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding-bottom: 4px;
+  transition: color 0.2s;
 }
 
-.navbar a.active {
+.nav-links a:hover {
+  color: #ff2a2a;
+}
+
+.nav-links a.active {
   border-bottom: 2px solid red;
 }
 
