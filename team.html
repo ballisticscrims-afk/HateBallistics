@@ -9,7 +9,26 @@
     <!-- YOUR ROSTER HTML ABOVE -->
 
   <script>
+    /* ===== ROLE FILTER ===== */
+    const filterButtons = document.querySelectorAll(".role-filters button");
+    const players = document.querySelectorAll(".player-card");
 
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        document.querySelector(".role-filters .active")?.classList.remove("active");
+        button.classList.add("active");
+
+        const role = button.dataset.role;
+
+        players.forEach(player => {
+          if (role === "all" || player.dataset.role === role) {
+            player.style.display = "block";
+          } else {
+            player.style.display = "none";
+          }
+        });
+      });
+    });
 
     /* ===== CLICK TO EXPAND BIO ===== */
     players.forEach(player => {
@@ -52,7 +71,7 @@
 </nav>
 
 <section class="roster-page">
-  <h1 class="roster-title">H4TE ROSTER </h1>
+  <h1 class="roster-title">THE ROSTER</h1>
 
   <div class="role-filters">
   <button data-role="all" class="active">All</button>
@@ -65,39 +84,353 @@
 
   <div class="roster-grid">
 
-<div class="player-card reveal"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE Domenic</h3></div><div class="player-bio"><p>Core player and team leader.</p></div></div>
-<div class="player-card reveal"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE aqeA</h3></div><div class="player-bio"><p>Main roster player.</p></div></div>
-<div class="player-card reveal"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE Skraib</h3></div><div class="player-bio"><p>Main roster player.</p></div></div>
-<div class="player-card reveal"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE KoVo41</h3></div><div class="player-bio"><p>Main roster player.</p></div></div>
-<div class="player-card reveal"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE raaf1337</h3></div><div class="player-bio"><p>Main roster player.</p></div></div>
-<div class="player-card reveal"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE n0vember</h3></div><div class="player-bio"><p>Main roster player.</p></div></div>
-<div class="player-card reveal"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE Slophy</h3></div><div class="player-bio"><p>Main roster player.</p></div></div>
+    <!-- MAIN TEAM -->
+    <div class="player-card"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE Domenic</h3><span class="role igl">IGL</span></div></div>
+    <div class="player-card"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE aqeA</h3><span class="role entry">Entry</span></div></div>
+    <div class="player-card"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE Skraib</h3><span class="role support">Support</span></div></div>
+    <div class="player-card"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE KoVo41</h3><span class="role entry">Entry</span></div></div>
+    <div class="player-card"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE raaf1337</h3><span class="role support">Support</span></div></div>
+    <div class="player-card"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE n0vember</h3><span class="role igl">IGL</span></div></div>
+    <div class="player-card"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE Slophy</h3><span class="role entry">Entry</span></div></div>
 
-<div class="player-card reveal"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE Miya05</h3></div><div class="player-bio"><p>ENG team player.</p></div></div>
-<div class="player-card reveal"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE Nordicadropz</h3></div><div class="player-bio"><p>ENG team player.</p></div></div>
-<div class="player-card reveal"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE Silence</h3></div><div class="player-bio"><p>ENG team player.</p></div></div>
-<div class="player-card reveal"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE Shakzz</h3></div><div class="player-bio"><p>ENG team player.</p></div></div>
+    <!-- ENG TEAM -->
+    <div class="player-card"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE Miya05</h3><span class="role flex">Flex</span></div></div>
+    <div class="player-card"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE Nordicadropz</h3><span class="role support">Support</span></div></div>
+    <div class="player-card"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE Silence</h3><span class="role entry">Entry</span></div></div>
+    <div class="player-card"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE Shakzz</h3><span class="role flex">Flex</span></div></div>
 
-<div class="player-card reveal"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE tibu_jr7</h3></div><div class="player-bio"><p>International roster player.</p></div></div>
-<div class="player-card reveal"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE thorie</h3></div><div class="player-bio"><p>International roster player.</p></div></div>
-<div class="player-card reveal"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE LØKIICH4NN</h3></div><div class="player-bio"><p>International roster player.</p></div></div>
-<div class="player-card reveal"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE Zhenkh</h3></div><div class="player-bio"><p>International roster player.</p></div></div>
-<div class="player-card reveal"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE Jess</h3></div><div class="player-bio"><p>International roster player.</p></div></div>
-<div class="player-card reveal"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE Bratko</h3></div><div class="player-bio"><p>International roster player.</p></div></div>
-<div class="player-card reveal"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE M4ko</h3></div><div class="player-bio"><p>International roster player.</p></div></div>
+    <!-- INTERNATIONAL -->
+    <div class="player-card"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE tibu_jr7</h3><span class="role entry">Entry</span></div></div>
+    <div class="player-card"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE thorie</h3><span class="role support">Support</span></div></div>
+    <div class="player-card"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE LØKIICH4NN</h3><span class="role flex">Flex</span></div></div>
+    <div class="player-card"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE Zhenkh</h3><span class="role entry">Entry</span></div></div>
+    <div class="player-card"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE Jess</h3><span class="role support">Support</span></div></div>
+    <div class="player-card"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE Bratko</h3><span class="role flex">Flex</span></div></div>
+    <div class="player-card"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE M4ko</h3><span class="role entry">Entry</span></div></div>
 
-<div class="player-card reveal"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE Passi</h3></div><div class="player-bio"><p>Academy / substitute player.</p></div></div>
-<div class="player-card reveal"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE ViperVenom</h3></div><div class="player-bio"><p>Academy / substitute player.</p></div></div>
-<div class="player-card reveal"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE Vortex</h3></div><div class="player-bio"><p>Academy / substitute player.</p></div></div>
-<div class="player-card reveal"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE NoMercy</h3></div><div class="player-bio"><p>Academy / substitute player.</p></div></div>
-<div class="player-card reveal"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE Pixel</h3></div><div class="player-bio"><p>Academy / substitute player.</p></div></div>
-<div class="player-card reveal"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE sabsi</h3></div><div class="player-bio"><p>Academy / substitute player.</p></div></div>
-<div class="player-card reveal"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE FloraTrix</h3></div><div class="player-bio"><p>Academy / substitute player.</p></div></div>
-<div class="player-card reveal"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE FromHeLL</h3></div><div class="player-bio"><p>Academy / substitute player.</p></div></div>
-<div class="player-card reveal"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE BloodRex</h3></div><div class="player-bio"><p>Academy / substitute player.</p></div></div>
-<div class="player-card reveal"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE lun0x</h3></div><div class="player-bio"><p>Academy / substitute player.</p></div></div>
+    <!-- ACADEMY / SUBS -->
+    <div class="player-card"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE Passi</h3><span class="role support">Support</span></div></div>
+    <div class="player-card"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE ViperVenom</h3><span class="role entry">Entry</span></div></div>
+    <div class="player-card"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE Vortex</h3><span class="role flex">Flex</span></div></div>
+    <div class="player-card"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE NoMercy</h3><span class="role entry">Entry</span></div></div>
+    <div class="player-card"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE Pixel</h3><span class="role support">Support</span></div></div>
+    <div class="player-card"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE sabsi</h3><span class="role flex">Flex</span></div></div>
+    <div class="player-card"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE FloraTrix</h3><span class="role support">Support</span></div></div>
+    <div class="player-card"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE FromHeLL</h3><span class="role entry">Entry</span></div></div>
+    <div class="player-card"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE BloodRex</h3><span class="role flex">Flex</span></div></div>
+    <div class="player-card"><img src="players/placeholder.jpg"><div class="player-info"><h3>H4TE lun0x</h3><span class="role support">Support</span></div></div>
 
+    <!-- MAIN TEAM -->
+<div class="player-card reveal" data-role="igl">
+  <img src="players/placeholder.jpg" alt="">
+  <div class="player-info">
+    <h3>H4TE Domenic</h3>
+    <span class="role igl">IGL</span>
+  </div>
+  <div class="player-bio">
+    <p>In-game leader with strong tactical awareness and experience.</p>
+  </div>
+</div>
 
+<div class="player-card reveal" data-role="entry">
+  <img src="players/placeholder.jpg" alt="">
+  <div class="player-info">
+    <h3>H4TE aqeA</h3>
+    <span class="role entry">Entry</span>
+  </div>
+  <div class="player-bio">
+    <p>Aggressive entry fragger with sharp mechanics.</p>
+  </div>
+</div>
+
+<div class="player-card reveal" data-role="support">
+  <img src="players/placeholder.jpg" alt="">
+  <div class="player-info">
+    <h3>H4TE Skraib</h3>
+    <span class="role support">Support</span>
+  </div>
+  <div class="player-bio">
+    <p>Reliable support player focused on utility and team play.</p>
+  </div>
+</div>
+
+<div class="player-card reveal" data-role="entry">
+  <img src="players/placeholder.jpg" alt="">
+  <div class="player-info">
+    <h3>H4TE KoVo41</h3>
+    <span class="role entry">Entry</span>
+  </div>
+  <div class="player-bio">
+    <p>Fast-paced entry player creating space for the team.</p>
+  </div>
+</div>
+
+<div class="player-card reveal" data-role="support">
+  <img src="players/placeholder.jpg" alt="">
+  <div class="player-info">
+    <h3>H4TE raaf1337</h3>
+    <span class="role support">Support</span>
+  </div>
+  <div class="player-bio">
+    <p>Consistent support with strong situational awareness.</p>
+  </div>
+</div>
+
+<div class="player-card reveal" data-role="igl">
+  <img src="players/placeholder.jpg" alt="">
+  <div class="player-info">
+    <h3>H4TE n0vember</h3>
+    <span class="role igl">IGL</span>
+  </div>
+  <div class="player-bio">
+    <p>Strategic leader bringing structure and discipline.</p>
+  </div>
+</div>
+
+<div class="player-card reveal" data-role="entry">
+  <img src="players/placeholder.jpg" alt="">
+  <div class="player-info">
+    <h3>H4TE Slophy</h3>
+    <span class="role entry">Entry</span>
+  </div>
+  <div class="player-bio">
+    <p>Explosive entry fragger with high-impact plays.</p>
+  </div>
+</div>
+
+<!-- ENG TEAM -->
+<div class="player-card reveal" data-role="flex">
+  <img src="players/placeholder.jpg" alt="">
+  <div class="player-info">
+    <h3>H4TE Miya05</h3>
+    <span class="role flex">Flex</span>
+  </div>
+  <div class="player-bio">
+    <p>Flexible player able to adapt to multiple roles.</p>
+  </div>
+</div>
+
+<div class="player-card reveal" data-role="support">
+  <img src="players/placeholder.jpg" alt="">
+  <div class="player-info">
+    <h3>H4TE Nordicadropz</h3>
+    <span class="role support">Support</span>
+  </div>
+  <div class="player-bio">
+    <p>Team-focused support player with calm decision-making.</p>
+  </div>
+</div>
+
+<div class="player-card reveal" data-role="entry">
+  <img src="players/placeholder.jpg" alt="">
+  <div class="player-info">
+    <h3>H4TE Silence</h3>
+    <span class="role entry">Entry</span>
+  </div>
+  <div class="player-bio">
+    <p>Confident fragger known for opening rounds.</p>
+  </div>
+</div>
+
+<div class="player-card reveal" data-role="flex">
+  <img src="players/placeholder.jpg" alt="">
+  <div class="player-info">
+    <h3>H4TE Shakzz</h3>
+    <span class="role flex">Flex</span>
+  </div>
+  <div class="player-bio">
+    <p>Versatile player filling gaps wherever needed.</p>
+  </div>
+</div>
+
+<!-- INTERNATIONAL -->
+<div class="player-card reveal" data-role="entry">
+  <img src="players/placeholder.jpg" alt="">
+  <div class="player-info">
+    <h3>H4TE tibu_jr7</h3>
+    <span class="role entry">Entry</span>
+  </div>
+  <div class="player-bio">
+    <p>High-tempo entry with fearless playstyle.</p>
+  </div>
+</div>
+
+<div class="player-card reveal" data-role="support">
+  <img src="players/placeholder.jpg" alt="">
+  <div class="player-info">
+    <h3>H4TE thorie</h3>
+    <span class="role support">Support</span>
+  </div>
+  <div class="player-bio">
+    <p>Support specialist focused on team consistency.</p>
+  </div>
+</div>
+
+<div class="player-card reveal" data-role="flex">
+  <img src="players/placeholder.jpg" alt="">
+  <div class="player-info">
+    <h3>H4TE LØKIICH4NN</h3>
+    <span class="role flex">Flex</span>
+  </div>
+  <div class="player-bio">
+    <p>Adaptable player capable of clutch performances.</p>
+  </div>
+</div>
+
+<div class="player-card reveal" data-role="entry">
+  <img src="players/placeholder.jpg" alt="">
+  <div class="player-info">
+    <h3>H4TE Zhenkh</h3>
+    <span class="role entry">Entry</span>
+  </div>
+  <div class="player-bio">
+    <p>Aggressive fragger with strong aim.</p>
+  </div>
+</div>
+
+<div class="player-card reveal" data-role="support">
+  <img src="players/placeholder.jpg" alt="">
+  <div class="player-info">
+    <h3>H4TE Jess</h3>
+    <span class="role support">Support</span>
+  </div>
+  <div class="player-bio">
+    <p>Reliable support ensuring team stability.</p>
+  </div>
+</div>
+
+<div class="player-card reveal" data-role="flex">
+  <img src="players/placeholder.jpg" alt="">
+  <div class="player-info">
+    <h3>H4TE Bratko</h3>
+    <span class="role flex">Flex</span>
+  </div>
+  <div class="player-bio">
+    <p>Flexible player known for adaptability.</p>
+  </div>
+</div>
+
+<div class="player-card reveal" data-role="entry">
+  <img src="players/placeholder.jpg" alt="">
+  <div class="player-info">
+    <h3>H4TE M4ko</h3>
+    <span class="role entry">Entry</span>
+  </div>
+  <div class="player-bio">
+    <p>Entry player with sharp mechanical skill.</p>
+  </div>
+</div>
+
+<!-- ACADEMY / SUBS -->
+<div class="player-card reveal" data-role="support">
+  <img src="players/placeholder.jpg" alt="">
+  <div class="player-info">
+    <h3>H4TE Passi</h3>
+    <span class="role support">Support</span>
+  </div>
+  <div class="player-bio">
+    <p>Support-focused academy player.</p>
+  </div>
+</div>
+
+<div class="player-card reveal" data-role="entry">
+  <img src="players/placeholder.jpg" alt="">
+  <div class="player-info">
+    <h3>H4TE ViperVenom</h3>
+    <span class="role entry">Entry</span>
+  </div>
+  <div class="player-bio">
+    <p>High-energy entry fragger.</p>
+  </div>
+</div>
+
+<div class="player-card reveal" data-role="flex">
+  <img src="players/placeholder.jpg" alt="">
+  <div class="player-info">
+    <h3>H4TE Vortex</h3>
+    <span class="role flex">Flex</span>
+  </div>
+  <div class="player-bio">
+    <p>Flexible academy player adapting to team needs.</p>
+  </div>
+</div>
+
+<div class="player-card reveal" data-role="entry">
+  <img src="players/placeholder.jpg" alt="">
+  <div class="player-info">
+    <h3>H4TE NoMercy</h3>
+    <span class="role entry">Entry</span>
+  </div>
+  <div class="player-bio">
+    <p>Aggressive fragger with confidence.</p>
+  </div>
+</div>
+
+<div class="player-card reveal" data-role="support">
+  <img src="players/placeholder.jpg" alt="">
+  <div class="player-info">
+    <h3>H4TE Pixel</h3>
+    <span class="role support">Support</span>
+  </div>
+  <div class="player-bio">
+    <p>Support player with strong teamwork.</p>
+  </div>
+</div>
+
+<div class="player-card reveal" data-role="flex">
+  <img src="players/placeholder.jpg" alt="">
+  <div class="player-info">
+    <h3>H4TE sabsi</h3>
+    <span class="role flex">Flex</span>
+  </div>
+  <div class="player-bio">
+    <p>Flexible substitute with adaptive playstyle.</p>
+  </div>
+</div>
+
+<div class="player-card reveal" data-role="support">
+  <img src="players/placeholder.jpg" alt="">
+  <div class="player-info">
+    <h3>H4TE FloraTrix</h3>
+    <span class="role support">Support</span>
+  </div>
+  <div class="player-bio">
+    <p>Support-focused academy player.</p>
+  </div>
+</div>
+
+<div class="player-card reveal" data-role="entry">
+  <img src="players/placeholder.jpg" alt="">
+  <div class="player-info">
+    <h3>H4TE FromHeLL</h3>
+    <span class="role entry">Entry</span>
+  </div>
+  <div class="player-bio">
+    <p>Entry fragger with aggressive positioning.</p>
+  </div>
+</div>
+
+<div class="player-card reveal" data-role="flex">
+  <img src="players/placeholder.jpg" alt="">
+  <div class="player-info">
+    <h3>H4TE BloodRex</h3>
+    <span class="role flex">Flex</span>
+  </div>
+  <div class="player-bio">
+    <p>Flexible sub bringing consistency.</p>
+  </div>
+</div>
+
+<div class="player-card reveal" data-role="support">
+  <img src="players/placeholder.jpg" alt="">
+  <div class="player-info">
+    <h3>H4TE lun0x</h3>
+    <span class="role support">Support</span>
+  </div>
+  <div class="player-bio">
+    <p>Support player focused on team success.</p>
+  </div>
+</div>
 
 
   </div>
