@@ -433,3 +433,15 @@ footer {
 .player-card:hover .player-hover {
   opacity: 1;
 }
+.role {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.role.igl { background: red; }
+.role.entry { background: #ff4d4d; }
+.role.support { background: #777; }
+.role.flex { background: #999; }
