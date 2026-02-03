@@ -46,3 +46,18 @@ body {
   transform: translate(-50%, -50%);
   text-align: center;
 }
+.page-title {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  padding: 40px;
+}
+
+.product img {
+  width: 100%;
+}
