@@ -192,3 +192,118 @@ footer {
   padding: 20px;
   margin-top: 60px;
 }
+/* EXPLORE SECTION */
+.explore-section {
+  padding: 100px 60px;
+  background: black;
+  text-align: center;
+}
+
+.explore-title {
+  font-size: 32px;
+  margin-bottom: 50px;
+  letter-spacing: 1px;
+}
+
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* CARD BASE */
+.explore-card {
+  position: relative;
+  height: 220px;
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+  background: #000;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+/* BACKGROUND IMAGE */
+.card-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s ease;
+}
+
+/* DARK OVERLAY */
+.card-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.75)
+  );
+}
+
+/* CONTENT */
+.card-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.card-content h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-size: 14px;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+.cta {
+  margin-top: 15px;
+  color: red;
+  font-weight: bold;
+  position: relative;
+  width: fit-content;
+}
+
+/* HOVER EFFECTS */
+.explore-card:hover .card-bg {
+  transform: scale(1.05);
+}
+
+.explore-card:hover .cta {
+  text-shadow: 0 0 8px rgba(255,0,0,0.6);
+}
+
+/* BACKGROUND IMAGES */
+.roster-bg {
+  background-image: url("images/roster.jpg");
+}
+
+.tournaments-bg {
+  background-image: url("images/tournaments.jpg");
+}
+
+.about-bg {
+  background-image: url("images/about.jpg");
+}
+
+.socials-bg {
+  background-image: url("images/socials.jpg");
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .card-content {
+    text-align: center;
+  }
+}
