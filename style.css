@@ -445,3 +445,58 @@ footer {
 .role.entry { background: #ff4d4d; }
 .role.support { background: #777; }
 .role.flex { background: #999; }
+/* ===== FORCE INLINE GRID ROSTER ===== */
+
+.roster-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 30px;
+  align-items: stretch;
+}
+
+/* PLAYER CARD */
+.player-card {
+  background: #111;
+  border-radius: 16px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* IMAGE */
+.player-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+/* INFO */
+.player-info {
+  padding: 16px;
+}
+
+.player-info h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+/* ROLE TAGS */
+.role {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 12px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.role.igl { background: red; }
+.role.entry { background: #ff4d4d; }
+.role.support { background: #777; }
+.role.flex { background: #999; }
+
+/* HOVER EFFECT */
+.player-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.35);
+}
