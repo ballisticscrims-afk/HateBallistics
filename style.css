@@ -1027,3 +1027,38 @@ body {
   transform: translateY(-6px);
   box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
 }
+/* =========================
+   FULL PAGE VIDEO BACKGROUND
+   ========================= */
+
+.page-bg,
+.video-bg,
+.bg-video-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+}
+
+/* VIDEO ELEMENT */
+.page-bg video,
+.video-bg video,
+.bg-video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* DARK OVERLAY (READABILITY) */
+.page-bg::after,
+.video-bg::after,
+.bg-video-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 1;
+}
