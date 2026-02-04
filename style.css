@@ -1882,3 +1882,109 @@ body.page-loaded {
     grid-template-columns: 1fr;
   }
 }
+/* =========================
+   SHOP PAGE (H4TE)
+========================= */
+
+/* Page wrapper */
+.shop-page {
+  position: relative;
+  min-height: 100vh;
+  padding: 140px 8% 80px;
+  text-align: center;
+  color: #fff;
+}
+
+/* Headings */
+.shop-page h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.shop-sub {
+  opacity: 0.75;
+  margin-bottom: 60px;
+}
+
+/* Product grid */
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Product card */
+.shop-card {
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.shop-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 35px rgba(255,0,0,0.4);
+}
+
+/* Product image */
+.shop-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Product text */
+.shop-card h3 {
+  margin: 20px 0 10px;
+  font-size: 22px;
+}
+
+.shop-card p {
+  padding: 0 20px;
+  font-size: 14px;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+/* Price */
+.price {
+  display: block;
+  margin: 14px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff3333;
+}
+
+/* Buy button */
+.buy-btn {
+  display: inline-block;
+  margin-bottom: 25px;
+  padding: 12px 30px;
+  background: red;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.buy-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255,0,0,0.6);
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .shop-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shop-page h1 {
+    font-size: 36px;
+  }
+}
