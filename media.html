@@ -7,10 +7,6 @@
 </head>
 <body>
 
-<video class="bg-video" autoplay muted loop playsinline>
-  <source src="videos/background.mp4" type="video/mp4">
-</video>
-<div class="bg-overlay"></div>
 
 <nav class="navbar">
   <div class="nav-left">
@@ -27,16 +23,30 @@
   </ul>
 </nav>
 
-<main class="page-content">
-  <h1>MEDIA</h1>
-  <p>Highlights, clips & moments from H4TE</p>
+<body>
 
-  <div class="media-grid">
-    <div class="media-box">Highlight #1</div>
-    <div class="media-box">Highlight #2</div>
-    <div class="media-box">Highlight #3</div>
+  <!-- Background Video -->
+  <div class="video-bg">
+    <video autoplay muted loop playsinline>
+      <source src="videos/media-bg.mp4" type="video/mp4">
+    </video>
   </div>
-</main>
+
+  <!-- Dark overlay -->
+  <div class="video-overlay"></div>
+
+  <!-- Page Content -->
+  <main class="page-content media-page">
+
+    <h1>Media</h1>
+    <p>Highlights, clips, and content from H4TE</p>
+
+    <div class="media-grid">
+      <div class="media-card">Highlight #1</div>
+      <div class="media-card">Highlight #2</div>
+      <div class="media-card">Highlight #3</div>
+    </div>
+
+  </main>
 
 </body>
-</html>
