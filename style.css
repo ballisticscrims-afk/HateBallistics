@@ -1096,3 +1096,8 @@ body {
   cursor: pointer;
   z-index: 9999;
 }
+/* Editable fields (admin only) */
+.admin .editable {
+  outline: 2px dashed red;
+  cursor: text;
+}
