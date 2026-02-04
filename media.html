@@ -7,59 +7,36 @@
 </head>
 <body>
 
+<video class="bg-video" autoplay muted loop playsinline>
+  <source src="videos/background.mp4" type="video/mp4">
+</video>
+<div class="bg-overlay"></div>
+
 <nav class="navbar">
   <div class="nav-left">
-    <a href="index.html" class="nav-logo">
-      <img src="images/logo.png" alt="H4TE Logo">
-    </a>
+    <img src="images/logo.png" class="nav-logo">
   </div>
-
-  <ul class="nav-links nav-center">
+  <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="team.html">Roster</a></li>
     <li><a href="tournaments.html">Tournaments</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="socials.html">Socials</a></li>
-    <li><a href="media.html">Media</a></li>
+    <li><a href="media.html" class="active">Media</a></li>
     <li><a href="join.html">Join Us</a></li>
   </ul>
 </nav>
 
-  <main class="page">
+<main class="page-content">
+  <h1>MEDIA</h1>
+  <p>Highlights, clips & moments from H4TE</p>
 
-    <h1 class="page-title reveal">Media & Highlights</h1>
-    <p class="page-subtitle reveal">
-      Latest highlights, clips, and videos from H4TE
-    </p>
+  <div class="media-grid">
+    <div class="media-box">Highlight #1</div>
+    <div class="media-box">Highlight #2</div>
+    <div class="media-box">Highlight #3</div>
+  </div>
+</main>
 
-    <section class="media-grid reveal">
-
-      <!-- YouTube Video -->
-      <div class="media-card">
-        <iframe 
-          src="https://www.youtube.com/embed/VIDEO_ID"
-          allowfullscreen>
-        </iframe>
-      </div>
-
-      <!-- YouTube Video -->
-      <div class="media-card">
-        <iframe 
-          src="https://www.youtube.com/embed/VIDEO_ID"
-          allowfullscreen>
-        </iframe>
-      </div>
-
-      <!-- Image Highlight -->
-      <div class="media-card">
-        <img src="images/highlight1.jpg" alt="Highlight">
-      </div>
-
-    </section>
-
-  </main>
-
-  <script src="script.js"></script>
 </body>
 </html>
-
