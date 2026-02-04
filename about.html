@@ -5,9 +5,12 @@
   <title>About H4TE</title>
   <link rel="stylesheet" href="style.css">
 </head>
-  <button onclick="adminLogin()" class="admin-login-btn">
-  Admin Login
-</button>
+<script>
+  if (!localStorage.getItem("loggedInUser")) {
+    window.location.href = "login.html";
+  }
+</script>
+
 
 <body>
   <div class="page-bg">
