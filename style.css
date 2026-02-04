@@ -1349,3 +1349,61 @@ body {
   border-radius: 8px;
   font-weight: bold;
 }
+/* JOIN PAGE */
+.join-accordion {
+  width: 90%;
+  max-width: 900px;
+  margin-top: 40px;
+}
+
+.join-item {
+  background: rgba(0,0,0,0.7);
+  border-radius: 14px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+
+.join-title {
+  width: 100%;
+  padding: 22px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: left;
+  cursor: pointer;
+}
+
+.join-title:hover {
+  background: rgba(255,0,0,0.15);
+}
+
+.join-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 22px;
+  transition: max-height 0.4s ease;
+}
+
+.join-item.active .join-content {
+  max-height: 500px;
+  padding-bottom: 22px;
+}
+
+.join-content ul {
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+.apply-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 18px;
+  background: red;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
