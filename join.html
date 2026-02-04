@@ -5,6 +5,17 @@
   <title>H4TE | Join Us</title>
   <link rel="stylesheet" href="style.css">
 </head>
+  <script>
+  const items = document.querySelectorAll(".join-item");
+
+  items.forEach(item => {
+    item.querySelector(".join-title").addEventListener("click", () => {
+      items.forEach(i => i.classList.remove("active"));
+      item.classList.toggle("active");
+    });
+  });
+</script>
+
 <body>
 
 <video class="bg-video" autoplay muted loop playsinline>
