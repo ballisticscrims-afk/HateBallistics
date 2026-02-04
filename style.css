@@ -1988,3 +1988,69 @@ body.page-loaded {
     font-size: 36px;
   }
 }
+.shop-page {
+  padding: 120px 8%;
+  text-align: center;
+  color: white;
+}
+
+.shop-title {
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+
+.shop-subtitle {
+  opacity: 0.7;
+  margin-bottom: 60px;
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+}
+
+.shop-card {
+  background: rgba(255,255,255,0.04);
+  border-radius: 18px;
+  padding: 30px;
+  transition: 0.3s;
+}
+
+.shop-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 40px rgba(255,0,0,0.15);
+}
+
+.shop-card img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.shop-card h3 {
+  margin-bottom: 10px;
+}
+
+.coming {
+  display: block;
+  color: red;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.notify-btn {
+  background: transparent;
+  border: 1px solid red;
+  color: red;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.notify-btn:hover {
+  background: red;
+  color: black;
+}
