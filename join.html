@@ -5,6 +5,27 @@
   <title>H4TE | Join Us</title>
   <link rel="stylesheet" href="style.css">
 </head>
+  <script>
+const WEBHOOK_URL = "https://discordapp.com/api/webhooks/1468490166699294844/Dbuhpy1Xjkiwvre1HxTCN73SIfjpKC_Hfjm0KlDJjdeoTiSaZy1r4GyirBCaK1PN4gkc";
+
+function sendApplication(role) {
+  const username = prompt("Enter your Discord username:");
+  if (!username) return;
+
+  const message = {
+    content: `📥 **New H4TE Application**\n\n👤 User: **${username}**\n🎯 Role: **${role}**`
+  };
+
+  fetch(WEBHOOK_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(message)
+  })
+  .then(() => alert("Application sent! Check Discord."))
+  .catch(() => alert("Error sending application."));
+}
+</script>
+
 <body>
 
 <video class="bg-video" autoplay muted loop playsinline>
