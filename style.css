@@ -1487,10 +1487,11 @@ body {
 }
 
 /* Headings */
-.join-content h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
+.join-content {
+  position: relative;
+  z-index: 5; /* THIS IS THE KEY */
 }
+
 
 .subtitle {
   opacity: 0.8;
