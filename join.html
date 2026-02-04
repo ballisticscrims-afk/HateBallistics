@@ -5,73 +5,65 @@
   <title>H4TE | Join Us</title>
   <link rel="stylesheet" href="style.css">
 </head>
-  <script>
-  const items = document.querySelectorAll(".join-item");
-
-  items.forEach(item => {
-    item.querySelector(".join-title").addEventListener("click", () => {
-      items.forEach(i => i.classList.remove("active"));
-      item.classList.toggle("active");
-    });
-  });
-</script>
-
 <body>
-<main class="page-content">
-
-  <h1>JOIN H4TE</h1>
-  <p>Select a role to learn more and apply</p>
-
-  <div class="join-accordion">
-
-    <!-- PLAYERS -->
-    <div class="join-item">
-      <button class="join-title">🎮 Players</button>
-      <div class="join-content">
-        <p><strong>Role:</strong> Competitive & Academy Players</p>
-        <ul>
-          <li>16+ years old</li>
-          <li>Team experience preferred</li>
-          <li>Active & coachable</li>
-        </ul>
-        <a href="https://discord.gg/YOURSERVER" class="apply-btn" target="_blank">
-          Apply on Discord
-        </a>
-      </div>
-    </div>
-
-    <!-- CREATORS -->
-    <div class="join-item">
-      <button class="join-title">🎥 Creators</button>
-      <div class="join-content">
-        <p><strong>Role:</strong> Streamers & Content Creators</p>
-        <ul>
-          <li>Consistent content</li>
-          <li>Positive community presence</li>
-          <li>H4TE branding use</li>
-        </ul>
-        <a href="https://discord.gg/YOURSERVER" class="apply-btn" target="_blank">
-          Apply on Discord
-        </a>
-      </div>
-    </div>
-
-    <!-- STAFF -->
-    <div class="join-item">
-      <button class="join-title">🛠 Staff</button>
-      <div class="join-content">
-        <p><strong>Role:</strong> Coaches, Admins, Analysts</p>
-        <ul>
-          <li>18+ preferred</li>
-          <li>Good communication</li>
-          <li>Team experience</li>
-        </ul>
-        <a href="https://discord.gg/YOURSERVER" class="apply-btn" target="_blank">
-          Apply on Discord
-        </a>
-      </div>
-    </div>
-
+  <nav class="navbar">
+  <div class="nav-left">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="H4TE Logo">
+    </a>
   </div>
 
-</main>
+  <ul class="nav-links nav-center">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="team.html">Roster</a></li>
+    <li><a href="tournaments.html">Tournaments</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="socials.html">Socials</a></li>
+    <li><a href="media.html">Media</a></li>
+    <li><a href="join.html">Join Us</a></li>
+  </ul>
+</nav>
+
+  <!-- NAVBAR (same as other pages) -->
+  <!-- paste your existing navbar here -->
+
+  <main class="page">
+
+    <h1 class="page-title reveal">Join H4TE</h1>
+    <p class="page-subtitle reveal">
+      Become part of the team — players, staff, and creators
+    </p>
+
+    <section class="join-grid">
+
+      <div class="join-card reveal">
+        <h2>Join as Player</h2>
+        <p>Compete in tournaments and represent H4TE.</p>
+        <a href="https://discord.gg/YOURDISCORD" target="_blank">
+          Apply Now
+        </a>
+      </div>
+
+      <div class="join-card reveal">
+        <h2>Join as Staff</h2>
+        <p>Help manage, coach, or support the team.</p>
+        <a href="https://discord.gg/YOURDISCORD" target="_blank">
+          Apply Now
+        </a>
+      </div>
+
+      <div class="join-card reveal">
+        <h2>Join as Creator</h2>
+        <p>Create content, highlights, and media for H4TE.</p>
+        <a href="https://discord.gg/YOURDISCORD" target="_blank">
+          Apply Now
+        </a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
