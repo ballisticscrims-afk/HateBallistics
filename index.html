@@ -7,6 +7,31 @@
 </head>
   <button onclick="adminLogin()" class="admin-login-btn">
   Admin Login
+    <script>
+  const ADMIN_PASSWORD = "hatepassword"; // change this
+
+  function adminLogin() {
+    const input = prompt("Enter admin password:");
+    if (input === ADMIN_PASSWORD) {
+      localStorage.setItem("isAdmin", "true");
+      alert("Admin mode enabled");
+      location.reload();
+    } else {
+      alert("Wrong password");
+    }
+  }
+
+  // Check admin state on page load
+  if (localStorage.getItem("isAdmin") === "true") {
+    document.body.classList.add("admin");
+  }
+
+  function logoutAdmin() {
+    localStorage.removeItem("isAdmin");
+    location.reload();
+  }
+</script>
+
 </button>
 
 <body>
