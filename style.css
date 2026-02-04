@@ -1502,46 +1502,67 @@ body {
 .join-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-bottom: 50px;
+  gap: 40px;
+  margin-top: 60px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .join-card {
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.75);
   border-radius: 18px;
   padding: 30px;
+  text-align: center;
+  color: white;
+  backdrop-filter: blur(10px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .join-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 0 30px rgba(255,0,0,0.4);
+  box-shadow: 0 0 25px rgba(255,0,0,0.4);
 }
 
-/* Button */
-.apply-btn {
-  display: inline-block;
-  padding: 16px 40px;
+.join-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.join-card p {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.join-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+  font-size: 14px;
+}
+
+.join-card li {
+  margin: 6px 0;
+}
+
+.join-card button {
+  margin-top: 15px;
+  padding: 12px 22px;
   background: red;
   color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
   font-weight: bold;
-  border-radius: 40px;
-  text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.apply-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(255,0,0,0.6);
+.join-card button:hover {
+  background: #ff3333;
 }
 
 /* Mobile */
 @media (max-width: 900px) {
   .join-cards {
     grid-template-columns: 1fr;
-  }
-
-  .join-content h1 {
-    font-size: 36px;
   }
 }
