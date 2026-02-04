@@ -1,3 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>H4TE | Join Us</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+  <script>
+  const items = document.querySelectorAll(".join-item");
+
+  items.forEach(item => {
+    item.querySelector(".join-title").addEventListener("click", () => {
+      items.forEach(i => i.classList.remove("active"));
+      item.classList.toggle("active");
+    });
+  });
+</script>
+
+<body>
 <main class="page-content">
 
   <h1>JOIN H4TE</h1>
