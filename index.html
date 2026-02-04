@@ -126,7 +126,23 @@
 
   </div>
 </section>
+  <script>
+const banner = document.getElementById("announcementBanner");
+const closeBtn = document.getElementById("closeBanner");
+
+if (localStorage.getItem("bannerClosed")) {
+  banner.style.display = "none";
+}
+
+closeBtn.addEventListener("click", () => {
+  banner.style.display = "none";
+  localStorage.setItem("bannerClosed", "true");
+});
+</script>
+
   
+  </body>
+
 <footer>
   <p>© 2026 H4TE Esports</p>
 </footer>
