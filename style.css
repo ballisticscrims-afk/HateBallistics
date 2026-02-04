@@ -1070,34 +1070,39 @@ body {
   background: rgba(0, 0, 0, 0.65);
   z-index: 1;
 }
-/* ===== ADMIN MODE ===== */
-
-/* Hide admin-only items by default */
-.admin-only {
-  display: none;
+/* LOGIN PAGE */
+.login-box {
+  max-width: 320px;
+  margin: 120px auto;
+  background: rgba(0,0,0,0.8);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
 }
 
-/* Show admin items when logged in */
-.admin.admin-only,
-.admin .admin-only {
-  display: block;
+.login-box h1 {
+  margin-bottom: 20px;
 }
 
-/* Admin login button */
-.admin-login-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: none;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
   background: red;
   color: white;
   border: none;
-  padding: 12px 18px;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
-  z-index: 9999;
 }
-/* Editable fields (admin only) */
-.admin .editable {
-  outline: 2px dashed red;
-  cursor: text;
+
+#login-error {
+  margin-top: 10px;
+  color: red;
 }
