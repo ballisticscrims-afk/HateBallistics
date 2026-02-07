@@ -1966,39 +1966,37 @@ body {
   height: 100%;
   object-fit: cover;
 }
-/* ===== MEDIA SUB BANNER ===== */
-.media-sub-banner {
-  position: relative;
-  height: 180px;
-  margin: 40px auto;
-  background: url("images/media/highlights-banner.jpg") center / cover no-repeat;
-  border-radius: 14px;
-  overflow: hidden;
+/* ===== MEDIA HERO ===== */
+.media-hero {
+  text-align: center;
+  padding: 120px 20px 60px;
 }
 
-.media-sub-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.65);
+/* ===== MEDIA SUB BANNER ===== */
+.media-sub-banner {
+  width: 100%;
+  margin: 0 auto 60px;
+  padding: 80px 20px;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.75)
+    ),
+    url("images/media/highlights-banner.jpg") center / cover no-repeat;
 }
 
 .media-sub-content {
-  position: relative;
-  z-index: 2;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
   text-align: center;
 }
 
 .media-sub-content h2 {
-  font-size: 28px;
-  margin-bottom: 8px;
+  font-size: 32px;
+  margin-bottom: 10px;
 }
 
 .media-sub-content p {
-  color: #ccc;
-  font-size: 14px;
+  color: #bbb;
+  font-size: 15px;
 }
+
