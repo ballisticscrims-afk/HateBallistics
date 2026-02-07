@@ -36,6 +36,21 @@
   <div class="page-bg">
   <video
     autoplay
+
+    <h1 id="hero-title"></h1>
+<p id="hero-subtitle"></p>
+<img id="hero-image">
+
+<script>
+fetch('/content/home.json')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('hero-title').innerText = data.hero_title;
+    document.getElementById('hero-subtitle').innerText = data.hero_subtitle;
+    document.getElementById('hero-image').src = data.hero_image;
+  });
+</script>
+
     muted
     loop
     playsinline
