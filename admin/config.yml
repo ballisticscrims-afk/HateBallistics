@@ -1,1 +1,27 @@
+backend:
+  name: github
+  repo: YOUR_USERNAME/YOUR_REPO
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home"
+        name: "home"
+        file: "content/home.json"
+        fields:
+          - { label: "Hero Title", name: "hero_title", widget: "string" }
+          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "string" }
+          - { label: "Hero Image", name: "hero_image", widget: "image" }
+
+      - label: "About"
+        name: "about"
+        file: "content/about.json"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Text", name: "body", widget: "text" }
 
