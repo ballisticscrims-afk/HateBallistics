@@ -1966,3 +1966,39 @@ body {
   height: 100%;
   object-fit: cover;
 }
+/* ===== MEDIA SUB BANNER ===== */
+.media-sub-banner {
+  position: relative;
+  height: 180px;
+  margin: 40px auto;
+  background: url("images/media/highlights-banner.jpg") center / cover no-repeat;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.media-sub-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.media-sub-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.media-sub-content h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.media-sub-content p {
+  color: #ccc;
+  font-size: 14px;
+}
