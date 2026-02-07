@@ -1927,3 +1927,35 @@ body {
   color: #777;
   cursor: not-allowed;
 }
+/* ===== TEAM PAGE BANNER ===== */
+.page-banner {
+  position: relative;
+  height: 260px;
+  background: url("images/banner/team-banner.jpg") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.banner-content {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.banner-content h1 {
+  font-size: 48px;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+}
+
+.banner-content p {
+  color: #ccc;
+  font-size: 16px;
+}
