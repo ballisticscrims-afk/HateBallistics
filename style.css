@@ -1975,13 +1975,14 @@ body {
 /* ===== MEDIA SUB BANNER ===== */
 .media-sub-banner {
   width: 100%;
-  margin: 0 auto 60px;
   padding: 80px 20px;
+  margin: 0;
   background: linear-gradient(
-      rgba(0, 0, 0, 0.75),
-      rgba(0, 0, 0, 0.75)
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
     ),
     url("images/media/highlights-banner.jpg") center / cover no-repeat;
+
 }
 
 .media-sub-content {
