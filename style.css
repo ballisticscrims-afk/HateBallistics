@@ -2005,6 +2005,14 @@ body {
    SHOP PAGE
 ========================= */
 
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #000;
+}
+
+/* HERO */
 .shop-hero {
   position: relative;
   width: 100%;
@@ -2013,22 +2021,29 @@ body {
   margin-top: 70px; /* navbar height */
 }
 
+/* VIDEO */
 .shop-video {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: 0;
 }
 
+/* OVERLAY */
 .shop-hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.65);
+  position: relative;
+  z-index: 2;
+  background: rgba(0,0,0,0.6);
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
+
 
 .shop-hero-overlay h1 {
   font-size: 3.5rem;
