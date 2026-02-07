@@ -1931,7 +1931,7 @@ body {
 .page-banner {
   position: relative;
   height: 260px;
-  background: url("images/banner/team-banner.jpg") center / cover no-repeat;
+  background: url("images/banner/team-banner.mp4") center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
