@@ -1987,6 +1987,15 @@ body {
 .page-header p {
   font-size: 16px;
   color: rgba(255,255,255,0.75);
+}
+.application-section {
+  max-width: 600px;
+  margin: 120px auto;
+  padding: 40px;
+  background: rgba(0,0,0,0.85);
+  border-radius: 18px;
+  text-align: center;
+}
 
 .application-section h2 {
   margin-bottom: 25px;
@@ -2017,26 +2026,4 @@ body {
   border-radius: 25px;
   font-weight: bold;
   cursor: pointer;
-}
-.application-section {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 50;
-}
-.application-box {
-  animation: fadeUp 0.5s ease-out;
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px) scale(1.05);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1.08);
-  }
 }
