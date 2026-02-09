@@ -25,6 +25,55 @@
   <title>H4TE | Join Us</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<script>
+const webhookURL = "https://discordapp.com/api/webhooks/1468490166699294844/Dbuhpy1Xjkiwvre1HxTCN73SIfjpKC_Hfjm0KlDJjdeoTiSaZy1r4GyirBCaK1PN4gkc";
+
+document.getElementById("applicationForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const discord = document.getElementById("discord").value;
+  const region = document.getElementById("region").value;
+  const about = document.getElementById("about").value;
+  const role = document.querySelector(".role-btn.active")?.dataset.role || "Not selected";
+
+  const payload = {
+    embeds: [{
+      title: "📝 New H4TE Application",
+      color: 15158332,
+      fields: [
+        { name: "Name / IGN", value: name, inline: true },
+        { name: "Discord", value: discord, inline: true },
+        { name: "Role", value: role, inline: true },
+        { name: "Region", value: region, inline: true },
+        { name: "About", value: about }
+      ],
+      footer: { text: "H4TE Esports Applications" },
+      timestamp: new Date()
+    }]
+  };
+
+  try {
+    const res = await fetch(webhookURL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+
+    if (res.ok) {
+      document.querySelector(".application-box").classList.add("success");
+    } else {
+      alert("Webhook failed. Check console.");
+      console.error(await res.text());
+    }
+  } catch (err) {
+    console.error(err);
+    alert("Webhook error — open DevTools (F12)");
+  }
+});
+</script>
+
+
 <body>
 
 <video class="bg-video" autoplay muted loop playsinline>
