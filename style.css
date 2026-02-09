@@ -2027,3 +2027,11 @@ body {
   font-weight: bold;
   cursor: pointer;
 }
+.application-section {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
