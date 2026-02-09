@@ -1966,36 +1966,25 @@ body {
   height: 100%;
   object-fit: cover;
 }
-/* ===== MEDIA HERO ===== */
-.media-hero {
-  text-align: center;
-  padding: 120px 20px 60px;
-}
 
-/* ===== MEDIA SUB BANNER ===== */
-.media-sub-banner {
-  width: 100%;
-  margin: 0 auto 60px;
-  padding: 80px 20px;
-  background: linear-gradient(
-      rgba(0, 0, 0, 0.75),
-      rgba(0, 0, 0, 0.75)
-    ),
-    url("images/media/highlights-banner.jpg") center / cover no-repeat;
-}
+/* ================================
+   GLOBAL PAGE HEADER
+================================ */
 
-.media-sub-content {
-  max-width: 900px;
-  margin: 0 auto;
+.page-header {
+  padding-top: 140px; /* SAME SPOT EVERY PAGE */
+  padding-bottom: 60px;
   text-align: center;
 }
 
-.media-sub-content h2 {
-  font-size: 32px;
+.page-header h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
   margin-bottom: 10px;
 }
 
-.media-sub-content p {
-  color: #bbb;
-  font-size: 15px;
+.page-header p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.75);
 }
