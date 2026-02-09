@@ -1,103 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Join H4TE</title>
+<!-- Primary Meta Tags -->
+<title>H4TE Esports</title>
+<meta name="title" content="H4TE Esports">
+<meta name="description" content="Official H4TE Esports website — rosters, tournaments, highlights, and tryouts.">
 
-  <!-- Main site CSS -->
-  <link rel="stylesheet" href="style.css" />
+<!-- Open Graph / Discord / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ballisticscrims-afk.github.io/HateBallistics/">
+<meta property="og:title" content="H4TE Esports">
+<meta property="og:description" content="Rosters • Tournaments • Highlights • Join H4TE">
+<meta property="og:image" content="https://ballisticscrims-afk.github.io/HateBallistics/images/embed.png">
 
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://ballisticscrims-afk.github.io/HateBallistics/">
+<meta property="twitter:title" content="H4TE Esports">
+<meta property="twitter:description" content="Rosters • Tournaments • Highlights • Join H4TE">
+<meta property="twitter:image" content="https://ballisticscrims-afk.github.io/HateBallistics/images/embed.png">
+
+  
+  <meta charset="UTF-8">
+  <title>H4TE | Join Us</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+ <script>
+const WEBHOOK_URL = "https://discordapp.com/api/webhooks/1468490166699294844/Dbuhpy1Xjkiwvre1HxTCN73SIfjpKC_Hfjm0KlDJjdeoTiSaZy1r4GyirBCaK1PN4gkc";
+
+function sendApplication(role) {
+  const username = prompt("Enter your Discord username:");
+  if (!username) return;
+
+  const message = {
+    content: `📥 **New H4TE Application**\n\n👤 User: **${username}**\n🎯 Role: **${role}**`
+  };
+
+  fetch(WEBHOOK_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(message)
+  })
+  .then(() => alert("Application sent! Check Discord."))
+  .catch(() => alert("Error sending application."));
+}
+</script>
+<script src="js/transitions.js"></script>
+
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="nav-left">
-      <a href="index.html">
-        <img src="images/logo.png" alt="H4TE Logo" class="nav-logo">
-      </a>
-    </div>
+<video class="bg-video" autoplay muted loop playsinline>
+  <source src="videos/background.mp4" type="video/mp4">
+</video>
+<div class="bg-overlay"></div>
 
-    <ul class="nav-links nav-center">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="team.html">Roster</a></li>
-      <li><a href="tournaments.html">Tournaments</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="socials.html">Socials</a></li>
-      <li><a href="media.html">Media</a></li>
-      <li><a href="join.html" class="active">Join Us</a></li>
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="H4TE Logo">
+    </a>
+  </div>
+
+  <ul class="nav-links nav-center">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="team.html">Roster</a></li>
+    <li><a href="tournaments.html">Tournaments</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="socials.html">Socials</a></li>
+    <li><a href="media.html">Media</a></li>
+    <li><a href="join.html">Join Us</a></li>
+
+  </ul>
+</nav>
+
+<main class="join-page">
+
+  <video class="join-bg-video" autoplay muted loop playsinline>
+    <source src="videos/join-bg.mp4" type="video/mp4">
+  </video>
+
+  <div class="join-overlay"></div>
+
+ <div class="join-cards">
+
+  <!-- Competitive -->
+  <div class="join-card">
+    <h3>Competitive</h3>
+    <p>Looking for skilled players for main & academy rosters.</p>
+    <ul>
+      <li>✔ Active competitive experience</li>
+      <li>✔ Team communication</li>
+      <li>✔ Tournament availability</li>
     </ul>
-  </nav>
+    <button onclick="sendApplication('Competitive Player')">Apply</button>
+  </div>
 
-  <!-- JOIN PAGE -->
-  <section class="join-page">
+  <!-- Creator -->
+  <div class="join-card">
+    <h3>Content Creator</h3>
+    <p>Creators who represent H4TE on social platforms.</p>
+    <ul>
+      <li>✔ YouTube / TikTok / Twitch</li>
+      <li>✔ Consistent uploads</li>
+      <li>✔ Brand-friendly content</li>
+    </ul>
+    <button onclick="sendApplication('Content Creator')">Apply</button>
+  </div>
 
-    <div class="application-box" id="appBox">
+  <!-- Staff -->
+  <div class="join-card">
+    <h3>Staff</h3>
+    <p>Support roles behind the scenes.</p>
+    <ul>
+      <li>✔ Coaches & analysts</li>
+      <li>✔ Social media managers</li>
+      <li>✔ Admin & support staff</li>
+    </ul>
+    <button onclick="sendApplication('Staff Member')">Apply</button>
+  </div>
 
-      <h2>Apply to H4TE</h2>
-
-      <!-- ROLE SELECTOR -->
-      <div class="role-selector">
-        <button class="role-btn active" data-role="Competitive">Competitive</button>
-        <button class="role-btn" data-role="Creator">Creator</button>
-        <button class="role-btn" data-role="Staff">Staff</button>
-      </div>
-
-      <!-- FORM -->
-      <form id="applicationForm">
-
-        <input type="text" name="name" placeholder="Your Name / IGN" required>
-
-        <input type="text" name="discord" placeholder="Discord Username (name#0000)" required>
-
-        <input type="text" name="region" placeholder="Region" required>
-
-        <textarea name="about" placeholder="Tell us about yourself" required></textarea>
-
-        <input type="hidden" name="role" id="selectedRole" value="Competitive">
-
-        <button type="submit" class="submit-btn">Submit Application</button>
-
-      </form>
-
-      <div class="success-message">
-        ✅ Application sent successfully!
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- SCRIPT -->
-  <script>
-    const roleButtons = document.querySelectorAll('.role-btn');
-    const roleInput = document.getElementById('selectedRole');
-    const form = document.getElementById('applicationForm');
-    const box = document.getElementById('appBox');
-
-    // Role selector
-    roleButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        roleButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        roleInput.value = btn.dataset.role;
-      });
-    });
-
-    // Submit (demo success)
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-
-      box.classList.add('success');
-      form.reset();
-
-      setTimeout(() => {
-        box.classList.remove('success');
-      }, 3000);
-    });
-  </script>
-
-</body>
-</html>
-
+</div>
