@@ -2012,13 +2012,14 @@ body {
 }
 
 .application-section {
-  max-width: 600px;
-  margin: 120px auto;
-  padding: 40px;
-  background: rgba(0,0,0,0.85);
-  border-radius: 18px;
-  text-align: center;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
 }
+
 
 .application-section h2 {
   margin-bottom: 25px;
