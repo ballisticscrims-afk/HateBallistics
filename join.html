@@ -25,40 +25,27 @@
   <title>H4TE | Join Us</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<script>
-const webhookURL = "PASTE_YOUR_DISCORD_WEBHOOK_HERE";
+ <script>
+const WEBHOOK_URL = "https://discordapp.com/api/webhooks/1468490166699294844/Dbuhpy1Xjkiwvre1HxTCN73SIfjpKC_Hfjm0KlDJjdeoTiSaZy1r4GyirBCaK1PN4gkc";
 
-document.getElementById("applicationForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+function sendApplication(role) {
+  const username = prompt("Enter your Discord username:");
+  if (!username) return;
 
-  const data = {
-    content: "📥 **NEW H4TE APPLICATION**",
-    embeds: [{
-      color: 16711680,
-      fields: [
-        { name: "Role", value: document.getElementById("role").value, inline: true },
-        { name: "Name", value: document.getElementById("name").value, inline: true },
-        { name: "Discord", value: document.getElementById("discord").value, inline: true },
-        { name: "Region", value: document.getElementById("region").value, inline: true },
-        { name: "About", value: document.getElementById("about").value }
-      ]
-    }]
+  const message = {
+    content: `📥 **New H4TE Application**\n\n👤 User: **${username}**\n🎯 Role: **${role}**`
   };
 
-  fetch(webhookURL, {
+  fetch(WEBHOOK_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data)
+    body: JSON.stringify(message)
   })
-  .then(() => {
-    alert("Application sent successfully!");
-    document.getElementById("applicationForm").reset();
-  })
-  .catch(() => {
-    alert("Error sending application.");
-  });
-});
+  .then(() => alert("Application sent! Check Discord."))
+  .catch(() => alert("Error sending application."));
+}
 </script>
+<script src="js/transitions.js"></script>
 
 <body>
 
@@ -131,20 +118,5 @@ document.getElementById("applicationForm").addEventListener("submit", function(e
     </ul>
     <button onclick="sendApplication('Staff Member')">Apply</button>
   </div>
-<section class="application-section" id="apply">
-  <h2>Apply to H4TE</h2>
-
-  <form id="applicationForm">
-    <input type="hidden" id="role" value="Competitive">
-
-    <input type="text" id="name" placeholder="Your Name / IGN" required>
-    <input type="text" id="discord" placeholder="Discord Username (name#0000)" required>
-    <input type="text" id="region" placeholder="Region" required>
-
-    <textarea id="about" placeholder="Tell us about yourself" required></textarea>
-
-    <button type="submit">Submit Application</button>
-  </form>
-</section>
 
 </div>
