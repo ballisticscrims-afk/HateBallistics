@@ -1988,19 +1988,168 @@ body {
   font-size: 16px;
   color: rgba(255,255,255,0.75);
 }
+/* ================================
+   APPLY / JOIN FORM (CENTERED)
+   ================================ */
 
-/* ===== Center Apply / Join Box ONLY ===== */
+.join-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+/* Main application box */
 .application-box {
-  position: relative;
-  max-width: 480px;      /* Bigger box */
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 36px;
   width: 100%;
-  margin: 0 auto;        /* Center horizontally */
-  padding: 32px;
-  transform: translateY(40px); /* Push slightly down */
+  max-width: 520px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+  animation: fadeInUp 0.6s ease forwards;
 }
 
-/* If page uses flex/grid, force center safely */
-.page-content .application-box {
-  align-self: center;
+/* Title */
+.application-box h2 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 28px;
+  letter-spacing: 1px;
 }
+
+/* Inputs & textarea */
+.application-box input,
+.application-box textarea {
+  width: 100%;
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 14px;
+  color: #fff;
+  font-size: 15px;
+}
+
+.application-box textarea {
+  resize: none;
+  height: 120px;
+}
+
+/* ================================
+   ROLE SELECTOR
+   ================================ */
+
+.role-selector {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.role-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  background: #111;
+  color: #aaa;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.role-btn:hover {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.role-btn.active {
+  background: #ff0000;
+  color: #fff;
+  border-color: #ff0000;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+}
+
+/* ================================
+   SUBMIT BUTTON
+   ================================ */
+
+.submit-btn {
+  width: 100%;
+  background: #ff0000;
+  border: none;
+  border-radius: 999px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.7);
+}
+
+/* ================================
+   SUCCESS STATE
+   ================================ */
+
+.application-box.success {
+  animation: successPulse 0.6s ease forwards;
+}
+
+.success-message {
+  text-align: center;
+  color: #00ff99;
+  font-weight: bold;
+  margin-top: 15px;
+  display: none;
+}
+
+.application-box.success .success-message {
+  display: block;
+}
+
+/* ================================
+   ANIMATIONS
+   ================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes successPulse {
+  0% {
+    box-shadow: 0 0 0 rgba(0, 255, 150, 0);
+  }
+  100% {
+    box-shadow: 0 0 35px rgba(0, 255, 150, 0.7);
+  }
+}
+
+/* ================================
+   MOBILE
+   ================================ */
+
+@media (max-width: 600px) {
+  .application-box {
+    margin: 20px;
+    padding: 28px;
+  }
+
+  .role-selector {
+    flex-direction: column;
+  }
+}
+
