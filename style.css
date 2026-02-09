@@ -2068,3 +2068,35 @@ html, body {
   border-radius: 6px;
   cursor: not-allowed;
 }
+/* ================================
+   GLOBAL — REMOVE ALL BANNERS
+================================ */
+
+.hero,
+.page-banner,
+.banner,
+.video-bg,
+.hero-video,
+.banner-overlay,
+.hero-overlay {
+  display: none !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Kill dark overlay layers */
+body::before,
+body::after,
+main::before,
+main::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Reset body layout */
+body {
+  background: #000;
+  margin: 0;
+  padding: 0;
+}
