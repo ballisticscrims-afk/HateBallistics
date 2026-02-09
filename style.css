@@ -2011,32 +2011,46 @@ body {
   animation: fadeInUp 0.6s ease forwards;
 }
 
-/* Title */
-.application-box h2 {
-  color: #fff;
+.application-section {
+  max-width: 600px;
+  margin: 120px auto;
+  padding: 40px;
+  background: rgba(0,0,0,0.85);
+  border-radius: 18px;
   text-align: center;
-  margin-bottom: 24px;
-  font-size: 28px;
-  letter-spacing: 1px;
 }
 
-/* Inputs & textarea */
-.application-box input,
-.application-box textarea {
+.application-section h2 {
+  margin-bottom: 25px;
+}
+
+.application-section input,
+.application-section textarea {
   width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
   background: #111;
-  border: 1px solid #222;
-  border-radius: 10px;
-  padding: 14px;
-  margin-bottom: 14px;
-  color: #fff;
-  font-size: 15px;
+  color: white;
 }
 
-.application-box textarea {
+.application-section textarea {
   resize: none;
   height: 120px;
 }
+
+.application-section button {
+  background: red;
+  color: white;
+  padding: 14px;
+  width: 100%;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 
 /* ================================
    ROLE SELECTOR
