@@ -1988,3 +1988,19 @@ body {
   font-size: 16px;
   color: rgba(255,255,255,0.75);
 }
+
+/* ===== Center Apply / Join Box ONLY ===== */
+
+.application-box {
+  position: relative;
+  max-width: 480px;      /* Bigger box */
+  width: 100%;
+  margin: 0 auto;        /* Center horizontally */
+  padding: 32px;
+  transform: translateY(40px); /* Push slightly down */
+}
+
+/* If page uses flex/grid, force center safely */
+.page-content .application-box {
+  align-self: center;
+}
