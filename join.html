@@ -118,5 +118,20 @@ function sendApplication(role) {
     </ul>
     <button onclick="sendApplication('Staff Member')">Apply</button>
   </div>
+<section class="application-section" id="apply">
+  <h2>Apply to H4TE</h2>
+
+  <form id="applicationForm">
+    <input type="hidden" id="role" value="Competitive">
+
+    <input type="text" id="name" placeholder="Your Name / IGN" required>
+    <input type="text" id="discord" placeholder="Discord Username (name#0000)" required>
+    <input type="text" id="region" placeholder="Region" required>
+
+    <textarea id="about" placeholder="Tell us about yourself" required></textarea>
+
+    <button type="submit">Submit Application</button>
+  </form>
+</section>
 
 </div>
