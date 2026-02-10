@@ -2031,3 +2031,76 @@ body {
 .about-box li {
   margin-bottom: 8px;
 }
+/* SECTION TITLE */
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  margin: 80px 0 40px;
+}
+
+/* TIMELINE */
+.timeline {
+  max-width: 800px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.timeline-item {
+  background: rgba(0,0,0,0.75);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(255,0,0,0.2);
+}
+
+.timeline-year {
+  font-weight: bold;
+  color: red;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* STAFF */
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.staff-card {
+  background: rgba(0,0,0,0.75);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(255,0,0,0.25);
+}
+
+/* STATS */
+.stats-section {
+  padding: 80px 20px;
+}
+
+.stats-grid {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  text-align: center;
+}
+
+.stat-box span {
+  font-size: 48px;
+  font-weight: bold;
+  color: red;
+}
+
+.stat-box p {
+  margin-top: 10px;
+  opacity: 0.8;
+}
