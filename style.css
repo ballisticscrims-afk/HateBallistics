@@ -2136,3 +2136,75 @@ body {
   color: red;
   font-weight: bold;
 }
+/* ===== ACHIEVEMENTS SECTION ===== */
+
+.achievements-section {
+  padding: 120px 8%;
+  text-align: center;
+  background: transparent;
+}
+
+.section-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 60px;
+}
+
+/* Achievements row */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.achievement-box {
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 18px;
+  padding: 35px 25px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.achievement-box h3 {
+  color: #fff;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.achievement-box p {
+  color: #ccc;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.achievement-box span {
+  color: #ff0000;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Stats row */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.stat-box {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 18px;
+  padding: 40px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stat-box h1 {
+  color: #ff0000;
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.stat-box p {
+  color: #ccc;
+  font-size: 15px;
+}
