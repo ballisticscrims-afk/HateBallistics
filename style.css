@@ -1152,6 +1152,11 @@ body {
   color: #fff;
 }
 
+@media (max-width: 600px) {
+  .media-card video {
+    height: 320px;
+  }
+}
 
 
 /* ===== BACKGROUND VIDEO ===== */
