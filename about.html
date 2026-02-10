@@ -25,12 +25,33 @@
 <meta property="twitter:description" content="Rosters • Tournaments • Highlights • Join H4TE">
 <meta property="twitter:image" content="https://ballisticscrims-afk.github.io/HateBallistics/images/embed.png">
 
+  <script>
+const counters = document.querySelectorAll('.counter');
+
+counters.forEach(counter => {
+  const target = +counter.dataset.target;
+  let count = 0;
+
+  const update = () => {
+    if (count < target) {
+      count += Math.ceil(target / 80);
+      counter.innerText = count;
+      requestAnimationFrame(update);
+    } else {
+      counter.innerText = target;
+    }
+  };
+
+  update();
+});
+</script>
+
+
   <meta charset="UTF-8">
   <title>About H4TE</title>
   <link rel="stylesheet" href="style.css">
   <script src="js/scroll.js"></script>
 
-  <script>
 </head>
 <script src="js/transitions.js"></script>
 <body>
@@ -132,50 +153,23 @@ fetch('/content/home.json')
   <section class="timeline-section">
   <h2 class="section-title">Our Journey</h2>
 
- <div class="timeline-item reveal">
-     <span class="timeline-year">2025</span>
+  <div class="timeline">
+    <div class="timeline-item">
+      <span class="timeline-year">2025</span>
       <p>H4TE founded with a focus on competitive integrity.</p>
     </div>
 
-    <div class="timeline-item reveal">
+    <div class="timeline-item">
       <span class="timeline-year">2025</span>
       <p>H4TE grow into more then competitive integrity daily content to scrims and tournaments.</p>
     </div>
 
-    <div class="timeline-item reveal">
+    <div class="timeline-item">
       <span class="timeline-year">2026</span>
       <p>International growth from all over the world one of the highest played tournamnets and viwed content teams</p>
     </div>
   </div>
 </section>
-
-  <section class="awards-section">
-  <h2 class="section-title">Achievements & Placements</h2>
-
-  <div class="awards-grid">
-
-    <div class="award-card reveal">
-      <h3>🥇 1st Place</h3>
-      <p>Regional Invitational</p>
-      <span>2024</span>
-    </div>
-
-    <div class="award-card reveal">
-      <h3>🥈 2nd Place</h3>
-      <p>Open Qualifier Series</p>
-      <span>2024</span>
-    </div>
-
-    <div class="award-card reveal">
-      <h3>🏆 Top 4</h3>
-      <p>National Championship</p>
-      <span>2025</span>
-    </div>
-
-  </div>
-</section>
-
-  
   <section class="stats-section">
   <div class="stats-grid">
 
