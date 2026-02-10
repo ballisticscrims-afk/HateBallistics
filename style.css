@@ -58,27 +58,6 @@ body {
 
 /
 
-
-
-/* HOVER EFFECT */
-.nav-link:hover {
-  color: red;
-}
-
-/* ACTIVE PAGE */
-.nav-link.active {
-  color: red;
-}
-
-.nav-link.active::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background: red;
-  left: 0;
-  bottom: -6px;
-}
 /* HERO SECTION */
 .hero {
   position: relative;
