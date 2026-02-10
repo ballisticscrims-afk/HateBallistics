@@ -1961,3 +1961,26 @@ body {
 .join-form-box button:hover {
   background: #d90000;
 }
+.success-message {
+  display: none;
+  margin-top: 25px;
+  padding: 16px;
+  background: rgba(0, 255, 0, 0.15);
+  border: 1px solid rgba(0, 255, 0, 0.4);
+  color: #9eff9e;
+  text-align: center;
+  border-radius: 14px;
+  font-weight: 600;
+  animation: popIn 0.5s ease;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
