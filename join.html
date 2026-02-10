@@ -1,185 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Join H4TE</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Join H4TE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* ===== GLOBAL ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ===== PAGE LAYOUT ===== */
+.join-page {
+  padding-top: 100px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ===== ROLE BOXES ===== */
+.roles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+.role-box {
+  background: #111;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(255,0,0,0.15);
+}
+
+.role-box h2 {
+  color: red;
+}
+
+/* ===== FORM BOX ===== */
+.form-box {
+  background: #111;
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 800px;
+  margin: auto;
+  box-shadow: 0 0 40px rgba(255,0,0,0.25);
+}
+
+.form-box h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+form {
+  display: grid;
+  gap: 15px;
+}
+
+input, textarea, select {
+  background: #000;
+  color: white;
+  border: 1px solid #333;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+button {
+  background: red;
+  border: none;
+  padding: 15px;
+  border-radius: 30px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ff2222;
+}
+
+.success {
+  text-align: center;
+  margin-top: 20px;
+  color: #0f0;
+  display: none;
+}
+</style>
 </head>
-  <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("joinForm");
-
-  if (!form) {
-    console.error("❌ joinForm not found");
-    return;
-  }
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    console.log("✅ Form submitted");
-
-    const webhookURL = "https://discordapp.com/api/webhooks/1468490166699294844/Dbuhpy1Xjkiwvre1HxTCN73SIfjpKC_Hfjm0KlDJjdeoTiSaZy1r4GyirBCaK1PN4gkc";
-
-    const data = {
-      content: "📨 **New H4TE Application Submitted**"
-    };
-
-    try {
-      const response = await fetch(webhookURL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-      });
-
-      console.log("✅ Discord status:", response.status);
-    } catch (error) {
-      console.error("❌ Webhook error:", error);
-    }
-  });
-});
-</script>
- const data = new FormData(form);
-
-  const payload = {
-    content: "📥 **New H4TE Application Received**",
-    embeds: [{
-      title: "H4TE Join Application",
-      color: 16711680,
-      fields: [
-        { name: "IGN", value: data.get("ign") || "N/A", inline: true },
-        { name: "Discord", value: data.get("discord") || "N/A", inline: true },
-        { name: "Role Applied", value: data.get("role") || "N/A", inline: true },
-        { name: "Region", value: data.get("region") || "N/A", inline: true },
-        { name: "Gadget / Specialty", value: data.get("gadget") || "N/A", inline: true },
-        { name: "About", value: data.get("about") || "N/A" },
-        { name: "Experience", value: data.get("experience") || "N/A" },
-        { name: "Social Links", value: data.get("socials") || "N/A" },
-        { name: "What We Can Do", value: data.get("expectations") || "N/A" }
-      ],
-      timestamp: new Date().toISOString()
-    }]
-  };
-
-  try {
-    const response = await fetch(WEBHOOK_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(payload)
-    });
-
-    if (!response.ok) {
-      throw new Error("Webhook failed");
-    }
-
-    form.reset();
-    success.style.display = "block";
-
-    setTimeout(() => {
-      success.style.display = "none";
-    }, 5000);
-
-  } catch (err) {
-    console.error(err);
-    alert("Application failed. Open console (F12).");
-  }
-});
-</script>
-
-
 
 <body>
 
-<!-- ===== NAVBAR (KEEP YOUR CURRENT NAVBAR CODE HERE) ===== -->
+<!-- NAV -->
 <nav class="navbar">
-  <div class="nav-left">
-    <a href="index.html" class="nav-logo">
-      <img src="images/logo.png" alt="H4TE Logo">
-    </a>
-  </div>
-
-  <ul class="nav-links nav-center">
+  <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="team.html">Roster</a></li>
     <li><a href="tournaments.html">Tournaments</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="socials.html">Socials</a></li>
     <li><a href="media.html">Media</a></li>
-    <li><a href="join.html" class="active">Join Us</a></li>
+    <li><a href="join.html">Join Us</a></li>
   </ul>
 </nav>
 
-<!-- ===== ROLE SELECTION ===== -->
-<section class="join-roles">
-  <h1 class="join-title">Join H4TE</h1>
-  <p class="join-subtitle">Choose your path and apply below</p>
+<!-- PAGE -->
+<div class="join-page">
 
-  <div class="role-grid">
-
-    <div class="role-card">
+  <!-- ROLES -->
+  <div class="roles">
+    <div class="role-box">
       <h2>Competitive</h2>
-      <p>
-        Looking for skilled players for main & academy rosters.
-        Strong communication, consistency, and tournament availability required.
-      </p>
+      <p>Main & academy players competing in tournaments.</p>
     </div>
 
-    <div class="role-card">
+    <div class="role-box">
       <h2>Content Creator</h2>
-      <p>
-        Creators who represent H4TE across social platforms.
-        YouTube, TikTok, Twitch, editors, and highlight creators welcome.
-      </p>
+      <p>YouTube, TikTok, Twitch creators representing H4TE.</p>
     </div>
 
-    <div class="role-card">
+    <div class="role-box">
       <h2>Staff</h2>
-      <p>
-        Coaches, analysts, admins, moderators, and support roles
-        helping H4TE operate behind the scenes.
-      </p>
+      <p>Coaches, analysts, admins, and social staff.</p>
     </div>
-
   </div>
-</section>
 
-<!-- ===== APPLICATION FORM ===== -->
-<section class="join-form-section">
-  <div class="join-form-box">
+  <!-- FORM -->
+  <div class="form-box">
+    <h1>Apply to H4TE</h1>
 
-    <h2>Application Form</h2>
+    <form id="joinForm">
+      <input name="ign" placeholder="In-Game Name" required>
+      <input name="discord" placeholder="Discord Username" required>
+      <input name="region" placeholder="Region">
+      
+      <select name="role">
+        <option value="Competitive">Competitive</option>
+        <option value="Content Creator">Content Creator</option>
+        <option value="Staff">Staff</option>
+      </select>
 
-   <form id="joinForm">
+      <input name="socials" placeholder="Social Links">
+      <textarea name="experience" placeholder="Experience"></textarea>
+      <textarea name="why" placeholder="Why do you want to join?"></textarea>
+      <textarea name="help" placeholder="What can H4TE do for you?"></textarea>
 
-  <input name="ign" placeholder="In-Game Name (IGN)" required>
-  <input name="discord" placeholder="Discord Username (name#0000)" required>
+      <button type="submit">Submit Application</button>
+    </form>
 
-  <select name="role" required>
-    <option value="">Select Role</option>
-    <option value="Competitive">Competitive</option>
-    <option value="Content Creator">Content Creator</option>
-    <option value="Staff">Staff</option>
-  </select>
+    <div class="success" id="successMsg">✅ Application Sent!</div>
+  </div>
 
-  <input name="region" placeholder="Region">
-  <input name="gadget" placeholder="Main Gadget / Specialty">
-
-  <textarea name="about" placeholder="Tell us about yourself"></textarea>
-  <textarea name="experience" placeholder="Experience"></textarea>
-  <textarea name="socials" placeholder="Social Links"></textarea>
-  <textarea name="expectations" placeholder="What can H4TE do for you?"></textarea>
-
-  <button type="submit">Submit Application</button>
-
-</form>
-
-<!-- Success Message -->
-<div id="successMessage" class="success-message">
-  ✅ Application sent successfully!
 </div>
 
+<!-- ===== DISCORD WEBHOOK SCRIPT ===== -->
+<script>
+document.getElementById("joinForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const f = e.target;
+  const webhook = "https://discordapp.com/api/webhooks/1468490166699294844/Dbuhpy1Xjkiwvre1HxTCN73SIfjpKC_Hfjm0KlDJjdeoTiSaZy1r4GyirBCaK1PN4gkc";
+
+  const embed = {
+    title: "📨 New H4TE Application",
+    color: 16711680,
+    fields: [
+      { name: "IGN", value: f.ign.value },
+      { name: "Discord", value: f.discord.value },
+      { name: "Region", value: f.region.value || "N/A" },
+      { name: "Role", value: f.role.value },
+      { name: "Social Links", value: f.socials.value || "N/A" },
+      { name: "Experience", value: f.experience.value || "N/A" },
+      { name: "Why Join", value: f.why.value || "N/A" },
+      { name: "What We Can Do", value: f.help.value || "N/A" }
+    ]
+  };
+
+  await fetch(webhook, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ embeds: [embed] })
+  });
+
+  document.getElementById("successMsg").style.display = "block";
+  f.reset();
+});
+</script>
 
 </body>
 </html>
