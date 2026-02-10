@@ -2120,3 +2120,22 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
 }
+/* =========================
+   Page Transitions
+========================= */
+
+body {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+body.page-loaded {
+  opacity: 1;
+}
+
+/* Disable transition if user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
+  }
+}
