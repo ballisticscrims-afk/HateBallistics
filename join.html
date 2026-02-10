@@ -5,16 +5,41 @@
   <title>Join H4TE</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<script>
-const WEBHOOK_URL = "https://discordapp.com/api/webhooks/1468490166699294844/Dbuhpy1Xjkiwvre1HxTCN73SIfjpKC_Hfjm0KlDJjdeoTiSaZy1r4GyirBCaK1PN4gkc";
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("joinForm");
 
-const form = document.getElementById("joinForm");
-const success = document.getElementById("successMessage");
+  if (!form) {
+    console.error("❌ joinForm not found");
+    return;
+  }
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  const data = new FormData(form);
+    console.log("✅ Form submitted");
+
+    const webhookURL = "https://discordapp.com/api/webhooks/1468490166699294844/Dbuhpy1Xjkiwvre1HxTCN73SIfjpKC_Hfjm0KlDJjdeoTiSaZy1r4GyirBCaK1PN4gkc";
+
+    const data = {
+      content: "📨 **New H4TE Application Submitted**"
+    };
+
+    try {
+      const response = await fetch(webhookURL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+
+      console.log("✅ Discord status:", response.status);
+    } catch (error) {
+      console.error("❌ Webhook error:", error);
+    }
+  });
+});
+</script>
+ const data = new FormData(form);
 
   const payload = {
     content: "📥 **New H4TE Application Received**",
