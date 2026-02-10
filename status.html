@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Application Status | H4TE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR (same as other pages) -->
+<nav class="navbar">
+  <ul class="nav-links nav-center">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="team.html">Roster</a></li>
+    <li><a href="tournaments.html">Tournaments</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="join.html">Join Us</a></li>
+    <li><a href="status.html" class="active">Application Status</a></li>
+  </ul>
+</nav>
+
+<section class="status-page">
+  <div class="status-box">
+    <h1>Check Your Application</h1>
+    <p>Enter your Application ID below.</p>
+
+    <input id="appIDInput" placeholder="H4TE-123456">
+    <button onclick="checkStatus()">Check Status</button>
+
+    <div id="statusResult"></div>
+  </div>
+</section>
+
+<script src="status.js"></script>
+</body>
+</html>
