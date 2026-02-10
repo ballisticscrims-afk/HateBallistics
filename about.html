@@ -1,78 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+
+  <!-- Primary Meta Tags -->
+<title>H4TE Esports</title>
+<meta name="title" content="H4TE Esports">
+<meta name="description" content="Official H4TE Esports website — rosters, tournaments, highlights, and tryouts.">
+
+<!-- Open Graph / Discord / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ballisticscrims-afk.github.io/HateBallistics/">
+<meta property="og:title" content="H4TE Esports">
+<meta property="og:description" content="Rosters • Tournaments • Highlights • Join H4TE">
+<meta property="og:image" content="https://ballisticscrims-afk.github.io/HateBallistics/images/embed.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://ballisticscrims-afk.github.io/HateBallistics/">
+<meta property="twitter:title" content="H4TE Esports">
+<meta property="twitter:description" content="Rosters • Tournaments • Highlights • Join H4TE">
+<meta property="twitter:image" content="https://ballisticscrims-afk.github.io/HateBallistics/images/embed.png">
+
   <meta charset="UTF-8">
   <title>About H4TE</title>
   <link rel="stylesheet" href="style.css">
+  <script src="js/scroll.js"></script>
+
 </head>
-
+<script src="js/transitions.js"></script>
 <body>
+  <div class="page-bg">
+  <video
+    autoplay
 
+    <h1 id="hero-title"></h1>
+<p id="hero-subtitle"></p>
+<img id="hero-image">
+
+<script>
+fetch('/content/home.json')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('hero-title').innerText = data.hero_title;
+    document.getElementById('hero-subtitle').innerText = data.hero_subtitle;
+    document.getElementById('hero-image').src = data.hero_image;
+  });
+</script>
+
+    muted
+    loop
+    playsinline
+    preload="auto"
+    class="bg-video"
+  >
+    <source src="videos/about-bg.mp4" type="video/mp4">
+  </video>
+
+  <div class="bg-overlay"></div>
 </div>
-
-<ul class="nav-links nav-center">
-<li><a href="index.html">Home</a></li>
-<li><a href="team.html">Roster</a></li>
-<li><a href="tournaments.html">Tournaments</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="socials.html">Socials</a></li>
-<li><a href="media.html">Media</a></li>
-<li><a href="join.html">Join Us</a></li>
-
-</ul>
-</nav>
 <nav class="navbar">
   <div class="nav-left">
-    <a href="index.html">
+    <a href="index.html" class="nav-logo">
       <img src="images/logo.png" alt="H4TE Logo">
     </a>
   </div>
-  <ul class="nav-links">
+
+  <ul class="nav-links nav-center">
     <li><a href="index.html">Home</a></li>
     <li><a href="team.html">Roster</a></li>
     <li><a href="tournaments.html">Tournaments</a></li>
-    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="about.html">About</a></li>
     <li><a href="socials.html">Socials</a></li>
     <li><a href="media.html">Media</a></li>
     <li><a href="join.html">Join Us</a></li>
+ 
   </ul>
 </nav>
 
-<!-- ABOUT HEADER -->
-<section class="about-header">
-  <h1>About H4TE</h1>
-  <p>Built for competition. Driven by community.</p>
-</section>
+>
 
-<!-- ABOUT CONTENT -->
-<section class="about-content">
-  <div class="about-box">
-    <h2>Who We Are</h2>
-    <p>
-      H4TE is a competitive esports organization focused on high-level play,
-      content creation, and community growth. We aim to build disciplined,
-      passionate teams across multiple titles.
-    </p>
-  </div>
+  <!-- ABOUT HERO -->
+  <section class="about-hero">
+    <h1>About H4TE</h1>
+    <p>Built by players. Driven by competition.</p>
+  </section>
 
-  <div class="about-box">
-    <h2>Our Vision</h2>
-    <p>
-      To create an environment where players, creators, and staff grow together
-      while competing at the highest level.
-    </p>
-  </div>
+  <!-- ABOUT CONTENT -->
+  <section class="about-content">
 
-  <div class="about-box">
-    <h2>What We Value</h2>
-    <ul>
-      <li>✔ Competitive integrity</li>
-      <li>✔ Consistency & commitment</li>
-      <li>✔ Respect & teamwork</li>
-      <li>✔ Long-term growth</li>
-    </ul>
-  </div>
-</section>
+    <div class="about-card">
+      <h2>Who We Are</h2>
+      <p>
+        H4TE is a competitive esports organization founded by players who wanted
+        more than just a team — a community built on trust, grind, and passion.
+      </p>
+    </div>
+
+    <div class="about-card">
+      <h2>Our Mission</h2>
+      <p>
+        We aim to develop talent, dominate tournaments, and create opportunities
+        for players to grow both competitively and personally.
+      </p>
+    </div>
+
+    <div class="about-card">
+      <h2>What We Compete In</h2>
+      <p>
+        From main-stage tournaments to underdog brackets and special events,
+        H4TE competes across multiple formats with one goal: win with style.
+      </p>
+    </div>
+
+    <div class="about-card highlight">
+      <h2>Join the Community</h2>
+      <p>
+        Whether you’re a player, supporter, or just love esports — H4TE is open
+        to everyone who respects the grind.
+      </p>
+      <a href="https://discord.gg/WAYsXGvByH" target="_blank" class="about-btn">
+        Join Our Discord
+      </a>
+    </div>
+
+  </section>
 
 </body>
 </html>
