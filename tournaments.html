@@ -2,22 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Tournaments | H4TE Esports</title>
-
+  <title>H4TE | Tournaments</title>
   <link rel="stylesheet" href="style.css">
-
 </head>
+
 <body>
 
-  <!-- NAVBAR (same as all pages) -->
+  <!-- NAVBAR (KEEP SAME AS OTHER PAGES) -->
   <nav class="navbar">
     <div class="nav-left">
-      <a href="index.html" class="nav-logo">
+      <a href="index.html">
         <img src="images/logo.png" alt="H4TE Logo">
       </a>
     </div>
 
-    <ul class="nav-links nav-center">
+    <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="team.html">Roster</a></li>
       <li><a href="tournaments.html" class="active">Tournaments</a></li>
@@ -35,66 +34,57 @@
     <p>Upcoming & past competitions</p>
   </section>
 
-  <!-- CONTENT -->
+  <!-- PAGE CONTENT -->
   <main class="page-content tournaments-page">
 
     <!-- UPCOMING -->
-<main class="tournaments-page">
+    <section class="tournament-section">
+      <h2>Upcoming Tournaments</h2>
 
-  <!-- UPCOMING -->
-  <section class="tournament-section">
-    <h2>Upcoming Tournaments</h2>
+      <div class="tournament-grid">
+        <div class="tournament-card upcoming">
+          <h3>Underdog Saturday</h3>
+          <p>Date: March 16, 2026</p>
+          <p>Format: 5v5</p>
+          <span class="badge upcoming">Upcoming</span>
+        </div>
 
-    <div class="tournament-grid">
-      <div class="tournament-card">
-        <h3>H4TE MAIN TOURNAMENTS</h3>
-        <p>Date: EVERY SUNDAY</p>
-        <p>Format: 5v5</p>
-        <span class="status upcoming">Upcoming</span>
+        <div class="tournament-card upcoming">
+          <h3>RAW League Qualifier</h3>
+          <p>Date: April 2, 2026</p>
+          <p>Format: Closed Bracket</p>
+          <span class="badge upcoming">Upcoming</span>
+        </div>
       </div>
+    </section>
 
-      <div class="tournament-card">
-        <h3>H4TE Underdog TOURNAMENTS</h3>
-        <p>Date: EVERY SATURDAY</p>
-        <p>Format: Closed Bracket Join Discord</p>
-        <span class="status upcoming">Upcoming</span>
+    <!-- PAST -->
+    <section class="tournament-section">
+      <h2>Past Tournaments</h2>
+
+      <div class="tournament-grid">
+        <div class="tournament-card past">
+          <h3>H4TE Main Tournament</h3>
+          <p>Placement: 🥇 1st Place</p>
+          <p>Year: 2026</p>
+          <span class="badge completed">Completed</span>
+        </div>
+
+        <div class="tournament-card past">
+          <h3>Underdog Cup</h3>
+          <p>Placement: 🥈 2nd Place</p>
+          <p>Year: 2026</p>
+          <span class="badge completed">Completed</span>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PAST -->
-  <section class="tournament-section">
-    <h2>Past Tournaments</h2>
-
-    <div class="tournament-grid">
-      <div class="tournament-card">
-        <h3>H4TE Main Tournament</h3>
-        <p>🥇 1st Place Team Ranger Monkey</p>
-        <p>Year: 2026</p>
-        <span class="status past">Completed</span>
-      </div>
-
-      <div class="tournament-card">
-        <h3>Underdog Cup</h3>
-        <p>🥈 2nd Place Team Law</p>
-        <p>Year: 2026</p>
-        <span class="status past">Completed</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- SIGNUP BOX -->
-  <section class="tournament-signup">
-    <h2>Sign Up for Tournaments</h2>
-    <p>All registrations are handled through our official tournament platform.</p>
-
-    <a href="https://battlefy.com/h4te-tournament" target="_blank" class="signup-btn">
-      Go to Signup Page
-    </a>
-  </section>
-
-</main>
-
+    <!-- SIGNUP BOX -->
+    <section class="tournament-signup">
+      <h2>Want to Compete?</h2>
+      <p>Sign up for upcoming tournaments through our partner platform.</p>
+      <a href="https://battlefy.com" target="_blank" class="signup-btn">Sign Up</a>
+    </section>
 
   </main>
 
