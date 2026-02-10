@@ -41,42 +41,49 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
-
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(6px);
-
   height: 64px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* LEFT LOGO */
+.nav-left {
+  position: absolute;
+  left: 100px;
   display: flex;
   align-items: center;
 }
 
-/* INNER CONTAINER */
-
-/* LOGO */
 .nav-logo img {
-  height: 26px;
-  display: block;
+  height: 38px;
+  width: auto;
 }
-.nav-inner {
-  width: 100%;
-  max-width: 100%;
-  padding: 0 24px;
 
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+/* CENTER LINKS */
+.nav-center {
+  margin: 0 auto;                 /* 🔥 centers the links */
+  list-style: none;
+  display: flex;
   align-items: center;
+  gap: 32px;
+  padding: 0;
 }
 
-/* FORCE LOGO LEFT */
-.nav-left {
-  justify-self: start;
+.nav-center a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: color 0.3s ease;
 }
 
-/* LOGO SIZE */
-.nav-logo img {
-  height: 26px;
-  display: block;
+.nav-center a:hover {
+  color: red;
 }
 
 /* LINKS */
