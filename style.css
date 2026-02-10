@@ -2104,3 +2104,17 @@ body {
   margin-top: 10px;
   opacity: 0.8;
 }
+/* ================================
+   SCROLL REVEAL ANIMATIONS
+================================ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
