@@ -5,6 +5,60 @@
   <title>Join H4TE</title>
   <link rel="stylesheet" href="style.css">
 </head>
+  <script>
+const webhookURL = "https://discordapp.com/api/webhooks/1468490166699294844/Dbuhpy1Xjkiwvre1HxTCN73SIfjpKC_Hfjm0KlDJjdeoTiSaZy1r4GyirBCaK1PN4gkc";
+
+document.getElementById("joinForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const data = new FormData(form);
+
+  const role = data.get("role");
+
+  const payload = {
+    embeds: [{
+      title: "🔥 New H4TE Application",
+      color: role === "Competitive" ? 16711680 :
+             role === "Content Creator" ? 5793266 : 10181046,
+      fields: [
+        { name: "IGN", value: data.get("ign"), inline: true },
+        { name: "Discord", value: data.get("discord"), inline: true },
+        { name: "Role", value: role, inline: true },
+        { name: "Region", value: data.get("region") || "N/A", inline: true },
+        { name: "Gadget / Specialty", value: data.get("gadget") || "N/A", inline: true },
+        { name: "About", value: data.get("about") || "N/A" },
+        { name: "Experience", value: data.get("experience") || "N/A" },
+        { name: "Social Links", value: data.get("socials") || "N/A" },
+        { name: "Expectations", value: data.get("expectations") || "N/A" }
+      ],
+      footer: {
+        text: "H4TE Esports • Join System"
+      },
+      timestamp: new Date()
+    }]
+  };
+
+  try {
+    await fetch(webhookURL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+
+    form.reset();
+    document.getElementById("successMessage").style.display = "block";
+
+    setTimeout(() => {
+      document.getElementById("successMessage").style.display = "none";
+    }, 5000);
+
+  } catch (err) {
+    alert("Error sending application.");
+  }
+});
+</script>
+
 
 <body>
 
