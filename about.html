@@ -30,6 +30,26 @@
   <link rel="stylesheet" href="style.css">
   <script src="js/scroll.js"></script>
 
+  <script>
+const reveals = document.querySelectorAll('.reveal');
+
+function revealOnScroll() {
+  const windowHeight = window.innerHeight;
+  const revealPoint = 100;
+
+  reveals.forEach(el => {
+    const revealTop = el.getBoundingClientRect().top;
+    if (revealTop < windowHeight - revealPoint) {
+      el.classList.add('active');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll();
+</script>
+
+
 </head>
 <script src="js/transitions.js"></script>
 <body>
