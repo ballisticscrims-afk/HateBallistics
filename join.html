@@ -1,86 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Primary Meta Tags -->
-<title>H4TE Esports</title>
-<meta name="title" content="H4TE Esports">
-<meta name="description" content="Official H4TE Esports website — rosters, tournaments, highlights, and tryouts.">
-
-<!-- Open Graph / Discord / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://ballisticscrims-afk.github.io/HateBallistics/">
-<meta property="og:title" content="H4TE Esports">
-<meta property="og:description" content="Rosters • Tournaments • Highlights • Join H4TE">
-<meta property="og:image" content="https://ballisticscrims-afk.github.io/HateBallistics/images/embed.png">
-
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://ballisticscrims-afk.github.io/HateBallistics/">
-<meta property="twitter:title" content="H4TE Esports">
-<meta property="twitter:description" content="Rosters • Tournaments • Highlights • Join H4TE">
-<meta property="twitter:image" content="https://ballisticscrims-afk.github.io/HateBallistics/images/embed.png">
-
-  
   <meta charset="UTF-8">
-  <title>H4TE | Join Us</title>
+  <title>Join H4TE</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<script>
-const webhookURL = "https://discordapp.com/api/webhooks/1468490166699294844/Dbuhpy1Xjkiwvre1HxTCN73SIfjpKC_Hfjm0KlDJjdeoTiSaZy1r4GyirBCaK1PN4gkc";
-
-document.getElementById("applicationForm").addEventListener("submit", async function(e) {
-  e.preventDefault();
-
-  const name = document.getElementById("name").value;
-  const discord = document.getElementById("discord").value;
-  const region = document.getElementById("region").value;
-  const about = document.getElementById("about").value;
-  const role = document.querySelector(".role-btn.active")?.dataset.role || "Not selected";
-
-  const payload = {
-    embeds: [{
-      title: "📝 New H4TE Application",
-      color: 15158332,
-      fields: [
-        { name: "Name / IGN", value: name, inline: true },
-        { name: "Discord", value: discord, inline: true },
-        { name: "Role", value: role, inline: true },
-        { name: "Region", value: region, inline: true },
-        { name: "About", value: about }
-      ],
-      footer: { text: "H4TE Esports Applications" },
-      timestamp: new Date()
-    }]
-  };
-
-  try {
-    const res = await fetch(webhookURL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
-    });
-
-    if (res.ok) {
-      document.querySelector(".application-box").classList.add("success");
-    } else {
-      alert("Webhook failed. Check console.");
-      console.error(await res.text());
-    }
-  } catch (err) {
-    console.error(err);
-    alert("Webhook error — open DevTools (F12)");
-  }
-});
-</script>
-
 
 <body>
 
-<video class="bg-video" autoplay muted loop playsinline>
-  <source src="videos/background.mp4" type="video/mp4">
-</video>
-<div class="bg-overlay"></div>
-
+<!-- ===== NAVBAR (KEEP YOUR CURRENT NAVBAR CODE HERE) ===== -->
 <nav class="navbar">
   <div class="nav-left">
     <a href="index.html" class="nav-logo">
@@ -95,70 +23,75 @@ document.getElementById("applicationForm").addEventListener("submit", async func
     <li><a href="about.html">About</a></li>
     <li><a href="socials.html">Socials</a></li>
     <li><a href="media.html">Media</a></li>
-    <li><a href="join.html">Join Us</a></li>
-
+    <li><a href="join.html" class="active">Join Us</a></li>
   </ul>
 </nav>
 
-<main class="join-page">
+<!-- ===== ROLE SELECTION ===== -->
+<section class="join-roles">
+  <h1 class="join-title">Join H4TE</h1>
+  <p class="join-subtitle">Choose your path and apply below</p>
 
-  <video class="join-bg-video" autoplay muted loop playsinline>
-    <source src="videos/join-bg.mp4" type="video/mp4">
-  </video>
+  <div class="role-grid">
 
-  <div class="join-overlay"></div>
+    <div class="role-card">
+      <h2>Competitive</h2>
+      <p>
+        Looking for skilled players for main & academy rosters.
+        Strong communication, consistency, and tournament availability required.
+      </p>
+    </div>
 
- <div class="join-cards">
+    <div class="role-card">
+      <h2>Content Creator</h2>
+      <p>
+        Creators who represent H4TE across social platforms.
+        YouTube, TikTok, Twitch, editors, and highlight creators welcome.
+      </p>
+    </div>
 
-  <!-- Competitive -->
-  <div class="join-card">
-    <h3>Competitive</h3>
-    <p>Looking for skilled players for main & academy rosters.</p>
-    <ul>
-      <li>✔ Active competitive experience</li>
-      <li>✔ Team communication</li>
-      <li>✔ Tournament availability</li>
-    </ul>
-    <button onclick="sendApplication('Competitive Player')">Apply</button>
+    <div class="role-card">
+      <h2>Staff</h2>
+      <p>
+        Coaches, analysts, admins, moderators, and support roles
+        helping H4TE operate behind the scenes.
+      </p>
+    </div>
+
   </div>
-
-  <!-- Creator -->
-  <div class="join-card">
-    <h3>Content Creator</h3>
-    <p>Creators who represent H4TE on social platforms.</p>
-    <ul>
-      <li>✔ YouTube / TikTok / Twitch</li>
-      <li>✔ Consistent uploads</li>
-      <li>✔ Brand-friendly content</li>
-    </ul>
-    <button onclick="sendApplication('Content Creator')">Apply</button>
-  </div>
-
-  <!-- Staff -->
-  <div class="join-card">
-    <h3>Staff</h3>
-    <p>Support roles behind the scenes.</p>
-    <ul>
-      <li>✔ Coaches & analysts</li>
-      <li>✔ Social media managers</li>
-      <li>✔ Admin & support staff</li>
-    </ul>
-    <button onclick="sendApplication('Staff Member')">Apply</button>
-  </div>
-<section class="application-section" id="apply">
-  <h2>Apply to H4TE</h2>
-
-  <form id="applicationForm">
-    <input type="hidden" id="role" value="Competitive">
-
-    <input type="text" id="name" placeholder="Your Name / IGN" required>
-    <input type="text" id="discord" placeholder="Discord Username (name#0000)" required>
-    <input type="text" id="region" placeholder="Region" required>
-
-    <textarea id="about" placeholder="Tell us about yourself" required></textarea>
-
-    <button type="submit">Submit Application</button>
-  </form>
 </section>
 
-</div>
+<!-- ===== APPLICATION FORM ===== -->
+<section class="join-form-section">
+  <div class="join-form-box">
+
+    <h2>Application Form</h2>
+
+    <form id="joinForm">
+
+      <input type="text" placeholder="In-Game Name (IGN)" required>
+      <input type="text" placeholder="Discord Username (name#0000)" required>
+
+      <select required>
+        <option value="">Select Role</option>
+        <option>Competitive</option>
+        <option>Content Creator</option>
+        <option>Staff</option>
+      </select>
+
+      <input type="text" placeholder="Region">
+      <input type="text" placeholder="Main Gadget / Role / Specialty">
+
+      <textarea placeholder="Tell us about yourself"></textarea>
+      <textarea placeholder="Experience (teams, tournaments, content, etc)"></textarea>
+      <textarea placeholder="Social Links (YouTube, TikTok, Twitch, Twitter)"></textarea>
+      <textarea placeholder="What can H4TE do for you?"></textarea>
+
+      <button type="submit">Submit Application</button>
+    </form>
+
+  </div>
+</section>
+
+</body>
+</html>
