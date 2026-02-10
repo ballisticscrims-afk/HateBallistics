@@ -181,39 +181,85 @@ button:hover {
 
 </div>
 
-<!-- ===== DISCORD WEBHOOK SCRIPT ===== -->
 <script>
-document.getElementById("joinForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("joinForm");
+  const successMsg = document.getElementById("successMsg");
 
-  const f = e.target;
-  const webhook = "https://discordapp.com/api/webhooks/1468490166699294844/Dbuhpy1Xjkiwvre1HxTCN73SIfjpKC_Hfjm0KlDJjdeoTiSaZy1r4GyirBCaK1PN4gkc";
+  if (!form) {
+    console.error("joinForm not found");
+    return;
+  }
 
-  const embed = {
-    title: "📨 New H4TE Application",
-    color: 16711680,
-    fields: [
-      { name: "IGN", value: f.ign.value },
-      { name: "Discord", value: f.discord.value },
-      { name: "Region", value: f.region.value || "N/A" },
-      { name: "Role", value: f.role.value },
-      { name: "Social Links", value: f.socials.value || "N/A" },
-      { name: "Experience", value: f.experience.value || "N/A" },
-      { name: "Why Join", value: f.why.value || "N/A" },
-      { name: "What We Can Do", value: f.help.value || "N/A" }
-    ]
-  };
+  const WEBHOOK_URL = "https://discordapp.com/api/webhooks/1468490166699294844/Dbuhpy1Xjkiwvre1HxTCN73SIfjpKC_Hfjm0KlDJjdeoTiSaZy1r4GyirBCaK1PN4gkc";
 
-  await fetch(webhook, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ embeds: [embed] })
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    // Generate Application ID
+    const appID = "H4TE-" + Math.floor(100000 + Math.random() * 900000);
+
+    const role = data.get("role");
+
+    // Role → Discord ping
+    let rolePing = "@Recruitment";
+    if (role === "Competitive") rolePing = "@Competitive Staff";
+    if (role === "Content Creator") rolePing = "@Creator Staff";
+    if (role === "Staff") rolePing = "@Staff Team";
+
+    const payload = {
+      content: `📥 **NEW APPLICATION RECEIVED**\n${rolePing}`,
+      embeds: [{
+        title: "H4TE Join Application",
+        color: 16711680,
+        fields: [
+          { name: "Application ID", value: appID, inline: true },
+          { name: "Role Applied", value: role, inline: true },
+          { name: "IGN", value: data.get("ign"), inline: true },
+          { name: "Discord", value: data.get("discord"), inline: true },
+          { name: "Region", value: data.get("region") || "N/A", inline: true },
+          { name: "Gadget / Specialty", value: data.get("gadget") || "N/A", inline: true },
+          { name: "Experience", value: data.get("experience") || "N/A" },
+          { name: "Social Links", value: data.get("socials") || "N/A" },
+          { name: "Why Join", value: data.get("why") || "N/A" },
+          { name: "What We Can Do", value: data.get("help") || "N/A" }
+        ],
+        footer: {
+          text: "React below to update status"
+        },
+        timestamp: new Date().toISOString()
+      }]
+    };
+
+    try {
+      const res = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+
+      if (!res.ok) throw new Error("Webhook failed");
+
+      // SUCCESS UI
+      successMsg.style.display = "block";
+      successMsg.innerText = `✅ Application sent!\nYour Application ID: ${appID}`;
+
+      form.reset();
+
+      setTimeout(() => {
+        successMsg.style.display = "none";
+      }, 8000);
+
+    } catch (err) {
+      alert("Application failed. Please try again.");
+      console.error(err);
+    }
   });
-
-  document.getElementById("successMsg").style.display = "block";
-  f.reset();
 });
 </script>
+
 
 </body>
 </html>
