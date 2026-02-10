@@ -1,147 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
-<link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
-
-  <!-- Primary Meta Tags -->
-<title>H4TE Esports</title>
-<meta name="title" content="H4TE Esports">
-<meta name="description" content="Official H4TE Esports website — rosters, tournaments, highlights, and tryouts.">
-
-<!-- Open Graph / Discord / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://ballisticscrims-afk.github.io/HateBallistics/">
-<meta property="og:title" content="H4TE Esports">
-<meta property="og:description" content="Rosters • Tournaments • Highlights • Join H4TE">
-<meta property="og:image" content="https://ballisticscrims-afk.github.io/HateBallistics/images/embed.png">
-
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://ballisticscrims-afk.github.io/HateBallistics/">
-<meta property="twitter:title" content="H4TE Esports">
-<meta property="twitter:description" content="Rosters • Tournaments • Highlights • Join H4TE">
-<meta property="twitter:image" content="https://ballisticscrims-afk.github.io/HateBallistics/images/embed.png">
-
   <meta charset="UTF-8">
-  <title>H4TE Esports – Tournaments</title>
-  <link rel="stylesheet" href="tournaments.css">
-</head>
-  <script src="js/transitions.js"></script>
+  <title>Tournaments | H4TE Esports</title>
 
+  <link rel="stylesheet" href="style.css">
+
+</head>
 <body>
 
-  <!-- BACKGROUND VIDEO -->
-  <div class="bg-video">
-    <video autoplay muted loop playsinline>
-      <source src="videos/tournaments-bg.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <!-- PAGE CONTENT -->
-<nav class="navbar">
-  <div class="nav-inner">
-
-    <!-- LEFT: LOGO -->
+  <!-- NAVBAR (same as all pages) -->
+  <nav class="navbar">
     <div class="nav-left">
       <a href="index.html" class="nav-logo">
         <img src="images/logo.png" alt="H4TE Logo">
       </a>
     </div>
 
-    <!-- CENTER: LINKS -->
     <ul class="nav-links nav-center">
       <li><a href="index.html">Home</a></li>
       <li><a href="team.html">Roster</a></li>
-      <li><a class="active" href="tournaments.html">Tournaments</a></li>
+      <li><a href="tournaments.html" class="active">Tournaments</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="socials.html">Socials</a></li>
       <li><a href="media.html">Media</a></li>
       <li><a href="join.html">Join Us</a></li>
       <li><a href="shop.html">Shop</a></li>
-
-
     </ul>
+  </nav>
 
-    <!-- RIGHT SPACER (keeps center perfect) -->
-    <div class="nav-right"></div>
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <h1>Tournaments</h1>
+    <p>Upcoming & past competitions</p>
+  </section>
 
-  </div>
-</nav>
+  <!-- CONTENT -->
+  <main class="page-content tournaments-page">
 
+    <!-- UPCOMING -->
+    <section class="tournament-section">
+      <h2>Upcoming Tournaments</h2>
 
+      <div class="tournament-grid">
+        <div class="tournament-card">
+          <h3>Underdog Saturday</h3>
+          <p>Date: March 16, 2026</p>
+          <p>Format: 5v5</p>
+          <span class="status upcoming">Upcoming</span>
+        </div>
 
-
-    <!-- HERO -->
-    <header class="hero">
-      <h1>Tournaments</h1>
-      <p>Upcoming & past competitions</p>
-    </header>
-
-    <!-- PANELS -->
-    <section class="tournament-panels">
-
-      <!-- MAIN TOURNAMENTS -->
-<a href="https://discord.gg/WAYsXGvByH" target="_blank" class="panel-link">
-  <div class="tournament-panel">
-    <h3>Main Tournaments</h3>
-    <span class="panel-line"></span>
-
-    <p>Premier competitive events featuring main roster teams.</p>
-
-    <h4>Past Winners</h4>
-    <ul>
-      <li>🏆 TEAM OXES — MAIN #14</li>
-      <li>🏆 TEAM ACE — MAIN #13</li>
-      <li>🥈 TEAM SILLY — MAIN #12</li>
-    </ul>
-  </div>
-</a>
-
-
-      <!-- UNDERDOG -->
-<a href="https://discord.gg/WAYsXGvByH" target="_blank" class="panel-link">
-  <div class="tournament-panel">
-    <h3>Underdog Tournaments</h3>
-    <span class="panel-line"></span>
-
-    <p>Rising talent, closed bracket, and breakout performances.</p>
-
-    <h4>Past Winners</h4>
-    <ul>
-      <li>🥈 TEAM LAW — #14</li>
-      <li>🏆 TEAM ACESOLARIUM — #13</li>
-      <li>🏆 TEAM OXES ACADEMY — #12</li>
-      
-    </ul>
-  </div>
-</a>
-
-
-      <!-- SPECIAL -->
-<a href="https://discord.gg/WAYsXGvByH" target="_blank" class="panel-link">
-  <div class="tournament-panel">
-    <h3>Special Tournaments</h3>
-    <span class="panel-line"></span>
-
-    <p>All 5-man team, showmatches, and special-format events.</p>
-
-    <h4>Highlights</h4>
-    <ul>
-      <li>⭐ TEAM MONKEY — RANGER ONLY </li>
-      <li>⭐ TEAM MONKEY — DEAGLE ONLY</li>
-      <li>⭐ TEAM F4TZ — RANGER ONLY</li>
-     
-    </ul>
-  </div>
-</a>
-
-
+        <div class="tournament-card">
+          <h3>RAW League Qualifier</h3>
+          <p>Date: April 2, 2026</p>
+          <p>Format: Closed Bracket</p>
+          <span class="status upcoming">Upcoming</span>
+        </div>
+      </div>
     </section>
 
-  </div>
+    <!-- PAST -->
+    <section class="tournament-section">
+      <h2>Past Tournaments</h2>
+
+      <div class="tournament-grid">
+        <div class="tournament-card">
+          <h3>H4TE Main Tournament</h3>
+          <p>Placement: 🥇 1st Place</p>
+          <p>Year: 2026</p>
+          <span class="status past">Completed</span>
+        </div>
+
+        <div class="tournament-card">
+          <h3>Underdog Cup</h3>
+          <p>Placement: 🥈 2nd Place</p>
+          <p>Year: 2026</p>
+          <span class="status past">Completed</span>
+        </div>
+
+        <div class="tournament-card">
+          <h3>RAW Invitational</h3>
+          <p>Placement: Top 4</p>
+          <p>Year: 2026</p>
+          <span class="status past">Completed</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
 </body>
 </html>
