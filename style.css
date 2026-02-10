@@ -1984,3 +1984,52 @@ body {
     transform: scale(1);
   }
 }
+/* ===== APPLICATION STATUS PAGE ===== */
+
+.status-page {
+  min-height: 100vh;
+  padding-top: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.status-box {
+  background: rgba(0,0,0,0.85);
+  padding: 40px;
+  border-radius: 22px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(255,0,0,0.3);
+}
+
+.status-box h1 {
+  margin-bottom: 10px;
+}
+
+.status-box input {
+  width: 100%;
+  padding: 14px;
+  margin: 15px 0;
+  border-radius: 10px;
+  border: none;
+  background: #111;
+  color: white;
+}
+
+.status-box button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 30px;
+  background: red;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#statusResult {
+  margin-top: 20px;
+  font-weight: bold;
+}
