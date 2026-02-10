@@ -11,8 +11,9 @@ function checkStatus() {
   const result = document.getElementById("statusResult");
 
   if (!input) {
-    result.innerText = "Please enter an Application ID.";
-    result.style.color = "orange";
+    result.innerText = ""H4TE-384291": "Accepted 🎉"
+.";
+    result.style.color = "green";
     return;
   }
 
