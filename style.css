@@ -2039,20 +2039,7 @@ body {
   margin-top: 20px;
   font-weight: bold;
 }
-/* PAGE HEADER */
-.page-header {
-  text-align: center;
-  padding: 120px 20px 60px;
-}
 
-.page-header h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
-}
-
-.page-header p {
-  opacity: 0.7;
-}
 
 /* TOURNAMENTS PAGE */
 /* PAGE WRAPPER */
