@@ -2118,3 +2118,35 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+/* ================================
+   AWARDS / PLACEMENTS
+================================ */
+
+.awards-section {
+  padding: 80px 20px;
+}
+
+.awards-grid {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+.award-card {
+  background: rgba(0,0,0,0.75);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(255,0,0,0.25);
+}
+
+.award-card h3 {
+  margin-bottom: 8px;
+}
+
+.award-card span {
+  color: red;
+  font-weight: bold;
+}
