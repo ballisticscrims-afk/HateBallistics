@@ -1,34 +1,26 @@
-document.addEventListener("DOMContentLoaded", () => {
+// Page fade-in on load
+window.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("page-loaded");
+});
 
-  document.querySelectorAll("a").forEach(link => {
+// Page fade-out on link click
+document.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", e => {
     const href = link.getAttribute("href");
 
-    if (href && !href.startsWith("#") && !href.startsWith("http")) {
-      link.addEventListener("click", e => {
-        e.preventDefault();
-        document.body.classList.remove("page-loaded");
+    // Ignore external links & anchors
+    if (
+      !href ||
+      href.startsWith("#") ||
+      href.startsWith("http") ||
+      link.target === "_blank"
+    ) return;
 
-        setTimeout(() => {
-          window.location.href = href;
-        }, 400);
-      });
-    }
+    e.preventDefault();
+    document.body.classList.remove("page-loaded");
+
+    setTimeout(() => {
+      window.location.href = href;
+    }, 300);
   });
 });
-const revealElements = document.querySelectorAll(".reveal");
-
-function revealOnScroll() {
-  revealElements.forEach(el => {
-    const windowHeight = window.innerHeight;
-    const elementTop = el.getBoundingClientRect().top;
-    const revealPoint = 100;
-
-    if (elementTop < windowHeight - revealPoint) {
-      el.classList.add("active");
-    }
-  });
-}
-
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
