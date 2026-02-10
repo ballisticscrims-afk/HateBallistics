@@ -1,82 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>H4TE Shop</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- MAIN SITE CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ===== SHOP PAGE ===== */
+    .shop-page {
+      padding-top: 120px;
+      padding-bottom: 120px;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .shop-title {
+      font-size: 46px;
+      margin-bottom: 10px;
+    }
+
+    .shop-subtitle {
+      color: #aaa;
+      margin-bottom: 60px;
+    }
+
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+    }
+
+    .shop-card {
+      background: rgba(0,0,0,0.85);
+      border-radius: 18px;
+      padding: 25px;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 0 30px rgba(255,0,0,0.15);
+    }
+
+    .shop-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      background: #111;
+    }
+
+    .shop-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .shop-card p {
+      font-size: 14px;
+      color: #ccc;
+      margin-bottom: 15px;
+    }
+
+    .shop-card button {
+      background: red;
+      border: none;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .shop-card button:hover {
+      background: #ff2222;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAV BAR (SAME AS OTHER PAGES) -->
+<!-- ===== NAV BAR (KEEP SAME AS OTHER PAGES) ===== -->
 <nav class="navbar">
-  <div class="nav-left">
-    <a href="index.html" class="nav-logo">
-      <img src="images/logo.png" alt="H4TE Logo">
-    </a>
-  </div>
-
   <ul class="nav-links nav-center">
     <li><a href="index.html">Home</a></li>
     <li><a href="team.html">Roster</a></li>
     <li><a href="tournaments.html">Tournaments</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="socials.html">Socials</a></li>
     <li><a href="media.html">Media</a></li>
     <li><a href="join.html">Join Us</a></li>
-    <li><a href="shop.html">Shop</a></li>
-       
-  
+    <li><a href="shop.html" class="active">Shop</a></li>
   </ul>
 </nav>
 
-<!-- VIDEO BACKGROUND -->
-<section class="shop-hero">
-  <video class="shop-video" autoplay muted loop playsinline preload="auto">
-    <source src="./videos/shop-bg.mp4" type="video/mp4">
-  </video>
-
-  <div class="shop-hero-overlay">
-    <h1>H4TE SHOP</h1>
-    <p>Official merchandise — coming soon</p>
-  </div>
-</section>
-
-<!-- SHOP CONTENT -->
-<main class="shop-content">
+<!-- ===== SHOP CONTENT ===== -->
+<section class="shop-page">
+  <h1 class="shop-title">H4TE Shop</h1>
+  <p class="shop-subtitle">Official merchandise – coming soon</p>
 
   <div class="shop-grid">
 
-    <!-- CARD 1 -->
+    <!-- ITEM 1 -->
     <div class="shop-card">
-      <img src="images/shop/jersey.png" alt="H4TE Jersey" />
-      <h3>H4TE Pro Jersey</h3>
-      <span class="coming-soon">COMING SOON</span>
-      <button disabled>Notify Me</button>
-    </div>
-
-    <!-- CARD 2 -->
-    <div class="shop-card">
-      <img src="images/shop/hoodie.png" alt="H4TE Hoodie" />
+      <img src="images/shop/placeholder.png" alt="">
       <h3>H4TE Hoodie</h3>
-      <span class="coming-soon">COMING SOON</span>
-      <button disabled>Notify Me</button>
+      <p>Black & red premium hoodie.</p>
+      <button>Coming Soon</button>
     </div>
 
-    <!-- CARD 3 -->
+    <!-- ITEM 2 -->
     <div class="shop-card">
-      <img src="images/shop/tee.png" alt="H4TE Tee" />
-      <h3>H4TE Tee</h3>
-      <span class="coming-soon">COMING SOON</span>
-      <button disabled>Notify Me</button>
+      <img src="images/shop/placeholder.png" alt="">
+      <h3>H4TE Jersey</h3>
+      <p>Official team jersey.</p>
+      <button>Coming Soon</button>
+    </div>
+
+    <!-- ITEM 3 -->
+    <div class="shop-card">
+      <img src="images/shop/placeholder.png" alt="">
+      <h3>H4TE T-Shirt</h3>
+      <p>Minimal logo tee.</p>
+      <button>Coming Soon</button>
+    </div>
+
+    <!-- ITEM 4 -->
+    <div class="shop-card">
+      <img src="images/shop/placeholder.png" alt="">
+      <h3>H4TE Cap</h3>
+      <p>Adjustable cap.</p>
+      <button>Coming Soon</button>
+    </div>
+
+    <!-- ITEM 5 -->
+    <div class="shop-card">
+      <img src="images/shop/placeholder.png" alt="">
+      <h3>Mouse Pad</h3>
+      <p>Large esports mouse pad.</p>
+      <button>Coming Soon</button>
+    </div>
+
+    <!-- ITEM 6 -->
+    <div class="shop-card">
+      <img src="images/shop/placeholder.png" alt="">
+      <h3>Sticker Pack</h3>
+      <p>H4TE logo stickers.</p>
+      <button>Coming Soon</button>
+    </div>
+
+    <!-- ITEM 7 -->
+    <div class="shop-card">
+      <img src="images/shop/placeholder.png" alt="">
+      <h3>Beanie</h3>
+      <p>Winter beanie.</p>
+      <button>Coming Soon</button>
+    </div>
+
+    <!-- ITEM 8 -->
+    <div class="shop-card">
+      <img src="images/shop/placeholder.png" alt="">
+      <h3>Water Bottle</h3>
+      <p>Metal branded bottle.</p>
+      <button>Coming Soon</button>
+    </div>
+
+    <!-- ITEM 9 -->
+    <div class="shop-card">
+      <img src="images/shop/placeholder.png" alt="">
+      <h3>Phone Case</h3>
+      <p>Minimal logo case.</p>
+      <button>Coming Soon</button>
+    </div>
+
+    <!-- ITEM 10 -->
+    <div class="shop-card">
+      <img src="images/shop/placeholder.png" alt="">
+      <h3>Poster</h3>
+      <p>H4TE wall poster.</p>
+      <button>Coming Soon</button>
     </div>
 
   </div>
-
-</main>
+</section>
 
 </body>
 </html>
