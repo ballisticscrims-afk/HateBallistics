@@ -17,53 +17,29 @@ body {
 }
 
 /* ===== NAVBAR ===== */
-.navbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 6%;
-  background:#000;
-  position:fixed;
-  width:100%;
-  z-index:1000;
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
 
-.nav-links{
-  display:flex;
-  gap:30px;
-  list-style:none;
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
 }
 
-.nav-links a{
-  color:#fff;
-  text-decoration:none;
-  font-weight:600;
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
-
-.nav-icons{
-  display:flex;
-  gap:20px;
-}
-
-.nav-icons button{
-  background:none;
-  border:none;
-  color:#fff;
-  font-size:18px;
-  cursor:pointer;
-  position:relative;
-}
-
-#cart-count{
-  background:red;
-  border-radius:50%;
-  padding:2px 6px;
-  font-size:12px;
-  position:absolute;
-  top:-8px;
-  right:-10px;
-}
-
 
 /* ===== PAGE LAYOUT ===== */
 .join-page {
@@ -139,41 +115,10 @@ button:hover {
   color: #0f0;
   display: none;
 }
-  .modal{
-  display:none;
-  position:fixed;
-  top:80px;
-  right:20px;
-  background:#111;
-  padding:20px;
-  width:300px;
-  border-radius:10px;
-  box-shadow:0 0 20px red;
-}
-
-.modal input{
-  width:100%;
-  padding:10px;
-  background:#000;
-  border:1px solid red;
-  color:#fff;
-}
-
-#search-results div{
-  padding:8px 0;
-  cursor:pointer;
-}
-
 </style>
 </head>
 
   <script src="js/transitions.js"></script>
-
-  <div id="search-modal" class="modal">
-  <input type="text" id="search-input" placeholder="Search H4TE..." onkeyup="performSearch()">
-  <div id="search-results"></div>
-</div>
-
 
 <body>
   
@@ -189,27 +134,22 @@ button:hover {
 
 <nav class="navbar">
   <div class="nav-left">
-    <a href="index.html">
-      <img src="images/logo.png" class="nav-logo">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="H4TE Logo">
     </a>
   </div>
 
-  <ul class="nav-links">
+  <ul class="nav-links nav-center">
     <li><a href="index.html">Home</a></li>
-    <li><a href="roster.html">Roster</a></li>
+    <li><a href="team.html">Roster</a></li>
     <li><a href="tournaments.html">Tournaments</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="socials.html">Socials</a></li>
     <li><a href="media.html">Media</a></li>
     <li><a href="join.html">Join Us</a></li>
     <li><a href="shop.html">Shop</a></li>
-  </ul>
 
-  <div class="nav-icons">
-    <button onclick="toggleLogin()">👤</button>
-    <button onclick="toggleSearch()">🔍</button>
-    <button onclick="openCart()">🛒 <span id="cart-count">0</span></button>
-  </div>
+  </ul>
 </nav>
 
 <!-- PAGE -->
@@ -338,34 +278,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-</script>
-  
-<script>
-const pages = [
-  {name:"Roster", url:"roster.html"},
-  {name:"Tournaments", url:"tournaments.html"},
-  {name:"About", url:"about.html"},
-  {name:"Media", url:"media.html"},
-  {name:"Join Us", url:"join.html"},
-  {name:"Shop", url:"shop.html"}
-];
-
-function toggleSearch(){
-  const modal = document.getElementById("search-modal");
-  modal.style.display = modal.style.display === "block" ? "none" : "block";
-}
-
-function performSearch(){
-  const query = document.getElementById("search-input").value.toLowerCase();
-  const results = document.getElementById("search-results");
-  results.innerHTML = "";
-
-  pages.forEach(page=>{
-    if(page.name.toLowerCase().includes(query)){
-      results.innerHTML += `<div onclick="window.location='${page.url}'">${page.name}</div>`;
-    }
-  });
-}
 </script>
 
 
