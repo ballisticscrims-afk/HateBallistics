@@ -169,6 +169,113 @@ body{
   width:100%;
   border-radius:15px;
 }
+   
+/* ================= NAV ICONS ================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-icon {
+    width: 26px;
+    height: 26px;
+    stroke: white;
+    stroke-width: 2;
+    fill: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-icon:hover {
+    stroke: red;
+    transform: scale(1.1);
+}
+
+/* ================= MODALS ================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-box {
+    background: #111;
+    padding: 40px;
+    width: 380px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,0,0,0.4);
+}
+
+.modal-box h2 {
+    margin-bottom: 20px;
+}
+
+.modal-box input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background: #000;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: white;
+}
+
+.modal-box button {
+    width: 100%;
+    padding: 12px;
+    background: red;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ================= BASKET ================= */
+
+.basket {
+    position: fixed;
+    right: -350px;
+    top: 0;
+    width: 350px;
+    height: 100%;
+    background: #111;
+    border-left: 2px solid red;
+    padding: 30px;
+    transition: 0.4s ease;
+    z-index: 9999;
+}
+
+.basket.open {
+    right: 0;
+}
+
+.close-basket {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    color: red;
+    font-size: 18px;
+}
 
 </style>
 </head>
@@ -194,6 +301,29 @@ body{
     <li><a href="join.html">Join Us</a></li>
     <li><a href="shop.html">Shop</a></li>
   </ul>
+   <div class="nav-icons">
+
+  <!-- Login -->
+  <svg class="nav-icon" onclick="openLogin()" viewBox="0 0 24 24">
+    <circle cx="12" cy="8" r="4"></circle>
+    <path d="M4 20c1.5-4 14.5-4 16 0"></path>
+  </svg>
+
+  <!-- Search -->
+  <svg class="nav-icon" onclick="openSearch()" viewBox="0 0 24 24">
+    <circle cx="11" cy="11" r="7"></circle>
+    <line x1="16.5" y1="16.5" x2="22" y2="22"></line>
+  </svg>
+
+  <!-- Basket -->
+  <svg class="nav-icon" onclick="toggleBasket()" viewBox="0 0 24 24">
+    <path d="M6 6h15l-1.5 9h-12z"></path>
+    <circle cx="9" cy="21" r="1"></circle>
+    <circle cx="18" cy="21" r="1"></circle>
+  </svg>
+
+</div>
+
 </nav>
 
 <!-- HEADER -->
