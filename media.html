@@ -3,195 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>H4TE | Media</title>
+<title>H4TE Media</title>
 
 <style>
 
-/* =========================
-   RESET
-========================= */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, Helvetica, sans-serif;
+/* ================= GLOBAL ================= */
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: black;
+    color: white;
+    overflow-x: hidden;
 }
 
-body{
-  background:#000;
-  color:white;
-  overflow-x:hidden;
+h1,h2,h3,h4 {
+    margin: 0;
 }
 
-/* =========================
-   VIDEO BACKGROUND
-========================= */
-.video-bg{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  z-index:-2;
-}
-
-.video-bg video{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.video-overlay{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.8);
-  z-index:-1;
-}
-
-/* =========================
-   NAVBAR
-========================= */
-.navbar{
-  position:fixed;
-  top:0;
-  width:100%;
-  height:70px;
-  background:rgba(0,0,0,0.95);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  z-index:1000;
-}
-
-.nav-links{
-  list-style:none;
-  display:flex;
-  gap:40px;
-}
-
-.nav-links a{
-  text-decoration:none;
-  color:white;
-  font-weight:600;
-  transition:0.3s;
-}
-
-.nav-links a:hover{
-  color:red;
-}
-
-/* =========================
-   PAGE HEADER
-========================= */
-.page-header{
-  padding-top:150px;
-  padding-bottom:60px;
-  text-align:center;
-}
-
-.page-header h1{
-  font-size:48px;
-  margin-bottom:10px;
-}
-
-.page-header p{
-  color:#ccc;
-}
-
-/* =========================
-   FEATURED CLIP
-========================= */
-.featured{
-  max-width:1000px;
-  margin:0 auto 100px;
-  padding:40px;
-  background:rgba(0,0,0,0.9);
-  border-radius:25px;
-  border:1px solid rgba(255,0,0,0.3);
-  text-align:center;
-  transition:0.3s;
-}
-
-.featured:hover{
-  box-shadow:0 0 40px rgba(255,0,0,0.5);
-}
-
-.featured h2{
-  margin-bottom:25px;
-}
-
-.featured video{
-  width:100%;
-  border-radius:15px;
-}
-
-/* =========================
-   SECTION TITLE
-========================= */
-.section-title{
-  text-align:center;
-  font-size:28px;
-  margin:80px 0 40px;
-}
-
-/* =========================
-   VIDEO GRID
-========================= */
-.video-grid{
-  max-width:1200px;
-  margin:0 auto 100px;
-  padding:0 40px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
-}
-
-/* =========================
-   VIDEO CARD
-========================= */
-.video-card{
-  background:rgba(0,0,0,0.85);
-  padding:15px;
-  border-radius:20px;
-  transition:0.3s;
-  border:1px solid rgba(255,0,0,0.2);
-}
-
-.video-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 0 25px rgba(255,0,0,0.5);
-}
-
-.video-card video{
-  width:100%;
-  border-radius:15px;
-}
-   
-/* ================= NAV ICONS ================= */
+/* ================= NAVBAR ================= */
 
 .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background: #000;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    z-index: 1000;
+}
+
+.nav-left img {
+    height: 35px;
 }
 
 .nav-links {
     display: flex;
     gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: red;
 }
 
 .nav-icons {
     display: flex;
-    gap: 20px;
-    align-items: center;
+    gap: 25px;
 }
 
 .nav-icon {
-    width: 26px;
-    height: 26px;
+    width: 22px;
+    height: 22px;
     stroke: white;
     stroke-width: 2;
     fill: none;
@@ -204,231 +77,244 @@ body{
     transform: scale(1.1);
 }
 
-/* ================= MODALS ================= */
+/* ================= VIDEO BACKGROUND ================= */
 
-.modal {
+.video-bg {
     position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.85);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-.modal-box {
-    background: #111;
-    padding: 40px;
-    width: 380px;
-    border-radius: 20px;
-    border: 1px solid rgba(255,0,0,0.4);
-}
-
-.modal-box h2 {
-    margin-bottom: 20px;
-}
-
-.modal-box input {
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
+    height: 100%;
+    z-index: -2;
+}
+
+.video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.75);
+    z-index: -1;
+}
+
+/* ================= PAGE HEADER ================= */
+
+.page-header {
+    padding-top: 120px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: #aaa;
+}
+
+/* ================= FEATURED ================= */
+
+.featured {
+    max-width: 900px;
+    margin: 60px auto;
+}
+
+.featured video {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 0 40px rgba(255,0,0,0.3);
+}
+
+/* ================= MEDIA GRID ================= */
+
+.section {
+    max-width: 1400px;
+    margin: 80px auto;
+    padding: 0 40px;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 30px;
+}
+
+.media-card {
+    background: #111;
+    padding: 15px;
+    border-radius: 15px;
+    transition: 0.3s;
+    box-shadow: 0 0 25px rgba(255,0,0,0.1);
+}
+
+.media-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 35px rgba(255,0,0,0.4);
+}
+
+.media-card video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.media-card h4 {
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* ================= SEARCH POPUP ================= */
+
+.search-popup {
+    position: fixed;
+    top: 80px;
+    right: 50px;
+    background: #111;
+    padding: 20px;
+    border-radius: 12px;
+    display: none;
+    box-shadow: 0 0 30px rgba(255,0,0,0.3);
+}
+
+.search-popup input {
+    width: 250px;
+    padding: 10px;
     background: #000;
     border: 1px solid #333;
-    border-radius: 8px;
     color: white;
 }
 
-.modal-box button {
-    width: 100%;
-    padding: 12px;
-    background: red;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-}
+/* ================= CART PANEL ================= */
 
-/* ================= BASKET ================= */
-
-.basket {
+.cart-panel {
     position: fixed;
     right: -350px;
     top: 0;
     width: 350px;
     height: 100%;
     background: #111;
-    border-left: 2px solid red;
-    padding: 30px;
-    transition: 0.4s ease;
-    z-index: 9999;
+    transition: 0.4s;
+    padding: 20px;
+    box-shadow: -5px 0 20px rgba(255,0,0,0.4);
 }
 
-.basket.open {
+.cart-panel.active {
     right: 0;
 }
 
-.close-basket {
-    position: absolute;
-    right: 20px;
-    top: 20px;
+.cart-panel h3 {
+    margin-bottom: 20px;
+}
+
+.close-cart {
     cursor: pointer;
     color: red;
-    font-size: 18px;
+    margin-bottom: 20px;
 }
 
 </style>
 </head>
 <body>
 
-<!-- VIDEO BACKGROUND -->
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-left">
+        <img src="images/logo.png">
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="team.html">Roster</a></li>
+        <li><a href="tournaments.html">Tournaments</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="socials.html">Socials</a></li>
+        <li><a href="media.html">Media</a></li>
+        <li><a href="join.html">Join Us</a></li>
+        <li><a href="shop.html">Shop</a></li>
+    </ul>
+
+    <div class="nav-icons">
+        <!-- LOGIN -->
+        <svg class="nav-icon" onclick="alert('Login Page Coming Soon')" viewBox="0 0 24 24">
+            <circle cx="12" cy="8" r="4"></circle>
+            <path d="M4 20c1.5-4 14.5-4 16 0"></path>
+        </svg>
+
+        <!-- SEARCH -->
+        <svg class="nav-icon" onclick="toggleSearch()" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="16.5" y1="16.5" x2="22" y2="22"></line>
+        </svg>
+
+        <!-- CART -->
+        <svg class="nav-icon" onclick="toggleCart()" viewBox="0 0 24 24">
+            <path d="M6 6h15l-1.5 9h-12z"></path>
+        </svg>
+    </div>
+</nav>
+
+<!-- SEARCH BOX -->
+<div class="search-popup" id="searchBox">
+    <input type="text" placeholder="Search clips...">
+</div>
+
+<!-- CART PANEL -->
+<div class="cart-panel" id="cartPanel">
+    <div class="close-cart" onclick="toggleCart()">Close ✖</div>
+    <h3>Your Basket</h3>
+    <p>No items yet.</p>
+</div>
+
+<!-- VIDEO BG -->
 <div class="video-bg">
-  <video autoplay muted loop playsinline>
-    <source src="videos/media-bg.mp4" type="video/mp4">
-  </video>
+    <video autoplay muted loop>
+        <source src="videos/media-bg.mp4" type="video/mp4">
+    </video>
 </div>
 <div class="video-overlay"></div>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="team.html">Roster</a></li>
-    <li><a href="tournaments.html">Tournaments</a></li>
-    <li><a href="about.html">About</a></li>
-      <li><a href="socials.html">Socials</a></li>
-    <li><a href="media.html">Media</a></li>
-    <li><a href="join.html">Join Us</a></li>
-    <li><a href="shop.html">Shop</a></li>
-  </ul>
-   <div class="nav-icons">
-
-  <!-- Login -->
-  <svg class="nav-icon" onclick="openLogin()" viewBox="0 0 24 24">
-    <circle cx="12" cy="8" r="4"></circle>
-    <path d="M4 20c1.5-4 14.5-4 16 0"></path>
-  </svg>
-
-  <!-- Search -->
-  <svg class="nav-icon" onclick="openSearch()" viewBox="0 0 24 24">
-    <circle cx="11" cy="11" r="7"></circle>
-    <line x1="16.5" y1="16.5" x2="22" y2="22"></line>
-  </svg>
-
-  <!-- Basket -->
-  <svg class="nav-icon" onclick="toggleBasket()" viewBox="0 0 24 24">
-    <path d="M6 6h15l-1.5 9h-12z"></path>
-    <circle cx="9" cy="21" r="1"></circle>
-    <circle cx="18" cy="21" r="1"></circle>
-  </svg>
-
-      <!-- LOGIN MODAL -->
-<div class="modal" id="loginModal">
-  <div class="modal-box">
-    <h2>Member Login</h2>
-    <input type="text" placeholder="Username">
-    <input type="password" placeholder="Password">
-    <button onclick="closeLogin()">Login</button>
-  </div>
-</div>
-
-<!-- SEARCH MODAL -->
-<div class="modal" id="searchModal">
-  <div class="modal-box">
-    <h2>Search</h2>
-    <input type="text" placeholder="Search H4TE...">
-    <button onclick="closeSearch()">Close</button>
-  </div>
-</div>
-
-<!-- BASKET -->
-<div class="basket" id="basketDrawer">
-  <div class="close-basket" onclick="toggleBasket()">✕</div>
-  <h2>Your Basket</h2>
-  <p>No items yet.</p>
-</div>
-
-</div>
-
-</nav>
-
-<!-- HEADER -->
+<!-- PAGE HEADER -->
 <section class="page-header">
-  <h1>H4TE Media</h1>
-  <p>Highlights. Clutches. Content.</p>
+    <h1>H4TE Media</h1>
+    <p>Top competitive & content clips</p>
 </section>
 
-<!-- FEATURED CLIP -->
-<div class="featured">
-  <h2>🔥 Clip of the Week</h2>
-  <video controls>
-    <source src="videos/featured.mp4" type="video/mp4">
-  </video>
-</div>
+<!-- FEATURED -->
+<section class="featured">
+    <video controls>
+        <source src="videos/featured.mp4">
+    </video>
+</section>
 
-<!-- CONTENT CLIPS -->
-<h2 class="section-title">Content Clips</h2>
-<div class="video-grid">
-  <div class="video-card"><video controls src="videos/content1.mp4"></video></div>
-  <div class="video-card"><video controls src="videos/content2.mp4"></video></div>
-  <div class="video-card"><video controls src="videos/content3.mp4"></video></div>
-  <div class="video-card"><video controls src="videos/content4.mp4"></video></div>
-</div>
+<!-- SECTION -->
+<section class="section">
+    <h2>Content Creator Clips</h2>
+    <div class="media-grid">
+        <div class="media-card"><video controls><source src="videos/1.mp4"></video><h4>Clip 1</h4></div>
+        <div class="media-card"><video controls><source src="videos/2.mp4"></video><h4>Clip 2</h4></div>
+        <div class="media-card"><video controls><source src="videos/3.mp4"></video><h4>Clip 3</h4></div>
+        <div class="media-card"><video controls><source src="videos/4.mp4"></video><h4>Clip 4</h4></div>
+    </div>
+</section>
 
-<!-- SCRIM CLIPS -->
-<h2 class="section-title">Scrim Clips</h2>
-<div class="video-grid">
-  <div class="video-card"><video controls src="videos/scrim1.mp4"></video></div>
-  <div class="video-card"><video controls src="videos/scrim2.mp4"></video></div>
-  <div class="video-card"><video controls src="videos/scrim3.mp4"></video></div>
-  <div class="video-card"><video controls src="videos/scrim4.mp4"></video></div>
-</div>
-
-<!-- TOURNAMENT CLIPS -->
-<h2 class="section-title">Tournament Clips</h2>
-<div class="video-grid">
-  <div class="video-card"><video controls src="videos/tournament1.mp4"></video></div>
-  <div class="video-card"><video controls src="videos/tournament2.mp4"></video></div>
-  <div class="video-card"><video controls src="videos/tournament3.mp4"></video></div>
-  <div class="video-card"><video controls src="videos/tournament4.mp4"></video></div>
-</div>
-
-<!-- FUNNY CLIPS -->
-<h2 class="section-title">Funny Clips</h2>
-<div class="video-grid">
-  <div class="video-card"><video controls src="videos/funny1.mp4"></video></div>
-  <div class="video-card"><video controls src="videos/funny2.mp4"></video></div>
-  <div class="video-card"><video controls src="videos/funny3.mp4"></video></div>
-  <div class="video-card"><video controls src="videos/funny4.mp4"></video></div>
-</div>
-
-<!-- CLUTCH CLIPS -->
-<h2 class="section-title">Clutch Clips</h2>
-<div class="video-grid">
-  <div class="video-card"><video controls src="videos/clutch1.mp4"></video></div>
-  <div class="video-card"><video controls src="videos/clutch2.mp4"></video></div>
-  <div class="video-card"><video controls src="videos/clutch3.mp4"></video></div>
-  <div class="video-card"><video controls src="videos/clutch4.mp4"></video></div>
-</div>
 <script>
-function openLogin() {
-  document.getElementById("loginModal").style.display = "flex";
+function toggleSearch(){
+    const box = document.getElementById("searchBox");
+    box.style.display = box.style.display === "block" ? "none" : "block";
 }
 
-function closeLogin() {
-  document.getElementById("loginModal").style.display = "none";
-}
-
-function openSearch() {
-  document.getElementById("searchModal").style.display = "flex";
-}
-
-function closeSearch() {
-  document.getElementById("searchModal").style.display = "none";
-}
-
-function toggleBasket() {
-  document.getElementById("basketDrawer").classList.toggle("open");
+function toggleCart(){
+    document.getElementById("cartPanel").classList.toggle("active");
 }
 </script>
 
