@@ -1,91 +1,224 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
-<link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>H4TE | Socials</title>
 
-<!-- Primary Meta Tags -->
-<title>H4TE Esports</title>
-<meta name="title" content="H4TE Esports">
-<meta name="description" content="Official H4TE Esports website — rosters, tournaments, highlights, and tryouts.">
+<style>
 
-<!-- Open Graph / Discord / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://ballisticscrims-afk.github.io/HateBallistics/">
-<meta property="og:title" content="H4TE Esports">
-<meta property="og:description" content="Rosters • Tournaments • Highlights • Join H4TE">
-<meta property="og:image" content="https://ballisticscrims-afk.github.io/HateBallistics/images/embed.png">
+/* =========================
+   RESET
+========================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://ballisticscrims-afk.github.io/HateBallistics/">
-<meta property="twitter:title" content="H4TE Esports">
-<meta property="twitter:description" content="Rosters • Tournaments • Highlights • Join H4TE">
-<meta property="twitter:image" content="https://ballisticscrims-afk.github.io/HateBallistics/images/embed.png">
+body{
+  background:#000;
+  color:#fff;
+  overflow-x:hidden;
+}
 
-  
-  <meta charset="UTF-8">
-  <title>H4TE | Socials</title>
-  <link rel="stylesheet" href="style.css">
+/* =========================
+   VIDEO BACKGROUND
+========================= */
+.video-bg{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:-2;
+}
+
+.video-bg video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.video-overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.75);
+  z-index:-1;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  height:70px;
+  background:rgba(0,0,0,0.95);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:40px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:white;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:red;
+}
+
+/* =========================
+   PAGE HEADER
+========================= */
+.page-header{
+  padding-top:150px;
+  padding-bottom:60px;
+  text-align:center;
+}
+
+.page-header h1{
+  font-size:48px;
+  margin-bottom:10px;
+}
+
+.page-header p{
+  color:#ccc;
+  font-size:18px;
+}
+
+/* =========================
+   MAIN CONTENT CARD
+========================= */
+.content-card{
+  max-width:1100px;
+  margin:0 auto 100px;
+  padding:60px 40px;
+  background:rgba(0,0,0,0.9);
+  border-radius:25px;
+  border:1px solid rgba(255,0,0,0.2);
+  text-align:center;
+  transition:0.3s ease;
+}
+
+.content-card:hover{
+  box-shadow:0 0 40px rgba(255,0,0,0.4);
+}
+
+/* =========================
+   BUTTON GRID
+========================= */
+.button-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+  margin-top:40px;
+}
+
+/* =========================
+   BUTTON STYLE
+========================= */
+.link-btn{
+  display:inline-block;
+  padding:18px 25px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:600;
+  background:#111;
+  border:1px solid rgba(255,0,0,0.3);
+  color:white;
+  transition:0.3s ease;
+}
+
+.link-btn:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 25px rgba(255,0,0,0.6);
+}
+
+/* Platform Hover Colors */
+.battlefy:hover{ background:#ff0000; }
+.tiktok:hover{ background:#ff0050; }
+.youtube:hover{ background:#cc0000; }
+.twitter:hover{ background:#1d9bf0; }
+.discord:hover{ background:#5865F2; }
+
+</style>
 </head>
-  <script src="js/transitions.js"></script>
-
 <body>
 
-<nav class="navbar">
-  <div class="nav-left">
-    <a href="index.html" class="nav-logo">
-      <img src="images/logo.png" alt="H4TE Logo">
-    </a>
-  </div>
+<!-- VIDEO BACKGROUND -->
+<div class="video-bg">
+  <video autoplay muted loop playsinline>
+    <source src="videos/socials-bg.mp4" type="video/mp4">
+  </video>
+</div>
+<div class="video-overlay"></div>
 
-  <ul class="nav-links nav-center">
+<!-- NAVBAR -->
+<nav class="navbar">
+  <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="team.html">Roster</a></li>
     <li><a href="tournaments.html">Tournaments</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="socials.html">Socials</a></li>
     <li><a href="media.html">Media</a></li>
     <li><a href="join.html">Join Us</a></li>
     <li><a href="shop.html">Shop</a></li>
-
   </ul>
 </nav>
 
-  <!-- VIDEO BACKGROUND -->
-  <div class="video-bg">
-    <video autoplay muted loop playsinline>
-      <source src="videos/socials-bg.mp4" type="video/mp4">
-    </video>
-    <div class="video-overlay"></div>
-  </div>
-<main class="page socials-page">
-
-  <section class="socials-section">
-   <section class="latest-updates">
-  <h2>Latest Updates</h2>
-
-  <div class="social-grid">
-
-    <a href="https://youtube.com" target="_blank" class="social-card youtube">
-      <img src="images/youtube.png" alt="YouTube">
-      <span>Watch on YouTube</span>
-    </a>
-
-    <a href="https://tiktok.com" target="_blank" class="social-card tiktok">
-      <img src="images/tiktok.png" alt="TikTok">
-      <span>View on TikTok</span>
-    </a>
-
-    <a href="https://twitter.com" target="_blank" class="social-card twitter">
-      <img src="images/twitter.png" alt="Twitter">
-      <span>See on Twitter</span>
-    </a>
-
-  </div>
+<!-- HEADER -->
+<section class="page-header">
+  <h1>Connect With H4TE</h1>
+  <p>Follow us. Watch us. Compete with us.</p>
 </section>
 
-</main>
+<!-- CONTENT -->
+<div class="content-card">
 
+  <h2>Official Links</h2>
+
+  <div class="button-grid">
+
+    <a href="https://battlefy.com/h4te-tournament" target="_blank" class="link-btn battlefy">
+      🎮 Battlefy Tournament
+    </a>
+
+    <a href="https://www.tiktok.com/@h4teballistic" target="_blank" class="link-btn tiktok">
+      🎵 TikTok
+    </a>
+
+    <a href="https://www.youtube.com/@H4TEEU" target="_blank" class="link-btn youtube">
+      ▶ YouTube
+    </a>
+
+    <a href="https://x.com/h4teBallistic" target="_blank" class="link-btn twitter">
+      𝕏 Twitter
+    </a>
+
+    <a href="https://discord.gg/WAYsXGvByH" target="_blank" class="link-btn discord">
+      💬 Discord
+    </a>
+
+  </div>
+
+</div>
+
+</body>
+</html>
