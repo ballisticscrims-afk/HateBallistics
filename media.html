@@ -322,6 +322,32 @@ body{
     <circle cx="18" cy="21" r="1"></circle>
   </svg>
 
+      <!-- LOGIN MODAL -->
+<div class="modal" id="loginModal">
+  <div class="modal-box">
+    <h2>Member Login</h2>
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <button onclick="closeLogin()">Login</button>
+  </div>
+</div>
+
+<!-- SEARCH MODAL -->
+<div class="modal" id="searchModal">
+  <div class="modal-box">
+    <h2>Search</h2>
+    <input type="text" placeholder="Search H4TE...">
+    <button onclick="closeSearch()">Close</button>
+  </div>
+</div>
+
+<!-- BASKET -->
+<div class="basket" id="basketDrawer">
+  <div class="close-basket" onclick="toggleBasket()">✕</div>
+  <h2>Your Basket</h2>
+  <p>No items yet.</p>
+</div>
+
 </div>
 
 </nav>
