@@ -372,6 +372,31 @@ body{
 </div>
 
 </nav>
+<!-- LOGIN MODAL -->
+<div class="modal" id="loginModal">
+  <div class="modal-box">
+    <h2>Member Login</h2>
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <button onclick="closeLogin()">Login</button>
+  </div>
+</div>
+
+<!-- SEARCH MODAL -->
+<div class="modal" id="searchModal">
+  <div class="modal-box">
+    <h2>Search</h2>
+    <input type="text" placeholder="Search H4TE...">
+    <button onclick="closeSearch()">Close</button>
+  </div>
+</div>
+
+<!-- BASKET -->
+<div class="basket" id="basketDrawer">
+  <div class="close-basket" onclick="toggleBasket()">✕</div>
+  <h2>Your Basket</h2>
+  <p>No items yet.</p>
+</div>
 
 <!-- ===== PAGE HEADER (NO BLACK BOX) ===== -->
 <section class="page-header">
@@ -473,31 +498,27 @@ body{
     </div>
   </div>
 </section>
-<!-- LOGIN MODAL -->
-<div class="modal" id="loginModal">
-  <div class="modal-box">
-    <h2>Member Login</h2>
-    <input type="text" placeholder="Username">
-    <input type="password" placeholder="Password">
-    <button onclick="closeLogin()">Login</button>
-  </div>
-</div>
+<script>
+function openLogin() {
+  document.getElementById("loginModal").style.display = "flex";
+}
 
-<!-- SEARCH MODAL -->
-<div class="modal" id="searchModal">
-  <div class="modal-box">
-    <h2>Search</h2>
-    <input type="text" placeholder="Search H4TE...">
-    <button onclick="closeSearch()">Close</button>
-  </div>
-</div>
+function closeLogin() {
+  document.getElementById("loginModal").style.display = "none";
+}
 
-<!-- BASKET -->
-<div class="basket" id="basketDrawer">
-  <div class="close-basket" onclick="toggleBasket()">✕</div>
-  <h2>Your Basket</h2>
-  <p>No items yet.</p>
-</div>
+function openSearch() {
+  document.getElementById("searchModal").style.display = "flex";
+}
+
+function closeSearch() {
+  document.getElementById("searchModal").style.display = "none";
+}
+
+function toggleBasket() {
+  document.getElementById("basketDrawer").classList.toggle("open");
+}
+</script>
 
 </body>
 </html>
