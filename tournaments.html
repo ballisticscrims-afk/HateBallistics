@@ -8,188 +8,222 @@
 <style>
 
 /* =========================
-   GLOBAL STYLE
+   RESET
 ========================= */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
 }
 
-body {
-  background: #000;
-  color: white;
-  overflow-x: hidden;
+body{
+  color:white;
+  overflow-x:hidden;
+  background:black;
+}
+
+/* =========================
+   VIDEO BACKGROUND
+========================= */
+
+.video-bg{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:-2;
+  overflow:hidden;
+}
+
+.video-bg video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.video-overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.75);
+  z-index:-1;
 }
 
 /* =========================
    NAVBAR
 ========================= */
 
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 70px;
-  background: rgba(0,0,0,0.95);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+.navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  height:70px;
+  background:rgba(0,0,0,0.95);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
 }
 
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 40px;
+.nav-links{
+  display:flex;
+  list-style:none;
+  gap:40px;
 }
 
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
+.nav-links a{
+  text-decoration:none;
+  color:white;
+  font-weight:600;
+  transition:0.3s;
 }
 
-.nav-links a:hover {
-  color: #ff0000;
+.nav-links a:hover{
+  color:#ff0000;
 }
 
 /* =========================
-   PAGE HEADER
+   HEADER
 ========================= */
 
-.page-header {
-  padding-top: 140px;
-  padding-bottom: 80px;
-  text-align: center;
+.page-header{
+  padding-top:150px;
+  padding-bottom:80px;
+  text-align:center;
 }
 
-.page-header h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
+.page-header h1{
+  font-size:48px;
+  margin-bottom:10px;
 }
 
-.page-header p {
-  color: #aaa;
-  font-size: 18px;
+.page-header p{
+  color:#aaa;
+  font-size:18px;
 }
 
 /* =========================
    SECTION TITLE
 ========================= */
 
-.section-title {
-  text-align: center;
-  font-size: 32px;
-  margin: 80px 0 40px;
+.section-title{
+  text-align:center;
+  font-size:32px;
+  margin:80px 0 40px;
 }
 
 /* =========================
-   TOURNAMENT GRID
+   GRID
 ========================= */
 
-.tournament-grid {
-  max-width: 1200px;
-  margin: 0 auto 100px;
-  padding: 0 40px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
+.tournament-grid{
+  max-width:1200px;
+  margin:0 auto 100px;
+  padding:0 40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:40px;
 }
 
 /* =========================
-   TOURNAMENT CARD
+   CARD
 ========================= */
 
-.tournament-card {
-  background: rgba(0,0,0,0.85);
-  padding: 40px;
-  border-radius: 20px;
-  text-align: center;
-  transition: 0.3s ease;
-  box-shadow: 0 0 40px rgba(255,0,0,0.05);
+.tournament-card{
+  background:rgba(0,0,0,0.85);
+  padding:40px;
+  border-radius:20px;
+  text-align:center;
+  transition:0.3s;
+  box-shadow:0 0 40px rgba(255,0,0,0.05);
 }
 
-.tournament-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 60px rgba(255,0,0,0.15);
+.tournament-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 0 60px rgba(255,0,0,0.15);
 }
 
-.tournament-card h3 {
-  margin-bottom: 15px;
-  font-size: 22px;
+.tournament-card h3{
+  margin-bottom:15px;
+  font-size:22px;
 }
 
-.tournament-card p {
-  color: #bbb;
-  margin-bottom: 10px;
+.tournament-card p{
+  color:#bbb;
+  margin-bottom:10px;
 }
 
-/* Status Badges */
-
-.badge {
-  display: inline-block;
-  padding: 8px 18px;
-  border-radius: 50px;
-  font-size: 14px;
-  font-weight: bold;
-  margin-top: 15px;
+.badge{
+  display:inline-block;
+  padding:8px 18px;
+  border-radius:50px;
+  font-size:14px;
+  font-weight:bold;
+  margin-top:15px;
 }
 
-.upcoming {
-  background: #ff0000;
+.upcoming{
+  background:#ff0000;
 }
 
-.completed {
-  background: #444;
+.completed{
+  background:#444;
 }
 
-/* Signup Box */
+/* =========================
+   SIGNUP BOX
+========================= */
 
-.signup-box {
-  max-width: 900px;
-  margin: 0 auto 120px;
-  padding: 60px;
-  background: rgba(0,0,0,0.9);
-  border-radius: 25px;
-  text-align: center;
-  box-shadow: 0 0 60px rgba(255,0,0,0.1);
+.signup-box{
+  max-width:900px;
+  margin:0 auto 120px;
+  padding:60px;
+  background:rgba(0,0,0,0.9);
+  border-radius:25px;
+  text-align:center;
+  box-shadow:0 0 60px rgba(255,0,0,0.1);
 }
 
-.signup-box h2 {
-  margin-bottom: 20px;
+.signup-box h2{
+  margin-bottom:20px;
 }
 
-.signup-box p {
-  color: #bbb;
-  margin-bottom: 30px;
+.signup-box p{
+  color:#bbb;
+  margin-bottom:30px;
 }
 
-.signup-btn {
-  background: #ff0000;
-  color: white;
-  padding: 14px 35px;
-  border-radius: 40px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
+.signup-btn{
+  background:#ff0000;
+  color:white;
+  padding:14px 35px;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
 }
 
-.signup-btn:hover {
-  background: #cc0000;
+.signup-btn:hover{
+  background:#cc0000;
 }
 
 </style>
 </head>
 <body>
 
-<!-- =========================
-     NAVBAR
-========================= -->
+<!-- VIDEO BACKGROUND -->
+<div class="video-bg">
+  <video autoplay muted loop playsinline>
+    <source src="videos/tournaments-bg.mp4" type="video/mp4">
+  </video>
+</div>
+<div class="video-overlay"></div>
 
+<!-- NAVBAR -->
 <nav class="navbar">
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
@@ -202,85 +236,75 @@ body {
   </ul>
 </nav>
 
-<!-- =========================
-     PAGE HEADER
-========================= -->
-
+<!-- HEADER -->
 <section class="page-header">
   <h1>Tournaments</h1>
-  <p>Upcoming & Past H4TE Tournaments</p>
+  <p>Upcoming & Past H4TE Competitions</p>
 </section>
 
-<!-- =========================
-     UPCOMING
-========================= -->
-
+<!-- UPCOMING -->
 <h2 class="section-title">Upcoming Tournaments</h2>
 
 <div class="tournament-grid">
 
-  <div class="tournament-card">
-    <h3>H4TE UNDERDOG TOURNAMENT</h3>
-    <p>Time:3PM EVERY SATURDAY</p>
-    <p>Format: Join Discord To Play</p>
-    <span class="badge upcoming">Upcoming</span>
-  </div>
+<div class="tournament-card">
+<h3>H4TE UNDERDOG TOURNAMENT</h3>
+<p>Time:3PM EVERY SATURDAY</p>
+<p>Format: Join Discord To Play</p>
+<span class="badge upcoming">Upcoming</span>
+</div>
 
-  <div class="tournament-card">
-    <h3>H4TE MAIN TOURNAMENT</h3>
-    <p>Time: 3PM EVERY SUNDAY</p>
-    <p>Sign Up To Play</p>
-    <span class="badge upcoming">Upcoming</span>
-  </div>
+<div class="tournament-card">
+<h3>H4TE MAIN TOURNAMENT</h3>
+<p>Time: 3PM EVERY SUNDAY</p>
+<p>Sign Up To Play</p>
+<span class="badge upcoming">Upcoming</span>
+</div>
 
-  <div class="tournament-card">
-    <h3>H4TE RANDOM</h3>
-    <p>Coming Soon</p>
-    <p>Format: 5v5</p>
-    <span class="badge upcoming">Upcoming</span>
-  </div>
+<div class="tournament-card">
+<h3>H4TE RANDOM</h3>
+<p>Coming Soon</p>
+<p>Format: 5v5</p>
+<span class="badge upcoming">Upcoming</span>
+</div>
 
 </div>
 
 <!-- =========================
-     PAST
+PAST
 ========================= -->
 
 <h2 class="section-title">Past Tournaments</h2>
 
 <div class="tournament-grid">
 
-  <div class="tournament-card">
-    <h3>H4TE Main Tournament</h3>
-    <p>Placement: 🥇 1st Place OXES</p>
-    <p>Year: 2026</p>
-    <span class="badge completed">Completed</span>
-  </div>
-
-  <div class="tournament-card">
-    <h3>Underdog Cup</h3>
-    <p>Placement: 🥇 1st Place LAW</p>
-    <p>Year: 2026</p>
-    <span class="badge completed">Completed</span>
-  </div>
-
-  <div class="tournament-card">
-    <h3>Ranger Pistol Only</h3>
-    <p>Placement: 🥇 1st Place Ranger Monkey</p>
-    <p>Year: 2025</p>
-    <span class="badge completed">Completed</span>
-  </div>
-
+<div class="tournament-card">
+<h3>H4TE Main Tournament</h3>
+<p>Placement: 🥇 1st Place OXES</p>
+<p>Year: 2026</p>
+<span class="badge completed">Completed</span>
 </div>
 
-<!-- =========================
-     SIGNUP BOX
-========================= -->
+<div class="tournament-card">
+<h3>Underdog Cup</h3>
+<p>Placement: 🥇 1st Place LAW</p>
+<p>Year: 2026</p>
+<span class="badge completed">Completed</span>
+</div>
 
+<div class="tournament-card">
+<h3>Ranger Pistol Only</h3>
+<p>Placement: 🥇 1st Place Ranger Monkey</p>
+<p>Year: 2025</p>
+<span class="badge completed">Completed</span>
+</div>
+
+</div>
+<!-- SIGNUP -->
 <div class="signup-box">
   <h2>Want To Compete?</h2>
   <p>Sign up for our upcoming tournaments and compete with the best.</p>
-  <a href="https://battlefy.com" target="_blank" class="signup-btn">
+  <a href="https://battlefy.com/h4te-tournament" target="_blank" class="signup-btn">
     Sign Up Now
   </a>
 </div>
