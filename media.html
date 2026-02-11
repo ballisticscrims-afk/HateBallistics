@@ -54,34 +54,234 @@ body{
 /* =========================
    NAVBAR
 ========================= */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>H4TE Icons Demo</title>
+
+<style>
+
+/* ================= RESET ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#000;
+  color:white;
+}
+
+/* ================= NAVBAR ================= */
 .navbar{
+  height:70px;
+  background:linear-gradient(to right,#000,#1a0000);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 40px;
+}
+
+.nav-left{
+  font-weight:bold;
+  font-size:20px;
+  color:white;
+}
+
+.nav-right{
+  display:flex;
+  gap:25px;
+  align-items:center;
+}
+
+/* ================= ICON STYLE ================= */
+.icon-btn{
+  width:28px;
+  height:28px;
+  cursor:pointer;
+  transition:0.3s;
+  fill:none;
+  stroke:white;
+  stroke-width:2;
+}
+
+.icon-btn:hover{
+  stroke:red;
+  transform:scale(1.1);
+}
+
+/* ================= MODALS ================= */
+.modal{
   position:fixed;
   top:0;
+  left:0;
   width:100%;
-  height:70px;
-  background:rgba(0,0,0,0.95);
-  display:flex;
+  height:100%;
+  background:rgba(0,0,0,0.8);
+  display:none;
   justify-content:center;
   align-items:center;
-  z-index:1000;
+  z-index:2000;
 }
 
-.nav-links{
-  list-style:none;
-  display:flex;
-  gap:40px;
+.modal-box{
+  background:#111;
+  padding:40px;
+  border-radius:20px;
+  width:350px;
+  border:1px solid rgba(255,0,0,0.4);
+  text-align:center;
 }
 
-.nav-links a{
-  text-decoration:none;
+.modal-box h2{
+  margin-bottom:20px;
+}
+
+.modal-box input{
+  width:100%;
+  padding:10px;
+  margin-bottom:15px;
+  background:#000;
+  border:1px solid #333;
   color:white;
-  font-weight:600;
-  transition:0.3s;
+  border-radius:8px;
 }
 
-.nav-links a:hover{
+.modal-box button{
+  width:100%;
+  padding:12px;
+  background:red;
+  border:none;
+  border-radius:10px;
+  color:white;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.modal-box button:hover{
+  background:#ff1a1a;
+}
+
+/* ================= BASKET DRAWER ================= */
+.basket{
+  position:fixed;
+  right:-350px;
+  top:0;
+  width:350px;
+  height:100%;
+  background:#111;
+  border-left:2px solid red;
+  padding:30px;
+  transition:0.4s;
+  z-index:2000;
+}
+
+.basket.open{
+  right:0;
+}
+
+.basket h2{
+  margin-bottom:20px;
+}
+
+.close-btn{
+  position:absolute;
+  top:15px;
+  right:20px;
+  cursor:pointer;
+  font-size:20px;
   color:red;
 }
+
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-left">H4TE</div>
+
+  <div class="nav-right">
+
+    <!-- LOGIN ICON -->
+    <svg class="icon-btn" onclick="openLogin()" viewBox="0 0 24 24">
+      <circle cx="12" cy="8" r="4"></circle>
+      <path d="M4 20c1.5-4 14.5-4 16 0"></path>
+    </svg>
+
+    <!-- SEARCH ICON -->
+    <svg class="icon-btn" onclick="openSearch()" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="7"></circle>
+      <line x1="16.5" y1="16.5" x2="22" y2="22"></line>
+    </svg>
+
+    <!-- BASKET ICON -->
+    <svg class="icon-btn" onclick="toggleBasket()" viewBox="0 0 24 24">
+      <path d="M6 6h15l-1.5 9h-12z"></path>
+      <circle cx="9" cy="21" r="1"></circle>
+      <circle cx="18" cy="21" r="1"></circle>
+    </svg>
+
+  </div>
+</nav>
+
+<!-- LOGIN MODAL -->
+<div class="modal" id="loginModal">
+  <div class="modal-box">
+    <h2>Member Login</h2>
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <button onclick="closeLogin()">Login</button>
+  </div>
+</div>
+
+<!-- SEARCH MODAL -->
+<div class="modal" id="searchModal">
+  <div class="modal-box">
+    <h2>Search</h2>
+    <input type="text" placeholder="Search H4TE...">
+    <button onclick="closeSearch()">Close</button>
+  </div>
+</div>
+
+<!-- BASKET DRAWER -->
+<div class="basket" id="basketDrawer">
+  <div class="close-btn" onclick="toggleBasket()">✕</div>
+  <h2>Your Basket</h2>
+  <p>No items yet.</p>
+</div>
+
+<script>
+
+function openLogin(){
+  document.getElementById("loginModal").style.display = "flex";
+}
+
+function closeLogin(){
+  document.getElementById("loginModal").style.display = "none";
+}
+
+function openSearch(){
+  document.getElementById("searchModal").style.display = "flex";
+}
+
+function closeSearch(){
+  document.getElementById("searchModal").style.display = "none";
+}
+
+function toggleBasket(){
+  document.getElementById("basketDrawer").classList.toggle("open");
+}
+
+</script>
+
+</body>
+</html>
+
 
 /* =========================
    PAGE HEADER
