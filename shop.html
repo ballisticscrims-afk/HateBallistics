@@ -76,36 +76,47 @@
     }
     /* ================= NAV ICONS ================= */
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.navbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:15px 6%;
+    background:#000;
+    position:fixed;
+    width:100%;
+    z-index:1000;
 }
 
-.nav-links {
-    display: flex;
-    gap: 30px;
+.nav-right{
+    display:flex;
+    gap:20px;
+    align-items:center;
 }
 
-.nav-icons {
-    display: flex;
-    gap: 20px;
-    align-items: center;
+.nav-icon{
+    background:none;
+    border:none;
+    cursor:pointer;
+    position:relative;
 }
 
-.nav-icon {
-    width: 26px;
-    height: 26px;
-    stroke: white;
-    stroke-width: 2;
-    fill: none;
-    cursor: pointer;
-    transition: 0.3s;
+.nav-icon svg{
+    transition:0.3s;
 }
 
-.nav-icon:hover {
-    stroke: red;
-    transform: scale(1.1);
+.nav-icon:hover svg{
+    stroke:red;
+}
+
+#cart-count{
+    position:absolute;
+    top:-6px;
+    right:-8px;
+    background:red;
+    color:white;
+    font-size:10px;
+    padding:2px 6px;
+    border-radius:50%;
 }
 
 /* ================= MODALS ================= */
@@ -180,18 +191,122 @@
     color: red;
     font-size: 18px;
 }
+   .popup{
+    display:none;
+    position:fixed;
+    top:100px;
+    right:40px;
+    width:300px;
+    background:#111;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 0 25px rgba(255,0,0,0.4);
+    z-index:2000;
+}
+
+.popup input{
+    width:100%;
+    padding:10px;
+    margin-bottom:10px;
+    background:#000;
+    border:1px solid red;
+    color:white;
+}
+ 
 
   </style>
 </head>
 <script src="js/transitions.js"></script>
+<script>
+/* TOGGLE FUNCTIONS */
+function toggleLogin(){
+    closeAll();
+    document.getElementById("loginModal").style.display="block";
+}
 
-  <div id="login-modal" class="modal">
-  <h3>Login</h3>
-  <input type="text" id="username" placeholder="Username">
-  <input type="password" id="password" placeholder="Password">
-  <button onclick="login()">Login</button>
-  <p id="login-status"></p>
-</div>
+function toggleSearch(){
+    closeAll();
+    document.getElementById("searchModal").style.display="block";
+}
+
+function openCart(){
+    closeAll();
+    document.getElementById("cartModal").style.display="block";
+    renderCart();
+}
+
+function closeAll(){
+    document.querySelectorAll(".popup").forEach(p=>p.style.display="none");
+}
+
+/* LOGIN SYSTEM */
+function login(){
+    const user = document.getElementById("loginUser").value;
+    const pass = document.getElementById("loginPass").value;
+
+    if(user==="admin" && pass==="h4te123"){
+        localStorage.setItem("loggedIn","true");
+        document.getElementById("loginMsg").innerText="Login Successful!";
+    }else{
+        document.getElementById("loginMsg").innerText="Wrong details.";
+    }
+}
+
+/* SEARCH SYSTEM */
+const pages = [
+    {name:"Home", url:"index.html"},
+    {name:"Roster", url:"roster.html"},
+    {name:"Tournaments", url:"tournaments.html"},
+    {name:"About", url:"about.html"},
+    {name:"Socials", url:"socials.html"},
+    {name:"Media", url:"media.html"},
+    {name:"Join Us", url:"join.html"},
+    {name:"Shop", url:"shop.html"}
+];
+
+function runSearch(){
+    const q = document.getElementById("searchInput").value.toLowerCase();
+    const results = document.getElementById("searchResults");
+    results.innerHTML="";
+    pages.forEach(p=>{
+        if(p.name.toLowerCase().includes(q)){
+            results.innerHTML += `<div onclick="window.location='${p.url}'">${p.name}</div>`;
+        }
+    });
+}
+
+/* CART SYSTEM */
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function addToCart(item){
+    cart.push(item);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
+}
+
+function renderCart(){
+    const container = document.getElementById("cartItems");
+    container.innerHTML="";
+    cart.forEach(item=>{
+        container.innerHTML+=`<div>${item}</div>`;
+    });
+}
+
+function clearCart(){
+    cart=[];
+    localStorage.removeItem("cart");
+    updateCartCount();
+    renderCart();
+}
+
+function updateCartCount(){
+    document.getElementById("cart-count").innerText=cart.length;
+}
+
+updateCartCount();
+</script>
+
+  
 
 
 <body>
@@ -228,52 +343,54 @@
   <div class="nav-icons">
 
   <!-- Login -->
-  <svg class="nav-icon" onclick="openLogin()" viewBox="0 0 24 24">
-    <circle cx="12" cy="8" r="4"></circle>
-    <path d="M4 20c1.5-4 14.5-4 16 0"></path>
-  </svg>
+<div class="nav-right">
+    <button class="nav-icon" onclick="toggleLogin()">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+            <circle cx="12" cy="8" r="4" stroke="white" fill="none" stroke-width="2"/>
+            <path d="M4 20c2-4 14-4 16 0" stroke="white" fill="none" stroke-width="2"/>
+        </svg>
+    </button>
 
-  <!-- Search -->
-  <svg class="nav-icon" onclick="openSearch()" viewBox="0 0 24 24">
-    <circle cx="11" cy="11" r="7"></circle>
-    <line x1="16.5" y1="16.5" x2="22" y2="22"></line>
-  </svg>
+    <button class="nav-icon" onclick="toggleSearch()">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+            <circle cx="11" cy="11" r="7" stroke="white" fill="none" stroke-width="2"/>
+            <line x1="16" y1="16" x2="22" y2="22" stroke="white" stroke-width="2"/>
+        </svg>
+    </button>
 
-  <!-- Basket -->
-  <svg class="nav-icon" onclick="toggleBasket()" viewBox="0 0 24 24">
-    <path d="M6 6h15l-1.5 9h-12z"></path>
-    <circle cx="9" cy="21" r="1"></circle>
-    <circle cx="18" cy="21" r="1"></circle>
-  </svg>
-
+    <button class="nav-icon" onclick="openCart()">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+            <path d="M6 6h15l-2 9H8L6 6z" stroke="white" fill="none" stroke-width="2"/>
+            <circle cx="9" cy="21" r="1.5" fill="white"/>
+            <circle cx="18" cy="21" r="1.5" fill="white"/>
+        </svg>
+        <span id="cart-count">0</span>
+    </button>
 </div>
 
 </nav>
-<!-- LOGIN MODAL -->
-<div class="modal" id="loginModal">
-  <div class="modal-box">
-    <h2>Member Login</h2>
-    <input type="text" placeholder="Username">
-    <input type="password" placeholder="Password">
-    <button onclick="closeLogin()">Login</button>
-  </div>
+<!-- LOGIN -->
+<div id="loginModal" class="popup">
+    <h3>Admin Login</h3>
+    <input type="text" id="loginUser" placeholder="Username">
+    <input type="password" id="loginPass" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p id="loginMsg"></p>
 </div>
 
-<!-- SEARCH MODAL -->
-<div class="modal" id="searchModal">
-  <div class="modal-box">
-    <h2>Search</h2>
-    <input type="text" placeholder="Search H4TE...">
-    <button onclick="closeSearch()">Close</button>
-  </div>
+<!-- SEARCH -->
+<div id="searchModal" class="popup">
+    <input type="text" id="searchInput" placeholder="Search..." onkeyup="runSearch()">
+    <div id="searchResults"></div>
 </div>
 
-<!-- BASKET -->
-<div class="basket" id="basketDrawer">
-  <div class="close-basket" onclick="toggleBasket()">✕</div>
-  <h2>Your Basket</h2>
-  <p>No items yet.</p>
+<!-- CART -->
+<div id="cartModal" class="popup">
+    <h3>Your Basket</h3>
+    <div id="cartItems"></div>
+    <button onclick="clearCart()">Clear Basket</button>
 </div>
+
 
 <!-- ===== SHOP CONTENT ===== -->
 <section class="shop-page">
@@ -385,24 +502,7 @@ function toggleBasket() {
   document.getElementById("basketDrawer").classList.toggle("open");
 }
 </script>
-<script>
-function toggleLogin(){
-  const modal = document.getElementById("login-modal");
-  modal.style.display = modal.style.display === "block" ? "none" : "block";
-}
 
-function login(){
-  const user = document.getElementById("username").value;
-  const pass = document.getElementById("password").value;
-
-  if(user === "admin" && pass === "h4te123"){
-    localStorage.setItem("loggedIn", "true");
-    document.getElementById("login-status").innerText = "Logged In!";
-  } else {
-    document.getElementById("login-status").innerText = "Wrong login.";
-  }
-}
-</script>
 
 </body>
 </html>
