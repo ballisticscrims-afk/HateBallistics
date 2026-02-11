@@ -410,6 +410,27 @@ body{
   <div class="video-card"><video controls src="videos/clutch3.mp4"></video></div>
   <div class="video-card"><video controls src="videos/clutch4.mp4"></video></div>
 </div>
+<script>
+function openLogin() {
+  document.getElementById("loginModal").style.display = "flex";
+}
+
+function closeLogin() {
+  document.getElementById("loginModal").style.display = "none";
+}
+
+function openSearch() {
+  document.getElementById("searchModal").style.display = "flex";
+}
+
+function closeSearch() {
+  document.getElementById("searchModal").style.display = "none";
+}
+
+function toggleBasket() {
+  document.getElementById("basketDrawer").classList.toggle("open");
+}
+</script>
 
 </body>
 </html>
