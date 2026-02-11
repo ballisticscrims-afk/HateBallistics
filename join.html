@@ -139,10 +139,41 @@ button:hover {
   color: #0f0;
   display: none;
 }
+  .modal{
+  display:none;
+  position:fixed;
+  top:80px;
+  right:20px;
+  background:#111;
+  padding:20px;
+  width:300px;
+  border-radius:10px;
+  box-shadow:0 0 20px red;
+}
+
+.modal input{
+  width:100%;
+  padding:10px;
+  background:#000;
+  border:1px solid red;
+  color:#fff;
+}
+
+#search-results div{
+  padding:8px 0;
+  cursor:pointer;
+}
+
 </style>
 </head>
 
   <script src="js/transitions.js"></script>
+
+  <div id="search-modal" class="modal">
+  <input type="text" id="search-input" placeholder="Search H4TE..." onkeyup="performSearch()">
+  <div id="search-results"></div>
+</div>
+
 
 <body>
   
@@ -307,6 +338,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+</script>
+  
+<script>
+const pages = [
+  {name:"Roster", url:"roster.html"},
+  {name:"Tournaments", url:"tournaments.html"},
+  {name:"About", url:"about.html"},
+  {name:"Media", url:"media.html"},
+  {name:"Join Us", url:"join.html"},
+  {name:"Shop", url:"shop.html"}
+];
+
+function toggleSearch(){
+  const modal = document.getElementById("search-modal");
+  modal.style.display = modal.style.display === "block" ? "none" : "block";
+}
+
+function performSearch(){
+  const query = document.getElementById("search-input").value.toLowerCase();
+  const results = document.getElementById("search-results");
+  results.innerHTML = "";
+
+  pages.forEach(page=>{
+    if(page.name.toLowerCase().includes(query)){
+      results.innerHTML += `<div onclick="window.location='${page.url}'">${page.name}</div>`;
+    }
+  });
+}
 </script>
 
 
