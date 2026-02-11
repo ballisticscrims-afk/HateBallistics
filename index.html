@@ -7,7 +7,7 @@
 
 <style>
 
-/* ================= GENERAL ================= */
+/* ================= RESET ================= */
 
 * {
     margin: 0;
@@ -19,6 +19,7 @@
 body {
     background: #000;
     color: white;
+    overflow-x: hidden;
 }
 
 /* ================= NAVBAR ================= */
@@ -62,33 +63,49 @@ body {
     color: red;
 }
 
-/* ================= HERO ================= */
+/* ================= HERO VIDEO ================= */
 
 .hero {
+    position: relative;
     height: 100vh;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
-                url("images/hero.jpg") center/cover no-repeat;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 75px;
     text-align: center;
+    overflow: hidden;
+    padding-top: 75px;
 }
 
-.hero h1 {
-    font-size: 60px;
-    letter-spacing: 3px;
+.hero video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: -1;
+}
+
+.hero-content h1 {
+    font-size: 65px;
+    letter-spacing: 4px;
     margin-bottom: 30px;
 }
 
 .enter-btn {
-    padding: 15px 45px;
+    padding: 15px 50px;
     background: red;
     border: none;
+    border-radius: 40px;
     color: white;
     font-size: 18px;
-    border-radius: 40px;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -98,7 +115,7 @@ body {
     transform: scale(1.05);
 }
 
-/* ================= EXPLORE ================= */
+/* ================= SECTION ================= */
 
 .section {
     padding: 100px 10%;
@@ -106,30 +123,56 @@ body {
 }
 
 .section h2 {
-    font-size: 40px;
-    margin-bottom: 50px;
+    font-size: 42px;
+    margin-bottom: 60px;
 }
+
+/* ================= EXPLORE GRID ================= */
 
 .explore-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
 .explore-card {
-    background: #111;
-    padding: 40px;
-    border-radius: 15px;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
     transition: 0.3s;
 }
 
-.explore-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 20px rgba(255,0,0,0.5);
+.explore-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    filter: brightness(60%);
+    transition: 0.3s;
 }
 
-.explore-card h3 {
-    margin-bottom: 15px;
+.explore-card:hover img {
+    filter: brightness(80%);
+    transform: scale(1.05);
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+.card-overlay h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.card-overlay p {
+    font-size: 14px;
+    opacity: 0.8;
 }
 
 /* ================= SOCIALS ================= */
@@ -142,13 +185,13 @@ body {
 }
 
 .social-btn {
-    background: #111;
-    padding: 20px 40px;
+    padding: 18px 40px;
     border-radius: 50px;
     text-decoration: none;
     color: white;
-    transition: 0.3s;
+    background: #111;
     border: 1px solid red;
+    transition: 0.3s;
 }
 
 .social-btn:hover {
@@ -182,33 +225,74 @@ body {
     </ul>
 </nav>
 
-<!-- HERO -->
+<!-- HERO VIDEO -->
 
 <section class="hero">
-    <h1>WELCOME TO H4TE</h1>
-    <button class="enter-btn" onclick="location.href='team.html'">ENTER</button>
+    <video autoplay muted loop playsinline>
+        <source src="videos/hero-bg.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-content">
+        <h1>WELCOME TO H4TE</h1>
+        <button class="enter-btn" onclick="location.href='team.html'">ENTER</button>
+    </div>
 </section>
 
 <!-- EXPLORE -->
 
 <section class="section">
-    <h2>Explore</h2>
+    <h2>Explore H4TE</h2>
 
     <div class="explore-grid">
-        <div class="explore-card">
-            <h3>Our Roster</h3>
-            <p>Meet the players representing H4TE.</p>
+
+        <div class="explore-card" onclick="location.href='team.html'">
+            <img src="images/roster.jpg">
+            <div class="card-overlay">
+                <h3>Roster</h3>
+                <p>Meet the team behind H4TE.</p>
+            </div>
         </div>
 
-        <div class="explore-card">
-            <h3>Tournaments</h3>
-            <p>Track our competitive journey.</p>
+        <div class="explore-card" onclick="location.href='tournaments.html'">
+            <img src="images/tournaments.jpg">
+            <div class="card-overlay">
+                <h3>Tournaments</h3>
+                <p>Upcoming & past competitions.</p>
+            </div>
         </div>
 
-        <div class="explore-card">
-            <h3>Media</h3>
-            <p>Watch highlights and top clips.</p>
+        <div class="explore-card" onclick="location.href='media.html'">
+            <img src="images/media.jpg">
+            <div class="card-overlay">
+                <h3>Media</h3>
+                <p>Highlights & top clips.</p>
+            </div>
         </div>
+
+        <div class="explore-card" onclick="location.href='about.html'">
+            <img src="images/about.jpg">
+            <div class="card-overlay">
+                <h3>About Us</h3>
+                <p>Learn about H4TE history.</p>
+            </div>
+        </div>
+
+        <div class="explore-card" onclick="location.href='join.html'">
+            <img src="images/join.jpg">
+            <div class="card-overlay">
+                <h3>Join Us</h3>
+                <p>Apply to represent H4TE.</p>
+            </div>
+        </div>
+
+        <div class="explore-card" onclick="location.href='shop.html'">
+            <img src="images/shop.jpg">
+            <div class="card-overlay">
+                <h3>Shop</h3>
+                <p>Official H4TE merchandise.</p>
+            </div>
+        </div>
+
     </div>
 </section>
 
@@ -227,3 +311,4 @@ body {
 
 </body>
 </html>
+
