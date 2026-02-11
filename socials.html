@@ -1,10 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>H4TE | Socials</title>
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 
@@ -85,7 +87,7 @@ body{
 }
 
 /* =========================
-   PAGE HEADER
+   HEADER
 ========================= */
 .page-header{
   padding-top:150px;
@@ -100,63 +102,75 @@ body{
 
 .page-header p{
   color:#ccc;
-  font-size:18px;
 }
 
 /* =========================
-   MAIN CONTENT CARD
+   SOCIAL GRID
 ========================= */
-.content-card{
-  max-width:1100px;
-  margin:0 auto 100px;
-  padding:60px 40px;
-  background:rgba(0,0,0,0.9);
-  border-radius:25px;
-  border:1px solid rgba(255,0,0,0.2);
-  text-align:center;
-  transition:0.3s ease;
-}
-
-.content-card:hover{
-  box-shadow:0 0 40px rgba(255,0,0,0.4);
-}
-
-/* =========================
-   BUTTON GRID
-========================= */
-.button-grid{
+.social-grid{
+  max-width:1200px;
+  margin:0 auto 120px;
+  padding:0 40px;
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:30px;
-  margin-top:40px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:40px;
 }
 
 /* =========================
-   BUTTON STYLE
+   GLASS CARD
 ========================= */
-.link-btn{
+.social-card{
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,0,0,0.3);
+  border-radius:20px;
+  padding:40px 30px;
+  text-align:center;
+  transition:0.4s ease;
+}
+
+.social-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 30px rgba(255,0,0,0.6);
+}
+
+/* =========================
+   ICON
+========================= */
+.social-icon{
+  font-size:42px;
+  margin-bottom:20px;
+  color:red;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.social-btn{
   display:inline-block;
-  padding:18px 25px;
-  border-radius:50px;
+  margin-top:20px;
+  padding:12px 28px;
+  border-radius:40px;
   text-decoration:none;
   font-weight:600;
-  background:#111;
-  border:1px solid rgba(255,0,0,0.3);
+  background:transparent;
+  border:2px solid red;
   color:white;
-  transition:0.3s ease;
+  transition:0.3s;
 }
 
-.link-btn:hover{
-  transform:translateY(-6px);
-  box-shadow:0 0 25px rgba(255,0,0,0.6);
+.social-btn:hover{
+  background:red;
+  box-shadow:0 0 20px red;
 }
 
-/* Platform Hover Colors */
-.battlefy:hover{ background:#ff0000; }
-.tiktok:hover{ background:#ff0050; }
-.youtube:hover{ background:#cc0000; }
-.twitter:hover{ background:#1d9bf0; }
-.discord:hover{ background:#5865F2; }
+/* Platform Neon Colors */
+
+.youtube:hover{ box-shadow:0 0 25px #cc0000; }
+.tiktok:hover{ box-shadow:0 0 25px #ff0050; }
+.twitter:hover{ box-shadow:0 0 25px #1d9bf0; }
+.discord:hover{ box-shadow:0 0 25px #5865F2; }
+.battlefy:hover{ box-shadow:0 0 25px #ff0000; }
 
 </style>
 </head>
@@ -186,39 +200,68 @@ body{
 <!-- HEADER -->
 <section class="page-header">
   <h1>Connect With H4TE</h1>
-  <p>Follow us. Watch us. Compete with us.</p>
+  <p>Follow. Watch. Compete.</p>
 </section>
 
-<!-- CONTENT -->
-<div class="content-card">
+<!-- SOCIAL CARDS -->
+<section class="social-grid">
 
-  <h2>Official Links</h2>
-
-  <div class="button-grid">
-
-    <a href="https://battlefy.com/h4te-tournament" target="_blank" class="link-btn battlefy">
-      🎮 Battlefy Tournament
+  <div class="social-card youtube">
+    <div class="social-icon">
+      <i class="fab fa-youtube"></i>
+    </div>
+    <h3>YouTube</h3>
+    <p>Tournaments, highlights & competitive content.</p>
+    <a href="https://youtube.com/@YOURCHANNEL" target="_blank" class="social-btn">
+      Visit Channel
     </a>
-
-    <a href="https://www.tiktok.com/@h4teballistic" target="_blank" class="link-btn tiktok">
-      🎵 TikTok
-    </a>
-
-    <a href="https://www.youtube.com/@H4TEEU" target="_blank" class="link-btn youtube">
-      ▶ YouTube
-    </a>
-
-    <a href="https://x.com/h4teBallistic" target="_blank" class="link-btn twitter">
-      𝕏 Twitter
-    </a>
-
-    <a href="https://discord.gg/WAYsXGvByH" target="_blank" class="link-btn discord">
-      💬 Discord
-    </a>
-
   </div>
 
-</div>
+  <div class="social-card tiktok">
+    <div class="social-icon">
+      <i class="fab fa-tiktok"></i>
+    </div>
+    <h3>TikTok</h3>
+    <p>Clips, funny moments & viral plays.</p>
+    <a href="https://tiktok.com/@YOURNAME" target="_blank" class="social-btn">
+      Follow Us
+    </a>
+  </div>
+
+  <div class="social-card twitter">
+    <div class="social-icon">
+      <i class="fab fa-x-twitter"></i>
+    </div>
+    <h3>Twitter / X</h3>
+    <p>Announcements & updates.</p>
+    <a href="https://twitter.com/YOURNAME" target="_blank" class="social-btn">
+      See Updates
+    </a>
+  </div>
+
+  <div class="social-card discord">
+    <div class="social-icon">
+      <i class="fab fa-discord"></i>
+    </div>
+    <h3>Discord</h3>
+    <p>Join the community & compete.</p>
+    <a href="https://discord.gg/YOURSERVER" target="_blank" class="social-btn">
+      Join Server
+    </a>
+  </div>
+
+  <div class="social-card battlefy">
+    <div class="social-icon">
+      <i class="fas fa-trophy"></i>
+    </div>
+    <h3>Battlefy</h3>
+    <p>Sign up for official tournaments.</p>
+    <a href="https://battlefy.com/YOURTOURNAMENT" target="_blank" class="social-btn">
+      View Tournament
+    </a>
+  </div>
+
+</section>
 
 </body>
 </html>
