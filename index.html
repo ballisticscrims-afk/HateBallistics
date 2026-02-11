@@ -1,50 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
-<link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
-
-  <!-- Primary Meta Tags -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>H4TE Esports</title>
-<meta name="title" content="H4TE Esports">
-<meta name="description" content="Official H4TE Website — Rosters, Tournaments, Highlights, and Tryouts.">
 
-<!-- Open Graph / Discord / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://ballisticscrims-afk.github.io/HateBallistics/">
-<meta property="og:title" content="H4TE Esports">
-<meta property="og:description" content="Rosters • Tournaments • Highlights • Join H4TE">
-<meta property="og:image" content="https://ballisticscrims-afk.github.io/HateBallistics/images/embed.png">
+<style>
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://ballisticscrims-afk.github.io/HateBallistics/">
-<meta property="twitter:title" content="H4TE Esports">
-<meta property="twitter:description" content="Rosters • Tournaments • Highlights • Join H4TE">
-<meta property="twitter:image" content="https://ballisticscrims-afk.github.io/HateBallistics/images/embed.png">
+/* ================= GENERAL ================= */
 
-  <meta charset="UTF-8">
-  <title>H4TE Esports</title>
-  <link rel="stylesheet" href="style.css">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #000;
+    color: white;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 75px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 60px;
+    z-index: 1000;
+}
+
+.nav-left {
+    position: absolute;
+    left: 60px;
+}
+
+.nav-left img {
+    height: 35px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: red;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+                url("images/hero.jpg") center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 75px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 60px;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+}
+
+.enter-btn {
+    padding: 15px 45px;
+    background: red;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.enter-btn:hover {
+    background: #ff2a2a;
+    transform: scale(1.05);
+}
+
+/* ================= EXPLORE ================= */
+
+.section {
+    padding: 100px 10%;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 30px;
+}
+
+.explore-card {
+    background: #111;
+    padding: 40px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.explore-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(255,0,0,0.5);
+}
+
+.explore-card h3 {
+    margin-bottom: 15px;
+}
+
+/* ================= SOCIALS ================= */
+
+.social-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    background: #111;
+    padding: 20px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+    border: 1px solid red;
+}
+
+.social-btn:hover {
+    background: red;
+    box-shadow: 0 0 20px red;
+}
+
+</style>
 </head>
 
-<script src="js/transitions.js"></script>
-  <script src="js/scroll.js"></script>
-  <script async src="https://www.tiktok.com/embed.js"></script>
-
-<script src="js/transitions.js"></script>
-
 <body>
-  
-<div class="announcement-banner" id="announcementBanner">
-  <span>🔥 APPLY NOW FOR H4TE TODAY</span>
-  <a href="join.html" class="banner-btn">Apply</a>
-  <button class="banner-close" id="closeBanner">✕</button>
 
-  <nav class="navbar">
+<!-- NAVBAR -->
 
+<nav class="navbar">
     <div class="nav-left">
         <a href="index.html">
             <img src="images/logo.png" alt="H4TE Logo">
@@ -61,150 +180,50 @@
         <li><a href="join.html">Join Us</a></li>
         <li><a href="shop.html">Shop</a></li>
     </ul>
-
 </nav>
 
-  <div class="nav-icons">
-
-  <!-- Login -->
-  <svg class="nav-icon" onclick="openLogin()" viewBox="0 0 24 24">
-    <circle cx="12" cy="8" r="4"></circle>
-    <path d="M4 20c1.5-4 14.5-4 16 0"></path>
-  </svg>
-
-  <!-- Search -->
-  <svg class="nav-icon" onclick="openSearch()" viewBox="0 0 24 24">
-    <circle cx="11" cy="11" r="7"></circle>
-    <line x1="16.5" y1="16.5" x2="22" y2="22"></line>
-  </svg>
-
-  <!-- Basket -->
-  <svg class="nav-icon" onclick="toggleBasket()" viewBox="0 0 24 24">
-    <path d="M6 6h15l-1.5 9h-12z"></path>
-    <circle cx="9" cy="21" r="1"></circle>
-    <circle cx="18" cy="21" r="1"></circle>
-  </svg>
-
-</div>
-
-</nav>
-
+<!-- HERO -->
 
 <section class="hero">
-  <video autoplay muted loop playsinline class="hero-video">
-    <source src="videos/hero.mp4" type="video/mp4">
-  </video>
-
-  <div class="hero-overlay"></div>
-
-  <div class="hero-content">
     <h1>WELCOME TO H4TE</h1>
-    <p>H4TE Offical Website</p>
-  </div>
-</section>
-  <section class="latest-updates">
-  <h2>Latest Updates</h2>
-
-  <div class="updates-grid">
-
-    <a href="https://www.youtube.com" target="_blank" class="update-card">
-      <img src="images/media/youtube1.jpg" alt="YouTube Highlight">
-      <span>Watch on YouTube</span>
-    </a>
-
-    <a href="https://www.tiktok.com" target="_blank" class="update-card">
-      <img src="images/media/tiktok1.jpg" alt="TikTok Highlight">
-      <span>View on TikTok</span>
-    </a>
-
-    <a href="https://twitter.com" target="_blank" class="update-card">
-      <img src="images/media/twitter1.jpg" alt="Twitter Post">
-      <span>See on Twitter</span>
-    </a>
-
-  </div>
+    <button class="enter-btn" onclick="location.href='team.html'">ENTER</button>
 </section>
 
+<!-- EXPLORE -->
 
+<section class="section">
+    <h2>Explore</h2>
 
+    <div class="explore-grid">
+        <div class="explore-card">
+            <h3>Our Roster</h3>
+            <p>Meet the players representing H4TE.</p>
+        </div>
 
+        <div class="explore-card">
+            <h3>Tournaments</h3>
+            <p>Track our competitive journey.</p>
+        </div>
 
-
-
-<section class="explore-section">
-  <h2 class="explore-title">Explore</h2>
-
-  <div class="explore-grid">
-
-    <!-- ROSTER -->
-    <a href="team.html" class="explore-card">
-      <div class="card-bg roster-bg"></div>
-      <div class="card-content">
-        <h3>Roster</h3>
-        <p>Meet the players who represent H4TE — disciplined, relentless, and built to compete.</p>
-        <span class="cta">View Team →</span>
-      </div>
-    </a>
-
-    <!-- TOURNAMENTS -->
-    <a href="tournaments.html" class="explore-card">
-      <div class="card-bg tournaments-bg"></div>
-      <div class="card-content">
-        <h3>Tournaments</h3>
-        <p>Track our journey through upcoming battles and past victories across competitive events.</p>
-        <span class="cta">View Events →</span>
-      </div>
-    </a>
-
-    <!-- ABOUT -->
-    <a href="about.html" class="explore-card">
-      <div class="card-bg about-bg"></div>
-      <div class="card-content">
-        <h3>About Us</h3>
-        <p>Learn what drives H4TE — our vision, values, and commitment to competitive excellence.</p>
-        <span class="cta">Learn More →</span>
-      </div>
-    </a>
-
-    <!-- SOCIALS -->
-    <a href="socials.html" class="explore-card">
-      <div class="card-bg socials-bg"></div>
-      <div class="card-content">
-        <h3>Socials</h3>
-        <p>Stay connected with H4TE — highlights, updates, and behind-the-scenes moments.</p>
-        <span class="cta">Connect →</span>
-      </div>
-    </a>
-
-  </div>
+        <div class="explore-card">
+            <h3>Media</h3>
+            <p>Watch highlights and top clips.</p>
+        </div>
+    </div>
 </section>
-  <script>
-const banner = document.getElementById("announcementBanner");
-const closeBtn = document.getElementById("closeBanner");
 
-if (localStorage.getItem("bannerClosed")) {
-  banner.style.display = "none";
-}
+<!-- SOCIALS -->
 
-closeBtn.addEventListener("click", () => {
-  banner.style.display = "none";
-  localStorage.setItem("bannerClosed", "true");
-});
-</script>
+<section class="section">
+    <h2>Find Us On Socials</h2>
 
-  
-  </body>
+    <div class="social-grid">
+        <a href="#" class="social-btn">YouTube</a>
+        <a href="#" class="social-btn">TikTok</a>
+        <a href="#" class="social-btn">X</a>
+        <a href="#" class="social-btn">Discord</a>
+    </div>
+</section>
 
-<footer>
-  <p>© 2026 H4TE</p>
-</footer>
-
-<script>
-fetch('/content/home.json')
-  .then(res => res.json())
-  .then(data => {
-    document.getElementById('hero-title').innerText = data.hero_title;
-    document.getElementById('hero-subtitle').innerText = data.hero_subtitle;
-    document.getElementById('hero-image').src = data.hero_image;
-  });
-</script>
+</body>
+</html>
