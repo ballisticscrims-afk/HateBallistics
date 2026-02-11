@@ -185,6 +185,15 @@
 </head>
 <script src="js/transitions.js"></script>
 
+  <div id="login-modal" class="modal">
+  <h3>Login</h3>
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="login()">Login</button>
+  <p id="login-status"></p>
+</div>
+
+
 <body>
   <!-- Video Background -->
 <div class="video-bg">
@@ -374,6 +383,24 @@ function closeSearch() {
 
 function toggleBasket() {
   document.getElementById("basketDrawer").classList.toggle("open");
+}
+</script>
+<script>
+function toggleLogin(){
+  const modal = document.getElementById("login-modal");
+  modal.style.display = modal.style.display === "block" ? "none" : "block";
+}
+
+function login(){
+  const user = document.getElementById("username").value;
+  const pass = document.getElementById("password").value;
+
+  if(user === "admin" && pass === "h4te123"){
+    localStorage.setItem("loggedIn", "true");
+    document.getElementById("login-status").innerText = "Logged In!";
+  } else {
+    document.getElementById("login-status").innerText = "Wrong login.";
+  }
 }
 </script>
 
