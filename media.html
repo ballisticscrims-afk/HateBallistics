@@ -1,239 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
-<link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>H4TE | Media</title>
 
-  <!-- Primary Meta Tags -->
-<title>H4TE Esports</title>
-<meta name="title" content="H4TE Esports">
-<meta name="description" content="Official H4TE Esports website — rosters, tournaments, highlights, and tryouts.">
+<style>
 
-<!-- Open Graph / Discord / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://ballisticscrims-afk.github.io/HateBallistics/">
-<meta property="og:title" content="H4TE Esports">
-<meta property="og:description" content="Rosters • Tournaments • Highlights • Join H4TE">
-<meta property="og:image" content="https://ballisticscrims-afk.github.io/HateBallistics/images/embed.png">
+/* =========================
+   RESET
+========================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://ballisticscrims-afk.github.io/HateBallistics/">
-<meta property="twitter:title" content="H4TE Esports">
-<meta property="twitter:description" content="Rosters • Tournaments • Highlights • Join H4TE">
-<meta property="twitter:image" content="https://ballisticscrims-afk.github.io/HateBallistics/images/embed.png">
+body{
+  background:#000;
+  color:white;
+  overflow-x:hidden;
+}
 
-  <meta charset="UTF-8">
-  <title>H4TE | Media</title>
-  <link rel="stylesheet" href="style.css">
+/* =========================
+   VIDEO BACKGROUND
+========================= */
+.video-bg{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:-2;
+}
+
+.video-bg video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.video-overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.8);
+  z-index:-1;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  height:70px;
+  background:rgba(0,0,0,0.95);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:40px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:white;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:red;
+}
+
+/* =========================
+   PAGE HEADER
+========================= */
+.page-header{
+  padding-top:150px;
+  padding-bottom:60px;
+  text-align:center;
+}
+
+.page-header h1{
+  font-size:48px;
+  margin-bottom:10px;
+}
+
+.page-header p{
+  color:#ccc;
+}
+
+/* =========================
+   FEATURED CLIP
+========================= */
+.featured{
+  max-width:1000px;
+  margin:0 auto 100px;
+  padding:40px;
+  background:rgba(0,0,0,0.9);
+  border-radius:25px;
+  border:1px solid rgba(255,0,0,0.3);
+  text-align:center;
+  transition:0.3s;
+}
+
+.featured:hover{
+  box-shadow:0 0 40px rgba(255,0,0,0.5);
+}
+
+.featured h2{
+  margin-bottom:25px;
+}
+
+.featured video{
+  width:100%;
+  border-radius:15px;
+}
+
+/* =========================
+   SECTION TITLE
+========================= */
+.section-title{
+  text-align:center;
+  font-size:28px;
+  margin:80px 0 40px;
+}
+
+/* =========================
+   VIDEO GRID
+========================= */
+.video-grid{
+  max-width:1200px;
+  margin:0 auto 100px;
+  padding:0 40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+/* =========================
+   VIDEO CARD
+========================= */
+.video-card{
+  background:rgba(0,0,0,0.85);
+  padding:15px;
+  border-radius:20px;
+  transition:0.3s;
+  border:1px solid rgba(255,0,0,0.2);
+}
+
+.video-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 25px rgba(255,0,0,0.5);
+}
+
+.video-card video{
+  width:100%;
+  border-radius:15px;
+}
+
+</style>
 </head>
-  <script src="js/transitions.js"></script>
-
 <body>
 
-<nav class="navbar">
-  <div class="nav-left">
-    <a href="index.html" class="nav-logo">
-      <img src="images/logo.png" alt="H4TE Logo">
-    </a>
-  </div>
+<!-- VIDEO BACKGROUND -->
+<div class="video-bg">
+  <video autoplay muted loop playsinline>
+    <source src="videos/media-bg.mp4" type="video/mp4">
+  </video>
+</div>
+<div class="video-overlay"></div>
 
-  <ul class="nav-links nav-center">
+<!-- NAVBAR -->
+<nav class="navbar">
+  <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="team.html">Roster</a></li>
     <li><a href="tournaments.html">Tournaments</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="socials.html">Socials</a></li>
     <li><a href="media.html">Media</a></li>
     <li><a href="join.html">Join Us</a></li>
     <li><a href="shop.html">Shop</a></li>
-
   </ul>
 </nav>
+
+<!-- HEADER -->
 <section class="page-header">
-  <h1>Media</h1>
-  <p>Top clips, highlights, and moments from H4TE</p>
+  <h1>H4TE Media</h1>
+  <p>Highlights. Clutches. Content.</p>
 </section>
 
-</section>
+<!-- FEATURED CLIP -->
+<div class="featured">
+  <h2>🔥 Clip of the Week</h2>
+  <video controls>
+    <source src="videos/featured.mp4" type="video/mp4">
+  </video>
+</div>
 
-<body>
+<!-- CONTENT CLIPS -->
+<h2 class="section-title">Content Clips</h2>
+<div class="video-grid">
+  <div class="video-card"><video controls src="videos/content1.mp4"></video></div>
+  <div class="video-card"><video controls src="videos/content2.mp4"></video></div>
+  <div class="video-card"><video controls src="videos/content3.mp4"></video></div>
+  <div class="video-card"><video controls src="videos/content4.mp4"></video></div>
+</div>
 
-  <!-- Background Video -->
-  <div class="video-bg">
-    <video autoplay muted loop playsinline>
-      <source src="videos/media-bg.mp4" type="video/mp4">
-    </video>
-  </div>
+<!-- SCRIM CLIPS -->
+<h2 class="section-title">Scrim Clips</h2>
+<div class="video-grid">
+  <div class="video-card"><video controls src="videos/scrim1.mp4"></video></div>
+  <div class="video-card"><video controls src="videos/scrim2.mp4"></video></div>
+  <div class="video-card"><video controls src="videos/scrim3.mp4"></video></div>
+  <div class="video-card"><video controls src="videos/scrim4.mp4"></video></div>
+</div>
 
-  <!-- Dark overlay -->
-  <div class="video-overlay"></div>
+<!-- TOURNAMENT CLIPS -->
+<h2 class="section-title">Tournament Clips</h2>
+<div class="video-grid">
+  <div class="video-card"><video controls src="videos/tournament1.mp4"></video></div>
+  <div class="video-card"><video controls src="videos/tournament2.mp4"></video></div>
+  <div class="video-card"><video controls src="videos/tournament3.mp4"></video></div>
+  <div class="video-card"><video controls src="videos/tournament4.mp4"></video></div>
+</div>
 
-  <!-- Page Content -->
-<section class="media-section">
-  <h2>Top Clips — Content Creators</h2>
+<!-- FUNNY CLIPS -->
+<h2 class="section-title">Funny Clips</h2>
+<div class="video-grid">
+  <div class="video-card"><video controls src="videos/funny1.mp4"></video></div>
+  <div class="video-card"><video controls src="videos/funny2.mp4"></video></div>
+  <div class="video-card"><video controls src="videos/funny3.mp4"></video></div>
+  <div class="video-card"><video controls src="videos/funny4.mp4"></video></div>
+</div>
 
-  <div class="media-grid">
+<!-- CLUTCH CLIPS -->
+<h2 class="section-title">Clutch Clips</h2>
+<div class="video-grid">
+  <div class="video-card"><video controls src="videos/clutch1.mp4"></video></div>
+  <div class="video-card"><video controls src="videos/clutch2.mp4"></video></div>
+  <div class="video-card"><video controls src="videos/clutch3.mp4"></video></div>
+  <div class="video-card"><video controls src="videos/clutch4.mp4"></video></div>
+</div>
 
-    <div class="media-card">
-      <video controls preload="metadata">
-        <source src="videos/creators/sabsi.mp4" type="video/mp4">
-      </video>
-      <span class="media-tag">H4TE SABSI</span>
-    </div>
-
-    <div class="media-card">
-      <video controls preload="metadata">
-        <source src="videos/creators/hell.mp4" type="video/mp4">
-      </video>
-      <span class="media-tag">H4TE HELL</span>
-    </div>
-
-    <div class="media-card">
-      <video controls preload="metadata">
-        <source src="videos/creators/november.mp4" type="video/mp4">
-      </video>
-      <span class="media-tag">H4TE NOVEMBER</span>
-    </div>
-
-  </div>
-</section>
-
-<section class="media-section">
-  <h2>Top Clips — Competitive</h2>
-
-  <div class="media-grid">
-
-    <div class="media-card">
-      <video controls preload="metadata">
-        <source src="videos/competitive/vabe.mp4" type="video/mp4">
-      </video>
-      <span class="media-tag">H4TE VABE</span>
-    </div>
-
-    <div class="media-card">
-      <video controls preload="metadata">
-        <source src="videos/competitive/skraibl.mp4" type="video/mp4">
-      </video>
-      <span class="media-tag">H4TE SKRAIBL</span>
-    </div>
-
-    <div class="media-card">
-      <video controls preload="metadata">
-        <source src="videos/competitive/kovo.mp4" type="video/mp4">
-      </video>
-      <span class="media-tag">H4TE KOVO</span>
-    </div>
-
-  </div>
-</section>
-<section class="media-section">
-  <h2>Funny Moments</h2>
-
-  <div class="media-grid">
-    <div class="media-card">
-      <video controls preload="metadata">
-        <source src="videos/funny/funny1.mp4" type="video/mp4">
-      </video>
-      <span class="media-tag">H4TE SABSI</span>
-    </div>
-
-    <div class="media-card">
-      <video controls preload="metadata">
-        <source src="videos/funny/funny2.mp4" type="video/mp4">
-      </video>
-      <span class="media-tag">H4TE NOVEMBER</span>
-    </div>
-
-    <div class="media-card">
-      <video controls preload="metadata">
-        <source src="videos/funny/funny3.mp4" type="video/mp4">
-      </video>
-      <span class="media-tag">TEAM MOMENT</span>
-    </div>
-  </div>
-</section>
-<section class="media-section">
-  <h2>Clutch Plays</h2>
-
-  <div class="media-grid">
-    <div class="media-card">
-      <video controls preload="metadata">
-        <source src="videos/clutch/clutch1.mp4" type="video/mp4">
-      </video>
-      <span class="media-tag">H4TE VABE</span>
-    </div>
-
-    <div class="media-card">
-      <video controls preload="metadata">
-        <source src="videos/clutch/clutch2.mp4" type="video/mp4">
-      </video>
-      <span class="media-tag">H4TE SKRAIBL</span>
-    </div>
-
-    <div class="media-card">
-      <video controls preload="metadata">
-        <source src="videos/clutch/clutch3.mp4" type="video/mp4">
-      </video>
-      <span class="media-tag">H4TE KOVO</span>
-    </div>
-  </div>
-</section>
-<section class="media-section">
-  <h2>Scrims</h2>
-
-  <div class="media-grid">
-    <div class="media-card">
-      <video controls preload="metadata">
-        <source src="videos/scrims/scrim1.mp4" type="video/mp4">
-      </video>
-      <span class="media-tag">VS ACADEMY</span>
-    </div>
-
-    <div class="media-card">
-      <video controls preload="metadata">
-        <source src="videos/scrims/scrim2.mp4" type="video/mp4">
-      </video>
-      <span class="media-tag">VS RAW</span>
-    </div>
-
-    <div class="media-card">
-      <video controls preload="metadata">
-        <source src="videos/scrims/scrim3.mp4" type="video/mp4">
-      </video>
-      <span class="media-tag">VS OXES</span>
-    </div>
-  </div>
-</section>
-<section class="media-section">
-  <h2>Tournament Highlights</h2>
-
-  <div class="media-grid">
-    <div class="media-card">
-      <video controls preload="metadata">
-        <source src="videos/tournaments/tourney1.mp4" type="video/mp4">
-      </video>
-      <span class="media-tag">H4TE MAIN</span>
-    </div>
-
-    <div class="media-card">
-      <video controls preload="metadata">
-        <source src="videos/tournaments/tourney2.mp4" type="video/mp4">
-      </video>
-      <span class="media-tag">RAW LEAGUE</span>
-    </div>
-
-    <div class="media-card">
-      <video controls preload="metadata">
-        <source src="videos/tournaments/tourney3.mp4" type="video/mp4">
-      </video>
-      <span class="media-tag">UNDERDOG CUP</span>
-    </div>
-  </div>
-</section>
-
-      
-
-</main>
+</body>
+</html>
